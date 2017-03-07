@@ -12,4 +12,4 @@ deploy:
         key-secret: $AWS_ACCESS_S3_KEY_SECRET
         bucket-url: $AWS_S3_BUCKET_URL
         source_dir: public/
-        opts: --acl-public --add-header=Cache-Control:max-age=3600
+        opts: --acl-public --add-header=Cache-Control:max-age=5000
