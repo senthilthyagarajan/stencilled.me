@@ -1,4 +1,4 @@
-baseurl = "https://www.stencilled.me"
+baseurl = "http://www.stencilled.me"
 languageCode = "en-us"
 title = "Beautiful Hugo"
 theme = "beautifulhugo"
