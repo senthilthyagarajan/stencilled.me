@@ -1,0 +1,14 @@
+box: debian
+build:
+  steps:
+    - arjen/hugo-build:
+        version: "0.15"
+
+deploy:
+  steps:
+    - s3sync:
+        key-id: $AWS_ACCESS_S3_KEY_ID
+        key-secret: $AWS_ACCESS_S3_KEY_SECRET
+        bucket-url: $AWS_S3_BUCKET_URL
+        source_dir: public/
+        opts: --acl-public --add-header=Cache-Control:max-age=3600
