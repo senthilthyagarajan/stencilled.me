@@ -1,12 +1,11 @@
-baseurl = "https://www.stencilled.me"
+baseurl = "http://s3.amazonaws.com/www.stencilled.me"
 languageCode = "en-us"
 title = "Beautiful Hugo"
 theme = "beautifulhugo"
 metaDataFormat = "yaml"
 pygmentsUseClasses = true
 pygmentCodeFences = true
-#disqusShortname = "XXX"
-#googleAnalytics = "XXX"
+
 
 [Params]
   subtitle = "Build a beautiful and simple website in minutes"
