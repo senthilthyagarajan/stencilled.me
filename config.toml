@@ -1,4 +1,4 @@
-baseurl = " http://www.stencilled.me.s3-website-us-east-1.amazonaws.com"
+baseurl = " https://s3.amazonaws.com/www.stencilled.me"
 languageCode = "en-us"
 title = "Stencilled"
 theme = "beautifulhugo"
