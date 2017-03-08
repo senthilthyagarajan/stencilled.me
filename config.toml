@@ -9,7 +9,7 @@ pygmentCodeFences = true
 
 [Params]
   
-  commit = false
+ # commit = false
 
 [Author]
   name = "Senthil Thyagarajan"
