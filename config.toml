@@ -1,54 +1,28 @@
-baseurl = "https://s3.amazonaws.com/www.stencilled.me"
+baseurl = "www.stencilled.me"
 languageCode = "en-us"
-title = "Beautiful Hugo"
+title = "Stencilled"
 theme = "beautifulhugo"
-metaDataFormat = "yaml"
 pygmentsUseClasses = true
 pygmentCodeFences = true
-
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
 
 [Params]
-  subtitle = "Build a beautiful and simple website in minutes"
-  logo = "img/avatar-icon.png"
-  favicon = "img/favicon.ico"
-  dateFormat = "January 2, 2006"
+  
   commit = false
-  rss = true
-  comments = true
-
-#[[Params.bigimg]]
-#  src = "img/triangle.jpg"
-#  desc = "Triangle"
-#[[Params.bigimg]]
-#  src = "img/sphere.jpg"
-#  desc = "Sphere"
-#[[Params.bigimg]]
-#  src = "img/hexagon.jpg"
-#  desc = "Hexagon"
 
 [Author]
-  name = "Some Person"
-  email = "youremail@domain.com"
-  facebook = "username"
-  googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
-  github = "username"
-  twitter = "username"
-  reddit = "username"
-  linkedin = "username"
-  xing = "username"
-  stackoverflow = "users/XXXXXXX/username"
-  snapchat = "username"
-  instagram = "username"
-  youtube = "user/username" # or channel/channelname
-  soundcloud = "username"
-  spotify = "username"
-  bandcamp = "username"
-  itchio = "username"
+  name = "Senthil Thyagarajan"
+  date= "2020"
+  email = "senthil.thyagarajan@gmail.com"
+  github = "senthilthyagarajan"
+  twitter = "therascala"
+  linkedin = "senthil.thyagarajan"
 
-[[menu.main]]
-    name = "Blog"
-    url = "/"
-    weight = 1
+#[[menu.main]]
+#    name = "Blog"
+#    url = "/"
+#    weight = 1
 
 [[menu.main]]
     name = "About"
@@ -56,27 +30,19 @@ pygmentCodeFences = true
     weight = 3
 
 [[menu.main]]
-    identifier = "samples"
-    name = "Samples"
+    identifier = "projects"
+    name = "Projects"
     weight = 2
 
 [[menu.main]]
-    parent = "samples"
-    name = "Big Image Sample"
-    url = "/post/2017-03-07-bigimg-sample"
-    weight = 1
+    parent = "projects"
+    name = "NFL Season 2016-17"
+    url = "/post/2017-01-29-nfl"
 
 [[menu.main]]
-    parent = "samples"
-    name = "Math Sample"
-    url = "/post/2017-03-05-math-sample"
-    weight = 2
-
-[[menu.main]]
-    parent = "samples"
-    name = "Code Sample"
-    url = "/post/2016-03-08-code-sample"
-    weight = 3
+    parent = "projects"
+    name = "Where do people eat in Austin ?"
+    url = "/post/2017-02-15-foursquare"
 
 [[menu.main]]
     name = "Tags"

@@ -7,12 +7,8 @@
 
     {{ partial "nav.html" . }}
 
-    {{ if isset .Site.Params.bigimg 1 }}
-      <div id="header-big-imgs" data-num-img={{len .Site.Params.bigimg}} {{range $i, $img := .Site.Params.bigimg}}data-img-src-{{add $i 1}}="{{$img.src}}" data-img-desc-{{add $i 1}}="{{$img.desc}}"{{end}}></div>
-    {{ end }}
-
-    <header class="header-section {{ if isset .Site.Params.bigimg 1 }}has-img{{ end }}">
-      <div class="intro-header {{ if isset .Site.Params.bigimg 1 }}big-img{{ else }}no-img{{ end }}">
+    <header class="header-section ">
+      <div class="intro-header no-img">
         <div class="container">
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -26,7 +22,6 @@
             </div>
           </div>
         </div>
-        <span class="img-desc" style="display: inline;"></span>
       </div>
     </header>
 
@@ -37,54 +32,54 @@
           <div class="posts-list">
             {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
             {{ range $pag.Pages }}
-              <article class="post-preview">
+            <article class="post-preview">
               <a href="{{ .Permalink }}">
-                <h2 class="post-title">{{ .Title }}</h2>
-
-                {{ if .Params.subtitle }}
-                  <h3 class="post-subtitle">
-                  {{ .Params.subtitle }}
-                  </h3>
-                {{ end }}
+          	  <h2 class="post-title">{{ .Title }}</h2>
+          	
+          	  {{ if .Params.subtitle }}
+          	  <h3 class="post-subtitle">
+          	    {{ .Params.subtitle }}
+          	  </h3>
+          	  {{ end }}  
               </a>
 
               <p class="post-meta">
-                Posted on {{ .Date.Format .Site.Params.dateFormat }}
+                Posted on {{ .Date.Format "January 2, 2006" }}
               </p>
               <div class="post-entry">
-                {{ if .Truncated }}
-                  {{ .Summary }}
-                  <a href="{{ .Permalink }}" class="post-read-more">[Read&nbsp;More]</a>
-                {{ else }}
-                  {{ .Content }}
-                {{ end }}
+              {{ if .Truncated }}
+                {{ .Summary }}
+                <a href="{{ .Permalink }}" class="post-read-more">[Read&nbsp;More]</a>
+              {{ else }}
+                {{ .Content }}
+              {{ end }}
               </div>
 
-              {{ if .Params.tags }}
-                <span class="post-meta">
-                {{ range .Params.tags }}
-                  #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
-                {{ end }}
-                </span>
-              {{ end }}
+	      {{ if .Params.tags }}
+	        <span class="post-meta">
+	          {{ range .Params.tags }}
+	            #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
+		  {{ end }}
+	        </span>
+	      {{ end }}
 
-              </article>
+             </article>
             {{ end }}
           </div>
 
           {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-            <ul class="pager main-pager">
-              {{ if .Paginator.HasPrev }}
-                <li class="previous">
-                  <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; Newer Posts</a>
-                </li>
-              {{ end }}
-              {{ if .Paginator.HasNext }}
-                <li class="next">
-                  <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">Older Posts &rarr;</a>
-                </li>
-              {{ end }}
-            </ul>
+          <ul class="pager main-pager">
+            {{ if .Paginator.HasPrev }}
+            <li class="previous">
+              <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; Newer Posts</a>
+            </li>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+            <li class="next">
+              <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">Older Posts &rarr;</a>
+            </li>
+            {{ end }}
+          </ul>
           {{ end }}
         </div>
       </div>

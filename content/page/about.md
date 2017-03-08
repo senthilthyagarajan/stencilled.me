@@ -1,16 +1,7 @@
----
-title: About me
-subtitle: Why you'd want to go on a date with me
-comments: false
----
+My name is Senthil Thyagarajan. 
 
-My name is Inigo Montoya. I have the following qualities:
+As a kid in school we used a stencil to draw the first map.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+Little did I know then that making maps would be my passion/profession.
 
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Here in Stencilled I would be working on projects to represent data in different forms of visualization and maps. 
