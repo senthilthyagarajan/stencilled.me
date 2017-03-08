@@ -13,3 +13,4 @@ deploy:
         bucket-url: $AWS_S3_BUCKET_URL
         source_dir: public/
         opts: --acl-public --add-header=Cache-Control:max-age=3600
+ 
