@@ -1,15 +1,10 @@
+<<<<<<< HEAD
 baseurl = " https://s3.amazonaws.com/www.stencilled.me"
+=======
+baseurl = "http://s3-website-us-east-1.amazonaws.com"
+>>>>>>> ebecd66c90a707e3ae423c8dacc0f6927495e85e
 languageCode = "en-us"
 title = "Stencilled"
-theme = "beautifulhugo"
-pygmentsUseClasses = true
-pygmentCodeFences = true
-#disqusShortname = "XXX"
-#googleAnalytics = "XXX"
-
-[Params]
-  
- # commit = false
 
 [Author]
   name = "Senthil Thyagarajan"
