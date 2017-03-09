@@ -1,15 +1,6 @@
-baseurl = ""
+baseurl = "http://www.stencilled.me.s3-website-us-east-1.amazonaws.com"
 languageCode = "en-us"
 title = "Stencilled"
-theme = "beautifulhugo"
-pygmentsUseClasses = true
-pygmentCodeFences = true
-#disqusShortname = "XXX"
-#googleAnalytics = "XXX"
-
-[Params]
-  
- # commit = false
 
 [Author]
   name = "Senthil Thyagarajan"
