@@ -1,6 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "Stencilled"
+relativeURLs = true
 
 [Author]
   name = "Senthil Thyagarajan"
