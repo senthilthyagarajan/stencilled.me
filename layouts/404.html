@@ -1,12 +1,25 @@
-{{ partial "header" . }}
-<section class="hero is-fullheight">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title notfound">404</h1>
-      <h2 class="subtitle is-4">
-        Page not found
-      </h2>
-      <a class="button" href="{{ .Site.BaseURL }}">Home Page</a>
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    {{ partial "nav.html" . }}
+
+      <div role="main" class="container main-content">
+  
+  	    <div class="text-center">
+    	      <h1>Whoops, this page doesn't exist.</h1>
+    	      <h1>Move along. (404 error)</h1>
+    	      <br/>
+    
+	      <img src="{{ .Site.BaseURL }}/img/404-southpark.jpg" />
+	    </div>
+	  
+	  </div>
+
+    {{ partial "footer.html" . }}
+
+  </body>
+</html>
