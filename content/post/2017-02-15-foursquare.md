@@ -111,7 +111,7 @@ now you would see any place with a rating of more than 9 on a scale of 10 and ch
 places which have high ratings but not seen here. To solve this I would add dynamic input with which the users can change the
 ratings and checkins to visualize the output.
 
-
+{{< highlight javascript >}}
 
  <style>
       text {
@@ -129,111 +129,110 @@ ratings and checkins to visualize the output.
                   <input type="number" class="form-control" id="myRating" value="0-10" placeholder = "Enter a value between 0-10">
                </div>
 
-  <svg width="960" height="1000"></svg>
-       <script src="https://d3js.org/d3.v4.min.js"></script>
-       <script>
-           var svg = d3.select("svg"),
-               width = +svg.attr("width");
+               <script src="https://d3js.org/d3.v4.min.js"></script>
+               <script>
+                   var svg = d3.select("svg"),
+                       width = +svg.attr("width");
 
-           var format = d3.format(",d");
+                   var format = d3.format(",d");
 
-           var color = d3.scaleOrdinal(d3.schemeCategory10);
+                   var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-           var pack = d3.pack()
-               .size([width, width])
-               .padding(1.5);
+                   var pack = d3.pack()
+                       .size([width, width])
+                       .padding(1.5);
 
-           var inputs = {};
+                   var inputs = {};
 
-           d3.csv("austin_fsq.csv", function(d) {
-               d.sno = +d.sno;
-               return d;
-           }, function(error, data) {
-               if (error) throw error;
+                   d3.csv("austin_fsq.csv", function(d) {
+                       d.sno = +d.sno;
+                       return d;
+                   }, function(error, data) {
+                       if (error) throw error;
 
-               d3.selectAll("input").on("change", function(){
-                 inputs[this.id] = +this.value;
-                 console.log(inputs.myValue + "-" + inputs.myRating)
-                 if(inputs.myValue && inputs.myRating){
-                    var classes = data.filter(d => d.value < inputs.myValue && d.rating >= inputs.myRating);
-                   draw(classes);
-                 }
-               })
-
-               function draw(classes) {
-
-                 d3.selectAll("svg > *").remove();
-
-                   console.log(classes.length);
-                   var root = d3.hierarchy({
-                           children: classes
+                       d3.selectAll("input").on("change", function(){
+                         inputs[this.id] = +this.value;
+                         console.log(inputs.myValue + "-" + inputs.myRating)
+                         if(inputs.myValue && inputs.myRating){
+                            var classes = data.filter(d => d.value < inputs.myValue && d.rating >= inputs.myRating);
+                           draw(classes);
+                         }
                        })
-                       .sum(function(d) {
-                           return d.value;
-                       })
-                       .each(function(d) {
-                           if (id = d.data.id) {
-                               var id, i = id.lastIndexOf(".");
-                               d.id = id;
-                               d.package = id.slice(0, i);
-                               d.class = id.slice(i + 1);
-                           }
-                       });
 
-                   var node = svg.selectAll(".node")
-                       .data(pack(root).leaves())
-                       .enter().append("g")
-                       .attr("class", "node")
-                       .attr("transform", function(d) {
-                           return "translate(" + d.x + "," + d.y + ")";
-                       });
+                       function draw(classes) {
 
-                   node.append("circle")
-                       .attr("id", function(d) {
-                           return d.id;
-                       })
-                       .attr("r", function(d) {
-                           return d.r;
-                       })
-                       .style("fill", function(d) {
-                           return color(d.package);
-                       });
+                         d3.selectAll("svg > *").remove();
 
-                   node.append("clipPath")
-                       .attr("id", function(d) {
-                           return "clip-" + d.id;
-                       })
-                       .append("use")
-                       .attr("xlink:href", function(d) {
-                           return "#" + d.id;
-                       });
+                           console.log(classes.length);
+                           var root = d3.hierarchy({
+                                   children: classes
+                               })
+                               .sum(function(d) {
+                                   return d.value;
+                               })
+                               .each(function(d) {
+                                   if (id = d.data.id) {
+                                       var id, i = id.lastIndexOf(".");
+                                       d.id = id;
+                                       d.package = id.slice(0, i);
+                                       d.class = id.slice(i + 1);
+                                   }
+                               });
 
-                   node.append("text")
-                       .attr("clip-path", function(d) {
-                           return "url(#clip-" + d.id + ")";
-                       })
-                       .selectAll("tspan")
-                       .data(function(d) {
-                           return d.class.split(/(?=[A-Z][^A-Z])/g);
-                       })
-                       .enter().append("tspan")
-                       .attr("x", 0)
-                       .attr("y", function(d, i, nodes) {
-                           return 13 + (i - nodes.length / 2 - 0.5) * 10;
-                       })
-                       .text(function(d) {
-                           return d;
-                       });
+                           var node = svg.selectAll(".node")
+                               .data(pack(root).leaves())
+                               .enter().append("g")
+                               .attr("class", "node")
+                               .attr("transform", function(d) {
+                                   return "translate(" + d.x + "," + d.y + ")";
+                               });
 
-                   node.append("title")
-                       .text(function(d) {
-                           return d.data.id + "\n" + format(d.value);
-                       });
-               }
-           });
-       </script>
+                           node.append("circle")
+                               .attr("id", function(d) {
+                                   return d.id;
+                               })
+                               .attr("r", function(d) {
+                                   return d.r;
+                               })
+                               .style("fill", function(d) {
+                                   return color(d.package);
+                               });
 
+                           node.append("clipPath")
+                               .attr("id", function(d) {
+                                   return "clip-" + d.id;
+                               })
+                               .append("use")
+                               .attr("xlink:href", function(d) {
+                                   return "#" + d.id;
+                               });
 
+                           node.append("text")
+                               .attr("clip-path", function(d) {
+                                   return "url(#clip-" + d.id + ")";
+                               })
+                               .selectAll("tspan")
+                               .data(function(d) {
+                                   return d.class.split(/(?=[A-Z][^A-Z])/g);
+                               })
+                               .enter().append("tspan")
+                               .attr("x", 0)
+                               .attr("y", function(d, i, nodes) {
+                                   return 13 + (i - nodes.length / 2 - 0.5) * 10;
+                               })
+                               .text(function(d) {
+                                   return d;
+                               });
+
+                           node.append("title")
+                               .text(function(d) {
+                                   return d.data.id + "\n" + format(d.value);
+                               });
+                       }
+                   });
+               </script>
+
+{{< highlight>}}
 
 Below is the code for the visualization.
 
