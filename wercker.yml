@@ -3,7 +3,6 @@ build:
   steps:
     - arjen/hugo-build:
         version: "0.18"
-        force_install: "true"
 
 deploy:
   steps:
