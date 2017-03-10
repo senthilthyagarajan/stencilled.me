@@ -1,4 +1,4 @@
-baseurl = "http://www.stencilled.me/"
+baseurl = "http://www.stencilled.me"
 languageCode = "en"
 title = "Stencilled"
 theme = "Hucore"
