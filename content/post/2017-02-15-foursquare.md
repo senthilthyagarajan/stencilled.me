@@ -5,18 +5,18 @@ date: 2017-02-15
 tags: ["R", "d3js"]
 ---
 
-Recently I visited Austin and many of my friends had mentioned about the variety in food options here. 
+Recently I visited Austin and many of my friends had mentioned about the variety in food options here.
 So my wife and I decided to search for places to eat on the foursquare app. As a standard search filter
-with high rating we ended up at pretty good places and foursquare did alert us to checkins whenever we 
-reached a place. Post the trip I wanted to see how many people do checkins using this app and how the checkins are 
+with high rating we ended up at pretty good places and foursquare did alert us to checkins whenever we
+reached a place. Post the trip I wanted to see how many people do checkins using this app and how the checkins are
 correlated with the ratings.
 
 <!--more-->
 
-The first step here is to get the data . So I started to play around with the foursquare API 
-and started working around the URL on what category(food,places to see, etc) to get the data . 
+The first step here is to get the data . So I started to play around with the foursquare API
+and started working around the URL on what category(food,places to see, etc) to get the data .
 The authentication process for the foursquare API was a bit tricky but with my google-fu
-(( and special mention to the GIS tribe ) I was able to get going. Below is how you would 
+(( and special mention to the GIS tribe ) I was able to get going. Below is how you would
 get the client id and client secret when you create a new app.
 
 ![This is an image](createfsqapi.png)
@@ -106,12 +106,12 @@ venue_formattedAddress = c()
 
 ```
 Once this was done the next part was to how do I visualize this data . Since I have been trying my hands on d3js I
-used the cleaned output from R in CSV format to display how many checkins and ratings vary for these places.As of 
-now you would see any place with a rating of more than 9 on a scale of 10 and checkins less than 5000. As a result there are 
-places which have high ratings but not seen here. To solve this I would add dynamic input with which the users can change the 
+used the cleaned output from R in CSV format to display how many checkins and ratings vary for these places.As of
+now you would see any place with a rating of more than 9 on a scale of 10 and checkins less than 5000. As a result there are
+places which have high ratings but not seen here. To solve this I would add dynamic input with which the users can change the
 ratings and checkins to visualize the output.
 
-{{< highlight javascript >}}
+
 
  <style>
       text {
@@ -119,7 +119,7 @@ ratings and checkins to visualize the output.
       text-anchor: middle;
       }
    </style>
-   
+
 <div class="form-group">
                   <label for="myValue">Checkins less than: </label>
                   <input type="number" class="form-control" id="myValue" value="0-30000" placeholder = "Enter a value between 0-30000">
@@ -128,12 +128,10 @@ ratings and checkins to visualize the output.
                   <label for="myRating">Rating greater than: </label>
                   <input type="number" class="form-control" id="myRating" value="0-10" placeholder = "Enter a value between 0-10">
                </div>
-			   
+
   <svg width="960" height="1000"></svg>
        <script src="https://d3js.org/d3.v4.min.js"></script>
        <script>
-	   
-	  
            var svg = d3.select("svg"),
                width = +svg.attr("width");
 
@@ -235,7 +233,7 @@ ratings and checkins to visualize the output.
            });
        </script>
 
-{{</ highlight >}}
+
 
 Below is the code for the visualization.
 
