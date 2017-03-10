@@ -13,7 +13,7 @@ pygmentCodeFences = true
 
 [Author]
   name = "Senthil Thyagarajan"
-  date= "2020"
+  date= "2017"
   email = "senthil.thyagarajan@gmail.com"
   github = "senthilthyagarajan"
   twitter = "therascala"
@@ -44,13 +44,11 @@ pygmentCodeFences = true
     name = "Where do people eat in Austin ?"
     url = "/post/2017-02-15-foursquare"
 
-	[[menu.main]]
-    parent = "projects"
-    name = "Top Beers in 2016."
-    url = "/post/2017-02-22-Top Beers in 2016"
+[[menu.main]]
+	parent = "projects"
+	name = "Top Beers in 2016."
+	url = "/post/2017-02-22-Top Beers in 2016"
 
-	
-	
 	
 [[menu.main]]
     name = "Tags"
