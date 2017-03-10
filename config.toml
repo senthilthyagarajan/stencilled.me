@@ -5,7 +5,7 @@ theme = "beautifulhugo"
 pygmentsUseClasses = true
 pygmentCodeFences = true
 #disqusShortname = "XXX"
-#googleAnalytics = "XXX"
+googleAnalytics = "UA-91161205-1"
 
 [Params]
   
