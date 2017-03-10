@@ -128,11 +128,20 @@ ratings and checkins to visualize the output.
                   <label for="myRating">Rating greater than: </label>
                   <input type="number" class="form-control" id="myRating" value="0-10" placeholder = "Enter a value between 0-10">
                </div>
+               <svg width="1250" height="1080"></svg>
 
-               <script src="https://d3js.org/d3.v4.min.js"></script>
+               <script> src = "https://d3js.org/d3.v4.min.js" ></script>
+               <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.4/d3.min.js" type="text/JavaScript"></script>
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.3/d3-queue.min.js"></script>
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/2.2.0/topojson.min.js"></script>
+               <!-- JS–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+               <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
                <script>
-                   var svg = d3.select("svg"),
-                       width = +svg.attr("width");
+               var svg = d3.select("svg"),
+                   width = +svg.attr("width"),
+                   height = +svg.attr("height");
 
                    var format = d3.format(",d");
 
@@ -238,8 +247,15 @@ Below is the code for the visualization.
 
 ```javascript
 
-< script >
-  < script > src = "https://d3js.org/d3.v4.min.js" >
+  <script> src = "https://d3js.org/d3.v4.min.js" ></script>
+  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.4/d3.min.js" type="text/JavaScript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.3/d3-queue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/2.2.0/topojson.min.js"></script>
+  <!-- JS–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  < script >
 
   var svg = d3.select("svg"),
     width = +svg.attr("width");
