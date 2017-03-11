@@ -111,7 +111,7 @@ now you would see any place with a rating of more than 9 on a scale of 10 and ch
 places which have high ratings but not seen here. To solve this I would add dynamic input with which the users can change the
 ratings and checkins to visualize the output.
 
-{{<highlight javascript>}}
+{{< highlight javascript >}}
 
 
  <style>
@@ -242,7 +242,7 @@ ratings and checkins to visualize the output.
                    });
                </script>
 
-{{</highlight>}}
+{{< /highlight >}}
 
 
 Below is the code for the visualization.
