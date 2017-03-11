@@ -242,7 +242,7 @@ ratings and checkins to visualize the output.
                    });
                </script>
 
-{{<highlight>}}
+{{</highlight>}}
 
 
 Below is the code for the visualization.
