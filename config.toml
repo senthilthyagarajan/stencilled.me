@@ -2,8 +2,8 @@ baseurl = "http://www.stencilled.me"
 languageCode = "en-us"
 title = "Stencilled"
 theme = "beautifulhugo"
-pygmentsUseClasses = false
-pygmentCodeFences = false
+pygmentsUseClasses = true
+pygmentCodeFences = true
 #disqusShortname = "XXX"
 googleAnalytics = "UA-91161205-1"
 
