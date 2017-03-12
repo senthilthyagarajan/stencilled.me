@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Stencilled"
 theme = "beautifulhugo"
 pygmentsUseClasses = true
-pygmentCodeFences = true
+pygmentCodeFences = false
 #disqusShortname = "XXX"
 googleAnalytics = "UA-91161205-1"
 
