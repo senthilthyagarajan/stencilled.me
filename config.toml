@@ -47,7 +47,7 @@ googleAnalytics = "UA-91161205-1"
 [[menu.main]]
 	parent = "projects"
 	name = "Top Beers in 2016."
-	url = "/post/2017-02-22-Top Beers in 2016"
+	url = "/post/2017-02-22-topbeers2016"
 
 	
 [[menu.main]]

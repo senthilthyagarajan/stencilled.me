@@ -1,0 +1,27 @@
+{
+  "name": "tinyce-hugo-theme",
+  "version": "1.0.0",
+  "description": "Simple blog theme for hugo",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roperzh/tinyce-hugo-theme.git"
+  },
+  "keywords": [
+    "theme",
+    "hugo",
+    "blog"
+  ],
+  "author": "Roberto Dip (roperzh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roperzh/tinyce-hugo-theme/issues"
+  },
+  "homepage": "https://github.com/roperzh/tinyce-hugo-theme",
+  "devDependencies": {
+    "grunt": "^1.0.0",
+    "grunt-autoprefixer": "^3.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
+  }
+}
