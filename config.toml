@@ -29,16 +29,18 @@ googleAnalytics = "UA-91161205-1"
     url = "/page/about/"
     weight = 3
 
-    [[menu.main]]
-    parent = "projects"
-    name = "Maps and GIFS"
-    url = "/post/2017-03-20-map-gif-r"
+    
 
 	
 [[menu.main]]
     identifier = "projects"
     name = "Projects"
     weight = 2
+	
+	[[menu.main]]
+    parent = "projects"
+    name = "Maps and GIFS"
+    url = "/post/2017-03-20-map-gif-r"
 
 [[menu.main]]
     parent = "projects"
@@ -56,7 +58,6 @@ googleAnalytics = "UA-91161205-1"
 	url = "/post/2017-02-22-topbeers2016"
 	
 
-	
 	
 	
 [[menu.main]]
