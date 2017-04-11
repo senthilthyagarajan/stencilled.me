@@ -30,17 +30,20 @@ googleAnalytics = "UA-91161205-1"
     weight = 3
 
     
-
+[[menu.main]]
+	parent = "projects"
+	name = "Indian Premier League Season 1 - 10"
+	url = "/post/2017-02-22-iplseasons"
 	
 [[menu.main]]
     identifier = "projects"
     name = "Projects"
     weight = 2
 	
-	[[menu.main]]
-    parent = "projects"
-    name = "Maps and GIFS"
-    url = "/post/2017-03-20-map-gif-r"
+[[menu.main]]
+   parent = "projects"
+   name = "Maps and GIFS"
+   url = "/post/2017-03-20-map-gif-r"
 
 [[menu.main]]
     parent = "projects"
