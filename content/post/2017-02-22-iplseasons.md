@@ -5,12 +5,13 @@ date: 2017-04-10
 tags: ["excel", "d3js"]
 ---
 
-This project was done to see represent how the teams have performed over the last several seasons.
-This data set was obtained from Kaggle.
+Indian Premier League(IPL) has had 13 different teams over the past ten years. In this project I have tried to visualize how these teams 
+have performed over the years.
 
 <!--more-->
 
-Just hover over each team to see their wins against the other teams.
+I got the data for this project from <a href="https://www.kaggle.com/manasgarg/ipl/downloads/ipl.zip">Kaggle.</a> As per the dataset 577 games were 
+played so far for which 574 of them had results and 3 games had no results. Just hover over each team to see how their performance has been.
 
 
 {{< highlight javascript >}}
