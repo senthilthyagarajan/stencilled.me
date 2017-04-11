@@ -10,10 +10,6 @@ have performed over the years.
 
 <!--more-->
 
-I got the data for this project from <a href="https://www.kaggle.com/manasgarg/ipl/downloads/ipl.zip">Kaggle.</a> As per the dataset 577 games were 
-played so far for which 574 of them had results and 3 games had no results. Just hover over each team to see how their performance has been.
-
-
 {{< highlight javascript >}}
 
 <style>
@@ -212,3 +208,6 @@ d3.select(self.frameElement).style("height", height+"px").style("width", width+"
 </script>
 
 {{< /highlight >}}
+
+I got the data for this project from <a href="https://www.kaggle.com/manasgarg/ipl/downloads/ipl.zip">Kaggle.</a> As per the dataset 577 games were 
+played so far for which 574 of them had results and 3 games had no results. Just hover over each team to see how their performance has been.
