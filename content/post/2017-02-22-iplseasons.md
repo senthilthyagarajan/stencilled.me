@@ -16,7 +16,7 @@ Just hover over each team to see their wins against the other teams.
 
 Below is the code for the visualization.
 
-```javascript
+{{< highlight javascript >}}
 
 <!DOCTYPE html>
 <meta charset="utf-8">
@@ -218,4 +218,4 @@ svg.append("g").attr("transform", "translate(600,550)").call(ch);
 d3.select(self.frameElement).style("height", height+"px").style("width", width+"px");     
 </script>
 
-```
+{{< /highlight >}}
