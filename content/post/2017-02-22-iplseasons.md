@@ -13,17 +13,9 @@ This data set was obtained from Kaggle.
 Just hover over each team to see their wins against the other teams.
 
 
-
-Below is the code for the visualization.
-
 {{< highlight javascript >}}
 
-<!DOCTYPE html>
-<meta charset="utf-8">
 <style>
-body {
-  font: 10px sans-serif;
-}
 
 svg text{
   fill:grey;
