@@ -200,7 +200,7 @@ var ch = viz.ch().data(data)
 	  .labelPadding(.03)
       .fill(function(d){ return colors[d];});
 
-var width=1200, height=1100;
+var width=1300, height=1100;
 
 var svg = d3.select("body").append("svg").attr("height",height).attr("width",width);
 
