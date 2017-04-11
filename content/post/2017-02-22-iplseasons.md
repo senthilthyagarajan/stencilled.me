@@ -7,9 +7,7 @@ tags: ["excel", "d3js"]
 
 Indian Premier League(IPL) has had 13 different teams over the past ten years. In this project I have tried to visualize how these teams 
 have performed over the years.
-
 <!--more-->
-
 {{< highlight javascript >}}
 
 <style>
