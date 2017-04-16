@@ -128,7 +128,7 @@ ratings and checkins to visualize the output.
                   <label for="myRating">Rating greater than: </label>
                   <input type="number" class="form-control" id="myRating" value="0-10" placeholder = "Enter a value between 0-10">
                </div>
-               <svg width="1250" height="1080"></svg>
+               <svg width="1250" height="1280"></svg>
 
                <script> src = "https://d3js.org/d3.v4.min.js" ></script>
                <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
