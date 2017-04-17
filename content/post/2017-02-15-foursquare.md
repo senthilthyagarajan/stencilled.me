@@ -105,7 +105,7 @@ venue_formattedAddress = c()
 
 ```
 Once this was done the next part was to how do I visualize this data . Since I have been trying my hands on d3js I
-used the cleaned output from R in CSV format to display how many checkins and ratings vary for these places.
+used the cleaned output from R in CSV format to display how checkins and ratings vary for these places using bubble chart.
 
 {{< highlight javascript >}}
 
