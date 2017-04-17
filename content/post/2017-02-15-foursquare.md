@@ -21,7 +21,7 @@ get the client id and client secret when you create a new app.
 
 ![This is an image](createfsqapi.png)
 
-The idea was how to do it for many places across the country. So I decided to use R to scrap and clean the data.You can find the code here.
+The idea was how to do it for many places across the country. So I decided to use R to scrap and clean the data. You can find the code here.
 
 ```r
 
@@ -105,10 +105,7 @@ venue_formattedAddress = c()
 
 ```
 Once this was done the next part was to how do I visualize this data . Since I have been trying my hands on d3js I
-used the cleaned output from R in CSV format to display how many checkins and ratings vary for these places.As of
-now you would see any place with a rating of more than 9 on a scale of 10 and checkins less than 5000. As a result there are
-places which have high ratings but not seen here. To solve this I would add dynamic input with which the users can change the
-ratings and checkins to visualize the output.
+used the cleaned output from R in CSV format to display how many checkins and ratings vary for these places.
 
 {{< highlight javascript >}}
 
