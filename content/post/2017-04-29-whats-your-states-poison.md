@@ -26,8 +26,8 @@ height: 100%;
 </style>
 
 
-When you think about Texas, the first thing that would come in mind is barbecue which of course could pair well with good beer. In this post I have mapped each state in the 
-US ranked based on the breweries or wineries present respectievly.I got the data from the Brewers Association and the American Winery Guide.With data visualization being so 
+When you think about Texas, the first thing that would come in mind is barbecue which of course  pairs well with a good beer. In this post I have mapped each state in the 
+US ranked based on the breweries or wineries present. I got the data from the Brewers Association and the American Winery Guide. With data visualization being so 
 important in representing the dataset I have used hexbins shapefile from   <a href="https://github.com/donmeltz/US-States---Hexbins">Don Meltz's repo</a>.
 
 <!--more-->
@@ -38,6 +38,8 @@ Below are the maps for how the states are ranked .
 ![This is an image](breweries.png)
 
 ![This is an image](wineries.png)
+
+![This is an image](winebeer.png)
 
 While doing this whole excerice in QGIS , I did see an extension "qgis2threejs". Using this extension and the number of wineries as a extrusion parameter
 this was another way of represeting the data.
@@ -52,4 +54,4 @@ To view the extrusion you may using "Shift + Ctrl + Up / Down" to zoom in and zo
             </div>
 			
 
-It was pretty surprising to see Texas being more of a wine state than a beer state . Well that again gives me more reason to travel places for a good beer.
+It was pretty surprising to see Texas being more of a wine state than a beer state . Well that again gives me more reason to travel to new places for a good beer.CHEERS
