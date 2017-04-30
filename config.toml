@@ -29,6 +29,12 @@ googleAnalytics = "UA-91161205-1"
     url = "/page/about/"
     weight = 3
 
+	[[menu.main]]
+	parent = "projects"
+	name = "Breweries or Wineries ??"
+	url = "/post/2017-04-29-whats-your-states-poison"
+	
+	
     
 [[menu.main]]
 	parent = "projects"
