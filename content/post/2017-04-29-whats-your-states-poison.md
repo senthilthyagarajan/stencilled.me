@@ -41,7 +41,7 @@ Below are the maps for how the states are ranked .
 
 ![This is an image](winebeer.png)
 
-While doing this whole excerice in QGIS , I did see an extension "qgis2threejs". Using this extension and the number of wineries as a extrusion parameter
+While doing this whole exercise in QGIS , I did see an extension "qgis2threejs". Using this extension and the number of wineries as a extrusion parameter
 this was another way of represeting the data.
 
 ![This is an image](wineries_extru.PNG)
