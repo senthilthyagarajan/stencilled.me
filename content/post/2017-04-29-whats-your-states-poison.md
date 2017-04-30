@@ -42,6 +42,10 @@ Below are the maps for how the states are ranked .
 While doing this whole excerice in QGIS , I did see an extension "qgis2threejs". Using this extension and the number of wineries as a extrusion parameter
 this was another way of represeting the data.
 
+![This is an image](wineries_extru.png)
+
+To view the extrusion you may using "Shift + Ctrl + Up / Down" to zoom in and zoom out.
+
  <!-- map code start -->
             <div class='myIframe' >
       <iframe width="720" height="600" src="https://s3.amazonaws.com/hugocontent/static/extru1.html"></iframe>
