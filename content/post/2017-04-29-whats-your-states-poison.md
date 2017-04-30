@@ -44,4 +44,4 @@ this was another way of represeting the data.
       <iframe width="720" height="600" src="https://s3.amazonaws.com/hugocontent/static/extru1.html"></iframe>
             </div>
 
-It was pretty surprising to see Texas being more of a wine state than a beer state . Well that again gives me more reason to check travel places for a good beer.
+It was pretty surprising to see Texas being more of a wine state than a beer state . Well that again gives me more reason to travel places for a good beer.
