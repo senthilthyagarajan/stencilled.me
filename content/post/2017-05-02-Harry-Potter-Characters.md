@@ -168,6 +168,6 @@ force.on("tick", function() {
 {{< /highlight >}}
 
 
-Their might me an odd instance when the characters might have been connected somehow and I missed it . Feel free to 
+There might me an odd instance when the characters might have been connected somehow and I missed it . Feel free to 
 use this <a href="https://raw.githubusercontent.com/senthilthyagarajan/stencilled.me/master/content/post/2017-05-02-Harry-Potter-Characters/hp.json">HP graph</a>
 and make more visualizations. Lumos Maxima !!!
