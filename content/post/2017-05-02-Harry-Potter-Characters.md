@@ -6,9 +6,9 @@ tags: ["d3js"]
 ---
 
 
-Across 7 books/ 8 movies there are so many characters in this series by J.K Rowling. For this project with the data source is from 
-<a href="https://data.world/harishkgarg/harry-potter-universe">data.world</a>.All files here were combined to create a json with nodes and links.
-Using d3js I have  visualized  the characters connected to each other.
+Across 7 books/ 8 movies there are so many characters in this series by J.K Rowling. For this project I have got the data from 
+<a href="https://data.world/harishkgarg/harry-potter-universe">data.world</a>. All files here were combined to create a json with nodes and links.
+ Using d3js I have  visualized  the characters connected to each other.
 
 <!--more-->
 
