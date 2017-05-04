@@ -55,7 +55,7 @@ var svg = d3.select("body").append("svg")
   .attr("height", height);
 
 //Read the data from the mis element
-d3.json("hp.json", function(error, graph) {
+d3.json("https://github.com/senthilthyagarajan/stencilled.me/blob/master/content/post/2017-05-02-Harry-Potter-Characters/hp.json", function(error, graph) {
     if (error) throw error;
 //Creates the graph data structure out of the json data
 force.nodes(graph.nodes)
