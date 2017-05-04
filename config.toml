@@ -28,6 +28,13 @@ googleAnalytics = "UA-91161205-1"
     name = "About"
     url = "/page/about/"
     weight = 3
+	
+	
+		[[menu.main]]
+	parent = "projects"
+	name = "Harry Potter Characters"
+	url = "/post/2017-05-02-Harry-Potter-Characters"
+	
 
 	[[menu.main]]
 	parent = "projects"
