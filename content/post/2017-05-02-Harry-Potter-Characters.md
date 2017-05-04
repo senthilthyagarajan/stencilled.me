@@ -56,7 +56,7 @@ var svg = d3.select("body").append("svg")
   .attr("height", height);
 
 //Read the data from the mis element
-d3.json("https://github.com/senthilthyagarajan/stencilled.me/blob/master/content/post/2017-05-02-Harry-Potter-Characters/hp.json", function(error, graph) {
+d3.json("https://raw.githubusercontent.com/senthilthyagarajan/stencilled.me/master/content/post/2017-05-02-Harry-Potter-Characters/hp.json", function(error, graph) {
     if (error) throw error;
 //Creates the graph data structure out of the json data
 force.nodes(graph.nodes)
@@ -162,9 +162,10 @@ force.on("tick", function() {
 });
 </script>
 
+
 {{< /highlight >}}
 
-PS: There might me an odd instance when the characters might have been connected somehow and I missed it . Feel free to 
+Their might me an odd instance when the characters might have been connected somehow and I missed it . Feel free to 
 use this <a href="https://raw.githubusercontent.com/senthilthyagarajan/stencilled.me/master/content/post/2017-05-02-Harry-Potter-Characters/hp.json">HP graph</a>
 and visualize.
 
