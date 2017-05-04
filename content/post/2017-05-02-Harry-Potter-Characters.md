@@ -5,11 +5,6 @@ date: 2017-05-02
 tags: ["d3js"]
 ---
 
-Across 7 books/ 8 movies there are so many characters in this series by J.K Rowling. For this project with the data source is from 
-<a href="https://data.world/harishkgarg/harry-potter-universe">data.world</a>.All files here were combined to create a json with nodes and links.
-Using d3js I have  visualized  the characters connected to each other.
-
-<!--more-->
 
 {{< highlight javascript >}}
 
@@ -164,6 +159,12 @@ force.on("tick", function() {
 
 
 {{< /highlight >}}
+
+<!--more-->
+
+Across 7 books/ 8 movies there are so many characters in this series by J.K Rowling. For this project with the data source is from 
+<a href="https://data.world/harishkgarg/harry-potter-universe">data.world</a>.All files here were combined to create a json with nodes and links.
+Using d3js I have  visualized  the characters connected to each other.
 
 Their might me an odd instance when the characters might have been connected somehow and I missed it . Feel free to 
 use this <a href="https://raw.githubusercontent.com/senthilthyagarajan/stencilled.me/master/content/post/2017-05-02-Harry-Potter-Characters/hp.json">HP graph</a>
