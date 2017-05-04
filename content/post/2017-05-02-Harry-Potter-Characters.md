@@ -10,9 +10,10 @@ Across 7 books/ 8 movies there are so many characters in this series by J.K Rowl
 Using d3js I have  visualized  the characters connected to each other.
 
 <!--more-->
+
 {{< highlight javascript >}}
 
-<<style>
+<style>
 
 .link {
   fill: none;
@@ -37,7 +38,7 @@ Using d3js I have  visualized  the characters connected to each other.
 <script src="https://d3js.org/d3.v3.min.js"></script><script>
 
 //Constants for the SVG
-var width = 900,
+var width = 1080,
   height = 900;
 
 //Set up the colour scale
@@ -162,4 +163,8 @@ force.on("tick", function() {
 </script>
 
 {{< /highlight >}}
+
+PS: There might me an odd instance when the characters might have been connected somehow and I missed it . Feel free to 
+use this <a href="https://raw.githubusercontent.com/senthilthyagarajan/stencilled.me/master/content/post/2017-05-02-Harry-Potter-Characters/hp.json">HP graph</a>
+and visualize.
 
