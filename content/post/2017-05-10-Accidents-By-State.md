@@ -1,3 +1,20 @@
+---
+title: Motor Vehicle Accidents
+subtitle: Using d3js
+date: 2017-05-10
+tags: ["d3js"]
+---
+
+
+I started working on this visualation after coming across   <a href="https://bl.ocks.org/mbostock/3081153">Mike Bostock's shape tweening bl.ock</a> , 
+ which was done for one state. The source for the data is 
+Insurance Institute for Highway Service(IIHS). The size of the square is based on the motor vehicle deaths per 100,000 people(2015).
+
+<!--more-->
+
+{{< highlight javascript >}}
+
+
 <html>
 	<head>
 		<style>
@@ -8,10 +25,10 @@
 		.state-path {
 			fill: #ccc;
 			stroke: #fff;
-			stroke-width: 1px;
+			stroke-width: 5px;
 		}
 		.state-label {
-			font-size: .5em;
+			font-size: .65em;
 		}
 		</style>
 	</head>
@@ -22,7 +39,10 @@
 		<script>
 		var width = window.innerWidth,
 		    height = window.innerHeight,
-		    duration = 800;
+		    duration =1000;
+        //Set up the colour scale
+        var color = d3.scaleOrdinal(d3.schemeCategory10);
+
 
 		var svg = d3.select("body").append("svg")
 		    .attr("width", width)
@@ -32,10 +52,10 @@
 
 		  var projection = centerZoom(map);
 
+
 		  var polygons = [];
 		  map.features.forEach(function(feature){
-		    polygons.push({id: feature.properties.state, geom: feature.geometry})
-		  });
+        polygons.push({id: feature.properties.state,count: feature.properties.count , geom: feature.geometry})			  });
 
 		  var init = parse(polygons, projection).sort(function(a, b){
 		    return b.area - a.area;
@@ -88,9 +108,10 @@
 		      .attr("class", "state state-label")
 		      .attr("x", pOld[0])
 		      .attr("y", pOld[1])
-		      .attr("dy", 5)
+		      .attr("dy", "0.35em")
 		      .attr("text-anchor", "middle")
-		      .text(obj.id)
+		      .text(obj.id ) //		      .text(obj.id + ": "+"\n" + obj.count)
+
 		      .transition().duration(duration)
 		      .attr("x", pNew[0])
 		      .attr("y", pNew[1])
@@ -102,18 +123,24 @@
 		  var path = svg.append("path")
 		      .attr("class", "state state-path")
 		      .attr("id", obj.id)
+          .style("fill", function(d) {
+		return color([obj.count])
+
+	})
+
 
 		  return path;
 
 		}
-
+   var obj = {};
 		function parse(polygons, projection) {
 
 		  var arr = [];
 
 		  polygons.forEach(function(state){
-		    var obj = {};
+		     obj = {};
 		    obj.id = state.id;
+         obj.count = state.count;
 		    obj.coordinates0 = state.geom.coordinates[0].map(projection);
 		    obj.coordinates1 = square(obj.coordinates0)[0];
 		    obj.d0 = "M" + obj.coordinates0.join("L") + "Z";
@@ -128,7 +155,7 @@
 
 		function square(coordinates){
 
-		  var area = d3.polygonArea(coordinates);
+		  var area =    obj.count *  obj.count *20;
 		  area < 0 ? area = area * -1 : area = area;
 		  var r = Math.sqrt(area) / 2.5;
 		  var centroid = d3.polygonCentroid(coordinates);
@@ -199,3 +226,8 @@
 
 	</body>
 </html>
+
+
+
+{{< /highlight >}}
+
