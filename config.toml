@@ -30,23 +30,22 @@ googleAnalytics = "UA-91161205-1"
     weight = 3
 	
 	
-	
-	[[menu.main]]
-	parent = "projects"
-	name = "States to Shapes"
-	url = "/post/2017-05-10-States-to-Shape"
-	
-	
-	[[menu.main]]
-	parent = "projects"
-	name = "Harry Potter Characters"
-	url = "/post/2017-05-02-Harry-Potter-Characters"
+[[menu.main]]
+parent = "projects"
+name = "States to Shapes"
+url = "/post/2017-05-10-states-to-shapes"
 	
 
-	[[menu.main]]
-	parent = "projects"
-	name = "Breweries or Wineries ??"
-	url = "/post/2017-04-29-whats-your-states-poison"
+[[menu.main]]
+parent = "projects"
+name = "Harry Potter Characters"
+url = "/post/2017-05-02-Harry-Potter-Characters"
+	
+
+[[menu.main]]
+parent = "projects"
+name = "Breweries or Wineries ??"
+url = "/post/2017-04-29-whats-your-states-poison"
 	
 	
     

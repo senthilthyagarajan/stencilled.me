@@ -6,7 +6,7 @@ tags: ["d3js"]
 ---
 
 
-I started working on this visualation after coming across   <a href="https://bl.ocks.org/mbostock/3081153">Mike Bostock's shape tweening bl.ock</a> , 
+I started working on this visualation after coming across  <a href="https://bl.ocks.org/mbostock/3081153">Mike Bostock's shape tweening bl.ock</a> , 
  which was done for one state. The source for the data is 
 Insurance Institute for Highway Service(IIHS). The size of the square is based on the motor vehicle deaths per 100,000 people(2015).
 
