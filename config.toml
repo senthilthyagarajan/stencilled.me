@@ -30,10 +30,10 @@ googleAnalytics = "UA-91161205-1"
     weight = 3
 
 
-    [[menu.main]]
-    	parent = "projects"
-    	name = "Taps near you"
-    	url = "/2017-07-10-taps-near-you"
+[[menu.main]]
+parent = "projects"
+name = "Taps near you"
+url = "/2017-09-18-taps-near-you"
 
 
 [[menu.main]]
