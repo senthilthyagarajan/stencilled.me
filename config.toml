@@ -8,7 +8,7 @@ pygmentCodeFences = true
 googleAnalytics = "UA-91161205-1"
 
 [Params]
-  
+
  # commit = false
 
 [Author]
@@ -28,37 +28,43 @@ googleAnalytics = "UA-91161205-1"
     name = "About"
     url = "/page/about/"
     weight = 3
-	
-	
+
+
+    [[menu.main]]
+    	parent = "projects"
+    	name = "Taps near you"
+    	url = "/2017-07-10-taps-near-you"
+
+
 [[menu.main]]
 parent = "projects"
 name = "States to Shapes"
 url = "/post/2017-05-10-states-to-shapes"
-	
+
 
 [[menu.main]]
 parent = "projects"
 name = "Harry Potter Characters"
 url = "/post/2017-05-02-Harry-Potter-Characters"
-	
+
 
 [[menu.main]]
 parent = "projects"
 name = "Breweries or Wineries ??"
 url = "/post/2017-04-29-whats-your-states-poison"
-	
-	
-    
+
+
+
 [[menu.main]]
 	parent = "projects"
 	name = "Indian Premier League so far."
 	url = "/post/2017-04-10-iplseasons"
-	
+
 [[menu.main]]
     identifier = "projects"
     name = "Projects"
     weight = 2
-	
+
 [[menu.main]]
    parent = "projects"
    name = "Maps and GIFS"
@@ -78,10 +84,12 @@ url = "/post/2017-04-29-whats-your-states-poison"
 	parent = "projects"
 	name = "Top Beers in 2016."
 	url = "/post/2017-02-22-topbeers2016"
-	
 
-	
-	
+
+
+
+
+
 [[menu.main]]
     name = "Tags"
     url = "/tags"
