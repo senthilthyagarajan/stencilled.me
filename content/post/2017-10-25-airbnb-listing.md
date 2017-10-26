@@ -238,4 +238,4 @@ Once the user goes through the list of amenities they do scroll down through the
 
 **What Next**
 
-The next stage for this project is to identify a relation ship between the proximity of listing to subway stations , amenities listed for the property,POI's such as restaurants, workplace, demographic variables such as daytime population. A shiny app which would show the listings and various layers such as rental price by geographies , all in one place for all the cities Airbnb have the rentals listed.
+The next stage for this project is to identify a relationship between the proximity of listing to subway stations , amenities listed for the property,POI's such as restaurants, workplace, demographic variables such as daytime population. A shiny app which would show the listings and various layers such as rental price by geographies , all in one place for all the cities Airbnb have the rentals listed.
