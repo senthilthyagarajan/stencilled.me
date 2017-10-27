@@ -33,7 +33,7 @@ googleAnalytics = "UA-91161205-1"
 [[menu.main]]
 parent = "projects"
 name = "Taps near you"
-url = "/2017-09-18-taps-near-you"
+url = "/post/2017-09-18-taps-near-you"
 
 
 [[menu.main]]
@@ -88,7 +88,7 @@ url = "/post/2017-04-29-whats-your-states-poison"
   [[menu.main]]
   	parent = "projects"
   	name = "Airbnb Listing."
-  	url = "/2017-10-25-airbnb-listing"
+  	url = "/post/2017-10-25-airbnb-listing"
 
 
 
