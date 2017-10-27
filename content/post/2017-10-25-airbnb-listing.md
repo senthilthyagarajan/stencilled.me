@@ -1,11 +1,11 @@
 ---
-title: Airbnb Listing
+title: Visualizing Airbnb listings.
 subtitle: Using r 
 date: 2017-10-25
 tags: ["r"]
 ---
 
-In this day of so many sharing services like Uber and Lyft , pricey hotels are being replaced by Airbnb. Students, working people and travelers wouldn't always want to pay a high price for staying a couple of nights at the Marriott and would rather stay at a place where they have the basic amenities needed for them at a reasonable price. So in this project I am trying to understand  the listings put on Airbnb on how the price varies by neighborhood ,house type and various other factors.
+In this day and age of so many sharing services like Uber and Lyft , pricey hotels are being replaced by Airbnb. Students, working people and travelers wouldn't always want to pay a high price for staying a couple of nights at the Marriott and would rather stay at a place where that has the basic amenities needed for them at a reasonable price. In this project I am trying to understand  the listings put on Airbnb on how the price varies by neighborhood ,house type and various other factors.
 
  I am using the data for <a href="http://insideairbnb.com/about.html">New York</a> for this post. To start with we can see the properties listed by neighborhood across New York.In the table below you can see the count for the Airbnb listings aggregated at burrough level and neighborhood level.
  
