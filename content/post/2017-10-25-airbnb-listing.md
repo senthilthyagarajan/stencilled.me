@@ -5,7 +5,7 @@ date: 2017-10-25
 tags: ["r"]
 ---
 
-In this day of so many sharing services like Uber and Lyft , pricey hotels are being replaced by Airbnb. Students, working people and travelers wouldnt always want to pay a high price for staying a couple of nights at the Marriot and would rather stay at a place where they have the basic amenities needed for them at a reasonable price. So in this project I am trying to understand  the listings put on Airbnb on how the price varies by neighbourhood ,house type and various other factors.
+In this day of so many sharing services like Uber and Lyft , pricey hotels are being replaced by Airbnb. Students, working people and travelers wouldn't always want to pay a high price for staying a couple of nights at the Marriott and would rather stay at a place where they have the basic amenities needed for them at a reasonable price. So in this project I am trying to understand  the listings put on Airbnb on how the price varies by neighborhood ,house type and various other factors.
 
  I am using the data for <a href="http://insideairbnb.com/about.html">New York</a> for this post. To start with we can see the properties listed by neighborhood across New York.In the table below you can see the count for the Airbnb listings aggregated at burrough level and neighborhood level.
  
@@ -25,7 +25,7 @@ In this day of so many sharing services like Uber and Lyft , pricey hotels are b
 
   <div class="output_html rendered_html output_subarea ">
 <table>
-<thead><tr><th scope=col>Neighbourhood</th><th scope=col>Count</th></tr></thead>
+<thead><tr><th scope=col>Neighborhood</th><th scope=col>Count</th></tr></thead>
 <tbody>
 	<tr><td>Allerton                  </td><td>  23                      </td></tr>
 	<tr><td>Arden Heights             </td><td>   6                      </td></tr>
@@ -185,7 +185,7 @@ As we saw the count for listings at neighborhood and burrough level below are th
  ![Listings per zipcode](rentalsbyzip.png)
 
 
-The Airbnb listings are generally catogorized as an **Entire Apartment / Home** , **private room** and **shared room**.Below is the pricing for each type of listing.
+The Airbnb listings are generally categorized as an **Entire Apartment / Home** , **private room** and **shared room**.Below is the pricing for each type of listing.
 
 <div class="output_html rendered_html output_subarea ">
 <table>
@@ -199,7 +199,7 @@ The Airbnb listings are generally catogorized as an **Entire Apartment / Home** 
 
 </div>
 
-This graph below shows how each of the burroughs have listings by property type.
+This graph below shows how each of the Burroughs have listings by property type.
 
 ![Property Type at Burrough level](Bar_roomtype_neigh.png)
 
@@ -210,17 +210,17 @@ To understand how the listings are spatially located I did plot them and bin the
 
 **Subway vs Rental Listings**
 
-Apart from all the ameneities mentioned in the listing one of the most important factor when it comes to booking a listing in New York is the proxmity to a subway stop. I downloaded a json for the subways and plotted them against the listings. Considering that poeple want to live closeby I took as 0.1 mile as a walking distance , I created a buffer to capture all the listings inside that 0.1 mile ring.I took the top 20 to understand which of the subway stations had the most listings nearby.
+Apart from all the amenities mentioned in the listing one of the most important factor when it comes to booking a listing in New York is the proximity to a subway stop. I downloaded a json for the subways and plotted them against the listings. Considering that people want to live close-by I took as 0.1 mile as a walking distance , I created a buffer to capture all the listings inside that 0.1 mile ring.I took the top 20 to understand which of the subway stations had the most listings nearby.
 
 ![Top 20 subway stations](bar_Top20subway_png.png)
 
-The same results were also plotted on the map using the leaflet package to vizualize where these subway stations are located and how many listings they have using the graduated symbols.
+The same results were also plotted on the map using the leaflet package to visualize where these subway stations are located and how many listings they have using the graduated symbols.
 
 ![Top 20 subway stations Map](subwaytop20.png)
 
 **Description**
 
-The description and the photos put by the property owner plays an important role for anyone to book a listing . A wordcloud of those description helps us understand what do property owners mention in the description which might help them in more bookings.
+The description and the photos put by the property owner plays an important role for anyone to book a listing . A word-cloud of those description helps us understand what do property owners mention in the description which might help them in more bookings.
 
 ![Description Word Cloud](Description_wordcloud.png)
 
