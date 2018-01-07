@@ -14,3 +14,5 @@ Here in Stencilled I would be working on projects to represent data in different
 This website is compiled using <a href="http://gohugo.io/" >Hugo</a> a static site generator and automatically deployed to AWS S3
 using <a href="http://www.wercker.com/" >Wercker</a>. All the code for this website is available freely on
 <a href="https://github.com/senthilthyagarajan/stencilled.me" >github.</a>
+
+<a href="https://s3.amazonaws.com/stencilfiles/SENTHIL_THYAGARAJAN_Resume.pdf" >Resume</a>.
