@@ -1,7 +1,7 @@
 box: debian
 build:
   steps:
-    - arjen/hugo@1.29:
+    - arjen/hugo-build:
         version: "0.46"
         theme: "beautifulhugo"
         disable_pygments: true
