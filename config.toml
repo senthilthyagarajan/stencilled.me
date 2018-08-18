@@ -37,7 +37,7 @@ url = "/post/2018-08-16-MTA-Subway-Ridership"
 
 [[menu.main]]
 parent = "projects"
-name = "Taps near you"
+name = "Taps Near You"
 url = "/post/2017-09-18-taps-near-you"
 
 
