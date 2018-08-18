@@ -5,6 +5,7 @@ build:
         version: "0.46"
         theme: "beautifulhugo"
         disable_pygments: true
+        flags: --buildDrafts=true
 
 deploy:
   steps:
