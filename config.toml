@@ -31,7 +31,7 @@ googleAnalytics = "UA-91161205-1"
 
 [[menu.main]]
 parent = "projects"
-name = "MTA Subway Ridership"
+name = "MTA Subway ridership"
 url = "/post/2018-08-16-MTA-Subway-Ridership"
 
 
