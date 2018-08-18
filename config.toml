@@ -29,7 +29,7 @@ googleAnalytics = "UA-91161205-1"
     url = "/page/about/"
     weight = 3
 
-[menu.main]]
+[[menu.main]]
 parent = "projects"
 name = "MTA Subway Ridership"
 url = "/post/2018-08-16-MTA-Subway-Ridership"
