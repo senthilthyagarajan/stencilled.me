@@ -23,15 +23,12 @@ get the client id and client secret when you create a new app.
 
 The idea was how to do it for many places across the country. So I decided to use R to scrap and clean the data. You can find the code here.
 
-```r
-
-
-
+<pre>
+    <code>
 library(RJSONIO)
 library(RCurl)
 
 options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
-
 
 # Obtained from http://notebook.gaslampmedia.com/download-zip-code-latitude-longitude-city-state-county-csv/
 ll = read.csv('zip_codes_states.csv',sep=",",head=TRUE)
@@ -53,11 +50,6 @@ venue_usersCount = c()
 venue_formattedAddress = c()
 
 
-# hasMenu
-# rating
-# postalCode
-# usersCount
-# formattedAddress
 
 # To go through the lat longs in the csv and get the data.
   for (i in 1:dim(ll)[1]) {
@@ -103,11 +95,11 @@ venue_formattedAddress = c()
 
   write.csv(tabley,file = "Austin_Foursquare.csv")
 
-```
+  </code>
+</pre>
+
 Once this was done the next part was to how do I visualize this data . Since I have been trying my hands on d3js I
 used the cleaned output from R in CSV format to display how checkins and ratings vary for these places using bubble chart.
-
-
 
  <style>
       text {

@@ -1,8 +1,6 @@
 ---
-title: About me
-
+date: 2017-01-29
 ---
-
 My name is Senthil Thyagarajan.
 
 As a kid in school we used a stencil to draw the first map.
