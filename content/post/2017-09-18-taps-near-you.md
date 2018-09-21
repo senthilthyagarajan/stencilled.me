@@ -5,6 +5,7 @@ date: 2017-09-18
 tags: ["r","js"]
 ---
 
+
 While working on a couple of projects involving beer data I did land up at <a href="https://www.brewersassociation.org/">breweries association</a>. They have a data set on all the breweries across the US.
 This raw html table was scrapped ,cleaned and geocoded using R. You can find the <a href="https://github.com/senthilthyagarajan/brewerymaps/tree/master/rscripts">R Scripts</a> which I used for this project here.
 
@@ -12,9 +13,6 @@ Once the data was ready this was put to use by being displayed on a web mapping 
 
 Check it out , <a href="https://senthilthyagarajan.github.io/brewerymaps/">Taps Near You</a>. CHEERS !!!
 
+<img src="TAPS_DESKTOP.png" alt="drawing" width="600px" height="400"/>
 
-![This is an image](TAPS_DESKTOP.png)
-
-![This is an image](TAPS_MOBILE.png)
-
-![This is an image](TAPS_TABLET.png)
+<img src="TAPS_MOBILE.png" alt="drawing" width="200"/>

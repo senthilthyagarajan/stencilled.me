@@ -8,6 +8,8 @@ pygmentCodeFences = true
 googleAnalytics = "UA-91161205-1"
 
 [Params]
+#author = "Senthil Thyagarajan"
+github = "senthilthyagarajan"
 
  # commit = false
 
