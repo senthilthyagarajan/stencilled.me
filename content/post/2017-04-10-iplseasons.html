@@ -5,10 +5,9 @@ date: 2017-04-10
 tags: ["excel", "d3js"]
 ---
 
-Indian Premier League(IPL) has had 13 different teams over the past ten years. In this project I have tried to visualize how these teams 
+Indian Premier League(IPL) has had 13 different teams over the past ten years. In this project I have tried to visualize how these teams
 have performed over the years.
 <!--more-->
-{{< highlight javascript >}}
 
 <style>
 
@@ -168,17 +167,17 @@ var colors = {
 };
 
 var sortOrder =[
-"Chennai Super Kings"        
-,"Deccan Chargers"           
-,"Delhi Daredevils"           
-,"Gujarat Lions"            
-,"Kings XI Punjab"            
-,"Kochi Tuskers Kerala"       
-,"Kolkata Knight Riders"      
-,"Mumbai Indians"             
-,"Pune Warriors"             
-,"Rajasthan Royals"          
-,"Rising Pune Supergiants"   
+"Chennai Super Kings"
+,"Deccan Chargers"
+,"Delhi Daredevils"
+,"Gujarat Lions"
+,"Kings XI Punjab"
+,"Kochi Tuskers Kerala"
+,"Kolkata Knight Riders"
+,"Mumbai Indians"
+,"Pune Warriors"
+,"Rajasthan Royals"
+,"Rising Pune Supergiants"
 ,"Royal Challengers Bangalore"
 ,"Sunrisers Hyderabad"
 ];
@@ -202,10 +201,9 @@ var svg = d3.select("body").append("svg").attr("height",height).attr("width",wid
 svg.append("g").attr("transform", "translate(600,550)").call(ch);
 
 // adjust height of frame in bl.ocks.org
-d3.select(self.frameElement).style("height", height+"px").style("width", width+"px");     
+d3.select(self.frameElement).style("height", height+"px").style("width", width+"px");
 </script>
 
-{{< /highlight >}}
 
-I got the data for this project from <a href="https://www.kaggle.com/manasgarg/ipl/downloads/ipl.zip">Kaggle.</a> As per the dataset 577 games were 
+I got the data for this project from <a href="https://www.kaggle.com/manasgarg/ipl/downloads/ipl.zip">Kaggle.</a> As per the dataset 577 games were
 played so far for which 574 of them had results and 3 games had no results. Just hover over each team to see how their performance has been.
