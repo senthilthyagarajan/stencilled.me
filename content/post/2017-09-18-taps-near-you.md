@@ -13,6 +13,6 @@ Once the data was ready this was put to use by being displayed on a web mapping 
 Check it out , <a href="https://senthilthyagarajan.github.io/brewerymaps/">Taps Near You</a>. CHEERS !!!
 
 
-<img width="400" height = "200" alt="portfolio_view" src="TAPS_DESKTOP.png">
+![This is an image](TAPS_DESKTOP.png)
 
-<img width="300"  alt="test" src="TAPS_MOBILE.png">
+![This is an image](TAPS_MOBILE.png)
