@@ -1,7 +1,7 @@
 baseurl = "http://www.stencilled.me"
 languageCode = "en-us"
 title = "Stencilled"
-theme = "beautifulhugo"
+theme = "basics"
 pygmentsUseClasses = true
 pygmentCodeFences = true
 #disqusShortname = "XXX"
@@ -13,7 +13,7 @@ googleAnalytics = "UA-91161205-1"
 
 [Author]
   name = "Senthil Thyagarajan"
-  date= "2017"
+  date= "2018"
   email = "senthil.thyagarajan@gmail.com"
   github = "senthilthyagarajan"
   twitter = "therascala"
@@ -28,6 +28,7 @@ googleAnalytics = "UA-91161205-1"
     name = "About"
     url = "/page/about/"
     weight = 3
+      date= "2018"
 
 [[menu.main]]
 parent = "projects"
