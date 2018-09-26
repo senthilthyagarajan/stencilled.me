@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tableau on Stencilled</title>
+    <link>http://www.stencilled.me/tags/tableau/</link>
+    <description>Recent content in Tableau on Stencilled</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor>
+    <webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster>
+    <lastBuildDate>Thu, 16 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.stencilled.me/tags/tableau/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MTA Subway Ridership</title>
+      <link>http://www.stencilled.me/post/2018-08-16-mta-subway-ridership/</link>
+      <pubDate>Thu, 16 Aug 2018 00:00:00 +0000</pubDate>
+      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
+      <guid>http://www.stencilled.me/post/2018-08-16-mta-subway-ridership/</guid>
+      <description> var divElement = document.getElementById(&#39;viz1534474579211&#39;); var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0]; vizElement.style.width=&#39;1000px&#39;;vizElement.style.height=&#39;827px&#39;; var scriptElement = document.createElement(&#39;script&#39;); scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;; vizElement.parentNode.insertBefore(scriptElement, vizElement);   </description>
+    </item>
+    
+  </channel>
+</rss>

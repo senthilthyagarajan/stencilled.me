@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <title>States to Shapes</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link" href="https://github.com/senthilthyagarajan" target="_blank">GitHub</a>
+              
+              <a class="nav-item nav-link " href="/page/about/">About</a>
+              <a class="nav-item nav-link " href="/page/reading/">Reading</a>
+
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Stencilled</a></h1>
+          <span id="author-name">
+            <h6><a href="/page/about/"></a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>States to Shapes</h1>
+  <div class="blog-post-subheader">
+  
+  </div>
+  <div class="blog-post-content">
+    I started working on this visualation after coming across  <a href="https://bl.ocks.org/mbostock/3081153">Mike Bostock's shape tweening bl.ock</a> ,
+ which was done for one state. The source for this data is
+Insurance Institute for Highway Service(IIHS). The size of the square is based on the motor vehicle deaths per 100,000 people(2015).
+
+<!--more-->
+
+
+
+<html>
+	<head>
+		<style>
+		body {
+			margin: 0;
+			font-family: "Helvetica Neue", sans-serif;
+		}
+		.state-path {
+			fill: #ccc;
+			stroke: #fff;
+			stroke-width: 5px;
+		}
+		.state-label {
+			font-size: .65em;
+		}
+		</style>
+	</head>
+	<body step="0">
+
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="polylabel.js"></script>
+		<script>
+		var width = window.innerWidth,
+		    height = window.innerHeight,
+		    duration =1000;
+        //Set up the colour scale
+        var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+
+		var svg = d3.select("body").append("svg")
+		    .attr("width", width)
+		    .attr("height", height);
+
+		d3.json("us.json", function(map) {
+
+		  var projection = centerZoom(map);
+
+
+		  var polygons = [];
+		  map.features.forEach(function(feature){
+        polygons.push({id: feature.properties.state,count: feature.properties.count , geom: feature.geometry})			  });
+
+		  var init = parse(polygons, projection).sort(function(a, b){
+		    return b.area - a.area;
+		  });
+
+		  init.forEach(function(d){
+		    var path = drawPath(d).attr("d", d.d0)
+		    drawLabels(d, 0, 0);
+		  });
+
+		  d3.interval(function(){
+		    var steps = stepUpdate();
+		    stepChange(steps[0], steps[1], init);
+		  }, duration * 2);
+
+		});
+
+		// This function "centers" and "zooms" a map by setting its projection's scale and translate according to its outer boundary
+		function centerZoom(data){
+
+		  // create a first guess for the projection
+		  var scale  = 1;
+		  var offset = [width / 2, height / 2];
+		  var projection = d3.geoAlbersUsa().scale(scale).translate(offset);
+
+		  // get bounds
+		  var bounds = d3.geoPath().projection(projection).bounds(data);
+
+		  // calculate the scale and offset
+		  var hscale  = scale * width  / (bounds[1][0] - bounds[0][0]);
+		  var vscale  = scale * height / (bounds[1][1] - bounds[0][1]);
+		  var scale   = (hscale < vscale) ? hscale : vscale;
+		  var offset  = [width - (bounds[0][0] + bounds[1][0]) / 2, height - (bounds[0][1] + bounds[1][1]) / 2];
+
+		  // new projection
+		  projection = d3.geoAlbersUsa()
+		      .scale(scale)
+		      .translate(offset);
+
+		  return projection;
+
+		}
+
+		function drawLabels(obj,oldStep,newStep){
+
+		  var pOld = polylabel([obj["coordinates" + oldStep]], 1);
+		  var pNew = polylabel([obj["coordinates" + newStep]], 1);
+
+		  svg.append("text")
+		      .attr("class", "state state-label")
+		      .attr("x", pOld[0])
+		      .attr("y", pOld[1])
+		      .attr("dy", "0.35em")
+		      .attr("text-anchor", "middle")
+		      .text(obj.id ) //		      .text(obj.id + ": "+"\n" + obj.count)
+
+		      .transition().duration(duration)
+		      .attr("x", pNew[0])
+		      .attr("y", pNew[1])
+
+		}
+
+		function drawPath(obj){
+
+		  var path = svg.append("path")
+		      .attr("class", "state state-path")
+		      .attr("id", obj.id)
+          .style("fill", function(d) {
+		return color([obj.count])
+
+	})
+
+
+		  return path;
+
+		}
+   var obj = {};
+		function parse(polygons, projection) {
+
+		  var arr = [];
+
+		  polygons.forEach(function(state){
+		     obj = {};
+		    obj.id = state.id;
+         obj.count = state.count;
+		    obj.coordinates0 = state.geom.coordinates[0].map(projection);
+		    obj.coordinates1 = square(obj.coordinates0)[0];
+		    obj.d0 = "M" + obj.coordinates0.join("L") + "Z";
+		    obj.d1 = "M" + obj.coordinates1.join("L") + "Z";
+		    obj.area = square(obj.coordinates0)[1];
+		    arr.push(obj);
+		  });
+
+		  return arr;
+
+		}
+
+		function square(coordinates){
+
+		  var area =    obj.count *  obj.count *20;
+		  area < 0 ? area = area * -1 : area = area;
+		  var r = Math.sqrt(area) / 2.5;
+		  var centroid = d3.polygonCentroid(coordinates);
+		  var x = centroid[0];
+		  var y = centroid[1];
+		  var len = coordinates.length;
+		  var square = squareCoords(x, y, r, len);
+
+		  return [square, area];
+
+		}
+
+		function squareCoords(x, y, r, len){
+
+		  var square = [];
+
+		  var topLf = [x - r, y - r];
+		  var topRt = [x + r, y - r];
+		  var botRt = [x + r, y + r];
+		  var botLf = [x - r, y + r];
+		  for (var i = 0; i < len / 4; i++){
+		    square.push(botRt);
+		  }
+		  for (var i = 0; i < len / 4; i++){
+		      square.push(botLf);
+		  }
+		  for (var i = 0; i < len / 4; i++){
+		    square.push(topLf);
+		  }
+		  for (var i = 0; i < len / 4; i++){
+		    square.push(topRt);
+		  }
+
+		  return square;
+
+		}
+
+		function stepChange(oldStep, newStep, obj){
+
+		  d3.selectAll(".state").remove();
+
+		  obj.forEach( function(d){
+		    transitionPath(drawPath(d), d["d" + oldStep], d["d" + newStep], duration);
+		    drawLabels(d, oldStep, newStep);
+		  } );
+
+		}
+
+		function stepUpdate(){
+
+		  var currStep = +d3.select("body").attr("step"), newStep;
+		  var newStep = currStep == 0 ? 1 : 0;
+		  d3.select("body").attr("step", newStep);
+
+		  return [currStep, newStep];
+
+		}
+
+		function transitionPath(path, d0, d1, duration){
+
+		  path
+		      .attr("d", d0)
+		      .transition().duration(duration)
+		      .attr("d", d1);
+
+		}
+		</script>
+
+	</body>
+</html>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2018 .
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+

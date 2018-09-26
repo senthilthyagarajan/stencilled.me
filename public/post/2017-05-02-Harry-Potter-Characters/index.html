@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <title>Harry Potter Characters.</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link" href="https://github.com/senthilthyagarajan" target="_blank">GitHub</a>
+              
+              <a class="nav-item nav-link " href="/page/about/">About</a>
+              <a class="nav-item nav-link " href="/page/reading/">Reading</a>
+
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Stencilled</a></h1>
+          <span id="author-name">
+            <h6><a href="/page/about/"></a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>Harry Potter Characters.</h1>
+  <div class="blog-post-subheader">
+  
+  </div>
+  <div class="blog-post-content">
+    Across 7 books/ 8 movies there are so many characters in this series by J.K Rowling. For this project I have got the data from
+<a href="https://data.world/harishkgarg/harry-potter-universe">data.world</a>. All files here were combined to create a json with nodes and links.
+ Using d3js I have  visualized  the characters connected to each other.
+
+<!--more-->
+
+
+
+<style>
+
+.link {
+  fill: none;
+  stroke-width: 0.5px;
+}
+
+.link.win{
+    stroke: #a6d96a;
+}
+
+.link.loss{
+    stroke: #ca0020;
+}
+
+.node text {
+  pointer-events: none;
+  font: 10px sans-serif;
+}
+
+</style>
+<body>
+<script src="https://d3js.org/d3.v3.min.js"></script><script>
+
+//Constants for the SVG
+var width = 1080,
+  height = 900;
+
+//Set up the colour scale
+var color = d3.scale.category10();
+
+//Set up the force layout
+var force = d3.layout.force()
+  .charge(-620)
+  .linkDistance(200)
+  .size([width, height]);
+
+//Append a SVG to the body of the html page. Assign this SVG as an object to svg
+var svg = d3.select("body").append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+//Read the data from the mis element
+d3.json("https://raw.githubusercontent.com/senthilthyagarajan/stencilled.me/master/content/post/2017-05-02-Harry-Potter-Characters/hp.json", function(error, graph) {
+    if (error) throw error;
+//Creates the graph data structure out of the json data
+force.nodes(graph.nodes)
+  .links(graph.links)
+  .start();
+
+//Create all the line svgs but without locations yet
+var link = svg.selectAll(".link")
+  .data(graph.links)
+  .enter().append("line")
+  .attr("class", "link")
+  .style("stroke-width", function(d) {
+    return Math.sqrt(d.value);
+  });
+
+//Do the same with the circles for the nodes - no
+//Changed
+var radiusScale = d3.scale.linear()
+
+var node = svg.selectAll(".node")
+  .data(graph.nodes)
+  .enter().append("g")
+  .attr("class", "node")
+  .call(force.drag);
+
+node.append("circle")
+//  .attr("r", 8)
+  .style("fill", function(d) {
+    return color(d.group)
+  })
+  .attr('r', function(d) {
+        	d.radius = radiusScale(d.count);
+        	return d.radius;
+        });
+
+node.append("text")
+  .attr("dx", 10)
+  .attr("dy", ".35em")
+  .text(function(d) {
+    return d.name
+  });
+//End changed
+
+
+			node.on("mouseover", function (d) {
+        var highlightedNodes = {};
+
+				link.style('stroke-width', function(l) {
+				    if (d === l.source || d === l.target){
+            highlightedNodes[l.source.name] = 1;
+            highlightedNodes[l.target.name] = 1;
+            return 2;
+          }
+          return 0;
+				})
+      });
+//Now we are giving the SVGs co-ordinates - the force layout is generating the co-ordinates which this code is using to update the attributes of the SVG elements
+force.on("tick", function() {
+  link.attr("x1", function(d) {
+      return d.source.x;
+    })
+    .attr("y1", function(d) {
+      return d.source.y;
+    })
+    .attr("x2", function(d) {
+      return d.target.x;
+    })
+    .attr("y2", function(d) {
+      return d.target.y;
+    });
+
+    link.attr("class", function(d) { return "link "+ d.value});
+
+
+
+  //Changed
+
+  d3.selectAll("circle").attr("cx", function(d) {
+      return d.x;
+    })
+    .attr("cy", function(d) {
+      return d.y;
+    });
+
+  d3.selectAll("text").attr("x", function(d) {
+      return d.x;
+    })
+    .attr("y", function(d) {
+      return d.y;
+    });
+
+
+
+
+    function unhoverNode() {
+            link.attr('stroke-width', 0.25);
+        };
+
+  //End Changed
+
+});
+
+});
+</script>
+
+
+
+
+There might me an odd instance when the characters might have been connected somehow and I missed it . Feel free to
+use this <a href="https://raw.githubusercontent.com/senthilthyagarajan/stencilled.me/master/content/post/2017-05-02-Harry-Potter-Characters/hp.json">HP graph</a>
+and make more visualizations. Lumos Maxima !!!
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2018 .
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qgis on Stencilled</title>
+    <link>http://www.stencilled.me/tags/qgis/</link>
+    <description>Recent content in Qgis on Stencilled</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor>
+    <webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster>
+    <lastBuildDate>Sat, 29 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.stencilled.me/tags/qgis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Breweries or Wineries ??</title>
+      <link>http://www.stencilled.me/post/2017-04-29-whats-your-states-poison/</link>
+      <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
+      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
+      <guid>http://www.stencilled.me/post/2017-04-29-whats-your-states-poison/</guid>
+      <description>.myIframe { position: relative; padding-bottom: 65.25%; padding-top: 30px; height: 0; overflow: auto; -webkit-overflow-scrolling:touch; //When you think about Texas, the first thing that would come in mind is barbecue which of course pairs well with a good beer. In this post I have mapped each state in the US ranked based on the breweries or wineries present. I got the data from the Brewers Association and the American Winery Guide. With data visualization being so important in representing the dataset I have used hexbins shapefile from Don Meltz&#39;s repo.</description>
+    </item>
+    
+  </channel>
+</rss>

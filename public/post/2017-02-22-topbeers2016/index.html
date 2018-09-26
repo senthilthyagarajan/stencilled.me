@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <title>Top Beers in 2016.</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link" href="https://github.com/senthilthyagarajan" target="_blank">GitHub</a>
+              
+              <a class="nav-item nav-link " href="/page/about/">About</a>
+              <a class="nav-item nav-link " href="/page/reading/">Reading</a>
+
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Stencilled</a></h1>
+          <span id="author-name">
+            <h6><a href="/page/about/"></a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>Top Beers in 2016.</h1>
+  <div class="blog-post-subheader">
+  
+  </div>
+  <div class="blog-post-content">
+    <style>
+
+.myIframe {
+position: relative;
+padding-bottom: 65.25%;
+padding-top: 30px;
+height: 0;
+overflow: auto;
+-webkit-overflow-scrolling:touch; //<<--- THIS IS THE KEY
+border: solid black 1px;
+}
+.myIframe iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+</style>
+
+<p>After completing my previous post on food I wanted to work on something which I have started to explore recently,craft beer.
+A friend of mine introduced me to a beer club membership prior to which I never knew anything beyond the Corona&rsquo;s .
+Then began the collection and here it is, what  have so far.</p>
+
+<p></p>
+
+<p><img src="beercaps.jpg" alt="This is an image" /></p>
+
+<p>So when I started searching for the data google lead me to <a href="https://www.beeradvocate.com/lists/top/">Beer Advocate.</a> Below is how the raw html table from the website looked like.</p>
+
+<p><img src="rawdata.PNG" alt="This is an image" /></p>
+
+<p>I have used R to scrape the table from the website using R. The library I am using here to scrape is <i>Rvest</i>. Below is the code on how to get the data.</p>
+
+<pre><code class="language-r">
+ library(&quot;rvest&quot;)
+
+                    # Enter the url below
+                    url &lt;- &quot;https://www.beeradvocate.com/lists/top/&quot;
+
+                      beer &lt;- url %&gt;%
+                      html() %&gt;%
+
+                      ## to get xpath for a table ,right click on the table,inspect,
+                      ## go to the table tag ,right click again and go to copy xpath .. phew ...
+                      ## not clear click here for &lt;a href=&quot;http://www.wikihow.com/Find-XPath-Using-Firebug&quot;&gt;more details&lt;/a&gt;
+
+                      html_nodes(xpath = '//*[@id=&quot;extendedInfo&quot;]/a[1]') %&gt;%
+                      html_table()
+                      beer &lt;- beer[[1]]
+
+                      head(beer)
+                      write.table(
+                        beer,
+                        file = &quot;topus250.csv&quot;,
+                        quote = TRUE,
+                        sep = &quot;,&quot;,
+                        row.names = FALSE
+                    )
+
+</code></pre>
+
+<p>Now that I got the scraped data and  address parameter as the name of the brewing company , it looks something like this.</p>
+
+<p><img src="address.PNG" alt="This is an image" /></p>
+
+<p>The next step here is to get the address geocoded which would help me plot this on a map . For this I have used the library ggmap.</p>
+
+<pre><code class="language-r">
+ library(&quot;rvest&quot;)
+ library(ggmap)
+
+                 # Read in the CSV data and store it in a variable
+                  origAddress &lt;- read.csv(&quot;topus250.csv&quot;, stringsAsFactors = FALSE)
+
+                  # Initialize the data frame
+                  geocoded &lt;- data.frame(stringsAsFactors = FALSE)
+
+                  # Loop through the addresses to get the latitude and longitude of each address
+                  # and add it to the origAddress data frame in new columns lat and lon
+
+                  for(i in 1:nrow(origAddress))
+                  {
+                    # Print(&quot;Working...&quot;)
+                    result &lt;- geocode(origAddress$Address[i], output = &quot;latlona&quot;, source = &quot;google&quot;)
+                    origAddress$lon[i] &lt;- as.numeric(result[1])
+                    origAddress$lat[i] &lt;- as.numeric(result[2])
+                    origAddress$geoAddress[i] &lt;- as.character(result[3])
+                    origAddress$state[i] &lt;- as.character(result[3])
+                  }
+
+                  # Save the output as csv to the working directory
+                  write.csv(result, file = geocoded.csv)
+
+
+</code></pre>
+
+<p>Now I got the data cleaned, gecoded and ready to plot it on the map. Another task &hellip;another library. Here I have used  the leaflet library
+to add the basemap,plot the points , add clusters and markers to it. All it took was a couple of lines in R  !! As a continuation to this project.</p>
+
+<pre><code class="language-r">
+library(leaflet)
+
+    library(dplyr)
+
+    lf &lt;-
+      read.csv(&quot;beer_lat_long.csv&quot;, stringsAsFactors = FALSE) # Brings in the file 'ctlist.csv'
+
+    map &lt;-
+      leaflet(lf) %&gt;% addTiles('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+                               attribution = 'Map tiles by &lt;a href=&quot;http://stamen.com&quot;&gt;Stamen Design&lt;/a&gt;, &lt;a href=&quot;http://creativecommons.org/licenses/by/3.0&quot;&gt;CC BY 3.0&lt;/a&gt; &amp;mdash; Map data &amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt;')
+
+    map %&gt;% setView(-95.712891, 37.09024, zoom = 5)
+
+    #add cluster
+
+    map %&gt;% addMarkers(
+      popup = paste(
+        &quot;Brewer:&quot;,
+        lf$company,
+        &quot;Beer Name:&quot;,
+        lf$name,
+        &quot;Rank:&quot;,
+        lf$rank
+      ),
+      clusterOptions = markerClusterOptions()
+    )
+
+</code></pre>
+
+<p><!-- map code start -->
+            <div class='myIframe' >
+      <iframe width="720" height="600" src="https://s3.amazonaws.com/www.stencilled.me/post/leaflethtml.html"></iframe>
+            </div>
+Sadly we dont  see many breweries in the top list from Texas, but then that gives me more the reasons to travel and visit many breweries.
+As I was doing this project I did realize that when I want to show the leaflet map using R in an html page this converts all the data loaded
+and that makes the html file heavy to load. So going on next I would  to try  do some more advanced visualization and representation of the
+same data using leaflet library and html.</p>
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2018 .
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+
