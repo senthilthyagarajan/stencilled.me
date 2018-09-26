@@ -81,3 +81,13 @@ pre {
 footer  {
   text-align: center;
 }
+
+.blog-post-content {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: justify;
+}
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
