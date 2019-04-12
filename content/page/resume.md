@@ -55,8 +55,6 @@ GIS Engineer, ESRI India Ltd – Mumbai, India                                  
 
 -  Trained key clients to ensure understanding for ArcGIS Desktop and ArcGIS Server,improved efficiency for ATMs by implementing a web-based GIS application and monitoring their status using ArcGIS Server for banking institutions.
 
-
-
 ## EDUCATION
 ------------
 
@@ -65,3 +63,11 @@ University of Texas, Dallas                           M.S – Geospatial Informa
 Symbiosis, India 									  M.S – Geoinformatics
 
 Anna University, India                                B.S – Electronics and Instrumentation Engineering
+
+## ANALYTICS PROJECTS
+------------
+-  Where do people eat in Austin? Scrapped data from Foursquare API for all places falling under the food & restaurant category
+using R, used D3.js to create bubble chart based on the inputs, check-ins and ratings.
+-  Mapping breweries in the US: Mapping breweries across US using R to scrape and geocode data and leaflet to map them.
+-  Visualizing Airbnb listings: Used R and Python to analyze how prices vary for rental listings in NY based on geography, listing
+type and amenities.
