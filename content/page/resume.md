@@ -8,15 +8,15 @@ LinkedIn                                    
 ## SKILLS
 ---------
 
-- Languages:           R, Python, JavaScript, SQL
+- ***Languages*** :           R, Python, JavaScript, SQL
 
-- Libraries: 	   R Shiny, d3js, dplyr, tibble, titdyR, ggplot2, leaflet, Fusion charts, Chartjs,Plotly, Rvest, Pandas, Numpy, Scikit-learn, Matplotlib
+- ***Libraries*** : 	   R Shiny, d3js, dplyr, tibble, titdyR, ggplot2, leaflet, Fusion charts, Chartjs,Plotly, Rvest, Pandas, Numpy, Scikit-learn, Matplotlib
 
-- Data Analytics: 		   RShiny, Alteryx, Tableau, Origami Logic, Pentaho Data Integration, MS Excel
+- ***Data Analytics*** : 		   RShiny, Alteryx, Tableau, Origami Logic, Pentaho Data Integration, MS Excel
 
-- Web Design: 			   HTML, CSS, Bootstrap, Angular Material Design
+- ***Web Design*** : 			   HTML, CSS, Bootstrap, Angular Material Design
 
-- GIS Tools: 			   ArcGIS Suite, QGIS, Map Server, ERDAS Imagine, Google Earth, MapInfo, Maptitude
+- ***GIS Tools*** : 			   ArcGIS Suite, QGIS, Map Server, ERDAS Imagine, Google Earth, MapInfo, Maptitude
 
 ##  PROFESSIONAL EXPERIENCE
 ---------------------------
@@ -32,7 +32,7 @@ Information and Analytics Manager, In4mation Insights, New York, NY             
 
 Senior GIS Developer (Data Analytics and Visualization), Tango Analytics – Irving, TX                                Jul 2013 – Jan 2018
 
-- Developed dashboards using D3js, Python and R for visualizing demographic variables assisting the clients in understanding the underlying important demographics and target marketing.
+- Developed dashboards using D3js visualizing demographic variables assisting the clients in understanding the underlying important demographics and target marketing.
 - Developed tools for web mapping application to perform spatial analysis allowing retailers to understand the spatial relationship between stores, their customers, competitors.
 -  Designed and developed UI for the mapping application to make it responsive across various devices allowing end users to use the application on site to run real time reports and understand factors in deciding potential new sites.
 -  Implemented PL/SQL procedures for generating demographic reports, trade areas, sales forecast model and geospatial editing functionalities.
