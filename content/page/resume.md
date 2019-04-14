@@ -71,3 +71,5 @@ using R, used D3.js to create bubble chart based on the inputs, check-ins and ra
 -  Mapping breweries in the US: Mapping breweries across US using R to scrape and geocode data and leaflet to map them.
 -  Visualizing Airbnb listings: Used R and Python to analyze how prices vary for rental listings in NY based on geography, listing
 type and amenities.
+
+<a href="https://s3.amazonaws.com/stencilfiles/SENTHIL_THYAGARAJAN_Resume.pdf" >Resume PDF</a>.
