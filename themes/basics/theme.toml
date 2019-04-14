@@ -9,6 +9,8 @@ homepage = "https://github.com/arjunkrishnababu96/basics"
 tags = ["minimal", "blog", "personal", "simple", "basic", "clean"]
 features = []
 min_version = "0.38"
+googleAnalytics = "UA-91161205-1"
+
 
 [author]
   name = "Arjun Krishna Babu"
