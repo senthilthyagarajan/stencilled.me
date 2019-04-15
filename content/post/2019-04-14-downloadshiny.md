@@ -1,5 +1,5 @@
 ---
-title: Generating and download/email report in a R Shiny
+title: Download and Email reports in R Shiny app
 date: 2019-04-14
 tags: ["r"]
 ---
@@ -19,6 +19,35 @@ library(mailR)
  The app layout has a sidebar and a main panel. The sidebar has the download and the email functionality and the main panel has the plot . The user can donload the the report in mutiple formats.
 
 ![ui](ui_layout.png)
+
+### Download Reports
+Below is the code for downloading report. The user can download the reports in multiple formats. You could also write into powerpoints which can taken into weekly meetings.
+
+```
+output$downloadReport <- downloadHandler(
+  filename = function() {
+    paste('my-report', sep = '.', switch(
+      input$format, PDF = 'pdf', HTML = 'html', Word = 'docx'
+    ))
+  },
+  content = function(file) {
+    src <- normalizePath('report.Rmd')
+
+    # temporarily switch to the temp dir, in case you do not have write
+    # permission to the current working directory
+    owd <- setwd(tempdir())
+    on.exit(setwd(owd))
+    file.copy(src, 'report.Rmd', overwrite = TRUE)
+
+    library(rmarkdown)
+    out <- render('report.Rmd', switch(
+      input$format,
+      PDF = pdf_document(), HTML = html_document(), Word = word_document()
+    ))
+    file.rename(out, file)
+  }
+)
+```
 
 ### Email component
 
@@ -54,31 +83,6 @@ When the user clicks on the send button it takes the inputs such as to, the body
 })
 ```
 
-Below is the code for downloading report. The user can download the reports in multiple formats. You could also write into powerpoints which can taken into weekly meetings.
+### Code
 
-```
-output$downloadReport <- downloadHandler(
-  filename = function() {
-    paste('my-report', sep = '.', switch(
-      input$format, PDF = 'pdf', HTML = 'html', Word = 'docx'
-    ))
-  },
-  content = function(file) {
-    src <- normalizePath('report.Rmd')
-
-    # temporarily switch to the temp dir, in case you do not have write
-    # permission to the current working directory
-    owd <- setwd(tempdir())
-    on.exit(setwd(owd))
-    file.copy(src, 'report.Rmd', overwrite = TRUE)
-
-    library(rmarkdown)
-    out <- render('report.Rmd', switch(
-      input$format,
-      PDF = pdf_document(), HTML = html_document(), Word = word_document()
-    ))
-    file.rename(out, file)
-  }
-)
-```
-You can find the app [here](https://github.com/senthilthyagarajan/shinyemail).
+You can find code for the app [here](https://github.com/senthilthyagarajan/shinyemail).
