@@ -1,6 +1,6 @@
 ---
 title: Visualizing Airbnb listings.
-subtitle: Using r 
+subtitle: Using r
 date: 2017-10-25
 tags: ["r"]
 ---
@@ -8,7 +8,7 @@ tags: ["r"]
 In this day and age of so many sharing services like Uber and Lyft , pricey hotels are being replaced by Airbnb. Students, working people and travelers wouldn't always want to pay a high price for staying a couple of nights at the Marriott and would rather stay at a place where that has the basic amenities needed for them at a reasonable price. In this project I am trying to understand  the listings put on Airbnb on how the price varies by neighborhood ,house type and various other factors.
 
  I am using the data for <a href="http://insideairbnb.com/about.html">New York</a> for this post. To start with we can see the properties listed by neighborhood across New York.In the table below you can see the count for the Airbnb listings aggregated at burrough level and neighborhood level.
- 
+
  <div class="output_html rendered_html output_subarea ">
 <table>
 <thead><tr><th scope=col>Burrough</th><th scope=col>Count</th></tr></thead>
@@ -93,7 +93,7 @@ In this day and age of so many sharing services like Uber and Lyft , pricey hote
 
 </div>
 
-####Summarizing Price 
+####Summarizing Price
 
 As we saw the count for listings at neighborhood and burrough level below are the prices .
 
@@ -179,9 +179,9 @@ As we saw the count for listings at neighborhood and burrough level below are th
 </tbody>
 </table>
  </div>
- 
+
  We could also see the listings per zip code level. I have use Ari Lamstien's R package **choroplethrzip** . Taking the five burroughs of New York and all the zip codes  within them I aggregated the listings per zipcode and mapped them .As you can see Manhattan and Brooklyn regions are the one with most listings.
- 
+
  ![Listings per zipcode](rentalsbyzip.png)
 
 
@@ -231,7 +231,7 @@ When you book a listing in Airbnb I assume the first thing we look for is does t
 ![Amenities ](amenitieswordcloud.png)
 
 **Reviews**
-Once the user goes through the list of amenities they do scroll down through the reviews to see what people who have stayed in this property thought about. Was the property as per mentioned in the listing ? Was the bed making noise ? Any suggestions for restaurants nearby? 
+Once the user goes through the list of amenities they do scroll down through the reviews to see what people who have stayed in this property thought about. Was the property as per mentioned in the listing ? Was the bed making noise ? Any suggestions for restaurants nearby?
 
 ![Reviews ](reviewwordcloud.png)
 

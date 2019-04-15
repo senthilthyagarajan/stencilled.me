@@ -10,14 +10,3 @@ tags = ["minimal", "blog", "personal", "simple", "basic", "clean"]
 features = []
 min_version = "0.38"
 googleAnalytics = "UA-91161205-1"
-
-
-[author]
-  name = "Arjun Krishna Babu"
-  homepage = "https://arjunkrishnababu96.github.io/"
-
-# If porting an existing theme
-[original]
-  name = "Benny Mei"
-  homepage = "https://gitlab.com/meibenny/elephants"
-  repo = "https://github.com/meibenny/elephants"
