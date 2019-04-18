@@ -10,13 +10,17 @@ LinkedIn                                    
 
 - ***Languages*** :           R, Python, JavaScript, SQL
 
-- ***Libraries*** : 	   R Shiny, d3js, dplyr, tibble, titdyR, ggplot2, leaflet, Fusion charts, Chartjs,Plotly, Rvest, Pandas, Numpy, Scikit-learn, Matplotlib
+- ***Libraries*** : 	        R Shiny, d3js, dplyr, tibble, titdyR, ggplot2, leaflet, Fusion charts, Chartjs,Plotly, Rvest, Pandas, Numpy, Scikit-learn, Matplotlib
 
-- ***Data Analytics*** : 		   RShiny, Alteryx, Tableau, Origami Logic, Pentaho Data Integration, MS Excel
+- ***Analytics Tools*** : 		  RShiny, Alteryx, Tableau, Origami Logic, Pentaho Data Integration, MS Excel
 
-- ***Web Design*** : 			   HTML, CSS, Bootstrap, Angular Material Design
+- ***Statistical Analysis*** : 			    ANOVA, Multiple Regression, Confidence intervals, Hypothesis testing, Significance Tests
 
-- ***GIS Tools*** : 			   ArcGIS Suite, QGIS, Map Server, ERDAS Imagine, Google Earth, MapInfo, Maptitude
+- ***Machine Learning*** : 			    Linear and Logistic Regression, Decision Trees and Random Forests, Support Vector Machines, Clustering, Isolation Forests, KNN
+
+- ***Web Design*** : 			    HTML, CSS, Bootstrap, Angular Material Design
+
+- ***GIS Tools*** : 			    ArcGIS Suite, QGIS, Map Server, ERDAS Imagine, Google Earth, MapInfo, Maptitude
 
 ##  PROFESSIONAL EXPERIENCE
 ---------------------------
