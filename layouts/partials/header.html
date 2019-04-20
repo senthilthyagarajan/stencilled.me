@@ -40,8 +40,10 @@
               {{ with .Site.Params.github }}<a class="nav-item nav-link" href="https://github.com/{{ . }}" target="_blank">GitHub</a>{{ end }}
               {{ with .Site.Params.gitlab }}<a class="nav-item nav-link" href="https://gitlab.com/{{ . }}" target="_blank">GitLab</a>{{ end }}
               <a class="nav-item nav-link {{ if eq .URL "/about/"}}active{{ end }}" href="/page/about/">About</a>
-              <a class="nav-item nav-link {{ if eq .URL "/reading/"}}active{{ end }}" href="/page/resume/">Resume</a>
+              <a class="nav-item nav-link {{ if eq .URL "/resume/"}}active{{ end }}" href="/page/resume/">Resume</a>
+              <a class="nav-item nav-link {{ if eq .URL "/blogroll/"}}active{{ end }}" href="/page/blogroll/">Blogroll</a>
               <a class="nav-item nav-link {{ if eq .URL "/reading/"}}active{{ end }}" href="/page/reading/">Reading</a>
+
 
             </div>
           </div>
