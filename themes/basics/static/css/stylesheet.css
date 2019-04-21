@@ -81,3 +81,27 @@ pre {
 footer  {
   text-align: center;
 }
+
+.img-xs {
+  max-height: 200px;
+}
+
+.img-xs img{
+  max-height:200px
+}
+
+.img-sm {
+  max-height: 300px;
+}
+
+.img-sm img{
+  max-height:300px
+}
+
+.img-lg {
+  max-height: 500px;
+}
+
+.img-lg img{
+  max-height:500px
+}
