@@ -27,8 +27,8 @@ LinkedIn                                    
 
 Information and Analytics Manager, In4mation Insights, New York, NY                                                   Feb 2018 – Present
 
-- Developed and maintained R Shiny applications using Teradata and SQL Server for brand forecasting, evaluation of advertisement and pricing activities for multiple brand product lines.
-- Developed R shiny based web tool to analyze the optimization model outputs for media budget allocations.
+- Developed R Shiny applications using Teradata and SQL Server for brand forecasting, evaluation of advertisement and pricing activities for multiple brand product lines.
+- Deployed optimization model for media budget allocations in R shiny app to production.
 - Developed R Shiny dashboards for analyzing user survey results.
 - Implemented Marketing analytics dashboards for CPG clients based on the KPI framework.
 - Implemented best practices for developing data analytics and reporting tools.
