@@ -1,5 +1,5 @@
 ---
-title: Whats Cooking : A shiny app to select your next meal !!
+title: Whats Cooking ??
 date: 2020-03-29
 tags: ["r"]
 ---
