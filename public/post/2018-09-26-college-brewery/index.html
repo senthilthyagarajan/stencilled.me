@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <title>Colleges vs Breweries - What tops in your State ?</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91161205-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-91161205-1');
+        </script>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              
+                <a class="nav-item nav-link" href="https://github.com/senthilthyagarajan" target="_blank">GitHub</a>
+              
+              
+              <a class="nav-item nav-link " href="/page/about/">About</a>
+              <a class="nav-item nav-link " href="/page/resume/">Resume</a>
+              <a class="nav-item nav-link " href="/page/blogroll/">Blogroll</a>
+              <a class="nav-item nav-link " href="/page/reading/">Reading</a>
+              <a class="nav-item nav-link " href="https://twitter.com/TheRascala">Twitter</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Stencilled</a></h1>
+          <span id="author-name">
+            <h6><a href="/page/about/">Senthil Thyagarajan</a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>Colleges vs Breweries - What tops in your State ?</h1>
+  <div class="blog-post-subheader">
+  
+  </div>
+  <div class="blog-post-content">
+    <p>In this post we see how the no. of breweries stack up against no. of colleges across USA. Here I am using d3js and a grid bar chartwhere each grid represents 5 breweries/colleges.I collected the data for Brewery
+from <!-- raw HTML omitted -->Beer Advocate<!-- raw HTML omitted --> and for colleges from <!-- raw HTML omitted -->wikipedia<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.4/d3.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+
+var tilesPerRow = 5;
+var tileSize = 15;
+var barPadding = 20;
+var maxValue = 100;
+var numVisibleCountries = 10;
+
+var barWidth = (tilesPerRow * tileSize) + barPadding;
+
+var data, filteredData;
+let colors = [&quot;#8dd3c7&quot;,&quot;#a6cee3&quot;,&quot;#bebada&quot;,&quot;#fb8072&quot;,&quot;#80b1d3&quot;,&quot;#fdb462&quot;,&quot;#b3de69&quot;,&quot;#fccde5&quot;,&quot;#d9d9d9&quot;,&quot;#bc80bd&quot;];
+
+var selectedYear = &quot;College&quot;, selectedMode = &quot;top10&quot;;
+
+function initializeData() {
+  data = data.map(function(d) {
+    return {
+      name: d.country,
+      year: d.year,
+      age: +d.all
+    }
+  });
+}
+
+function updateFilteredData() {
+  filteredData = data.filter(function(d) {
+    return d.year === selectedYear;
+  });
+  filteredData = _.sortBy(filteredData, function(d) {
+    return selectedMode === &quot;top10&quot; ? -d.age : d.age;
+  });
+  filteredData = filteredData.slice(0, numVisibleCountries);
+}
+
+function getTiles(num) {
+  var tiles = [];
+
+  for(var i = 0; i &lt; num; i++) {
+    var rowNumber = Math.floor(i / tilesPerRow);
+    tiles.push({
+      x: (i % tilesPerRow) * tileSize,
+      y: -(rowNumber + 1) * tileSize
+    });
+  }
+
+  return tiles
+}
+
+function updateBar(d, i) {
+  var tiles = getTiles(d.age/5);
+
+  var u = d3.select(this)
+    .attr(&quot;transform&quot;, &quot;translate(&quot; + i * barWidth + &quot;, 300)&quot;)
+    .selectAll(&quot;rect&quot;)
+    .data(tiles);
+
+  u.enter()
+    .append(&quot;rect&quot;)
+    .style(&quot;opacity&quot;, 0)
+    .style(&quot;stroke&quot;, &quot;white&quot;)
+    .style(&quot;stroke-width&quot;, &quot;0.5&quot;)
+    .style(&quot;shape-rendering&quot;, &quot;crispEdges&quot;)
+    .merge(u)
+    .attr(&quot;x&quot;, function(d) {
+      return d.x;
+    })
+    .attr(&quot;y&quot;, function(d) {
+      return d.y;
+    })
+    .attr(&quot;width&quot;, tileSize)
+    .attr(&quot;height&quot;, tileSize)
+    .transition()
+    .delay(function(d, i) {
+      return i * 20;
+    })
+    .style(&quot;opacity&quot;, 1);
+
+
+  u.exit()
+    .transition()
+    .delay(function(d, i) {
+      return (100 - i) * 20;
+    })
+    .style(&quot;opacity&quot;, 0)
+    .on(&quot;end&quot;, function() {
+      d3.select(this).remove();
+    });
+}
+
+function updateLabel(d) {
+  var el = d3.select(this)
+    .select(&quot;text&quot;);
+
+  if(el.empty()) {
+    el = d3.select(this)
+      .append(&quot;text&quot;)
+      .attr(&quot;y&quot;, -4)
+      .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
+      .style(&quot;font-weight&quot;, &quot;bold&quot;)
+      .style(&quot;font-size&quot;, &quot;12px&quot;)
+      .style(&quot;fill&quot;, &quot;#777&quot;);
+  }
+
+  el.text(d.name);
+}
+
+function updateBars() {
+  var u = d3.select(&quot;g.bars&quot;)
+    .selectAll(&quot;g&quot;)
+    .data(filteredData);
+
+  u.enter()
+    .append(&quot;g&quot;)
+    .merge(u)
+    .style(&quot;fill&quot;, function(d, i) {
+      return colors[i % colors.length];
+    })
+    .each(updateBar)
+    .each(updateLabel);
+
+  u.exit().remove();
+}
+
+function updateAxis() {
+  var chartWidth = numVisibleCountries * barWidth;
+  var chartHeight = (maxValue / tilesPerRow) * tileSize;
+
+  var yScale = d3.scaleLinear().domain([0, maxValue]).range([chartHeight, 0]);
+  var yAxis = d3.axisRight().scale(yScale).tickSize(chartWidth);
+
+  d3.select(&quot;.y.axis&quot;)
+    .call(yAxis);
+}
+
+function initialize() {
+  initializeData();
+
+  d3.select(&quot;select.mode&quot;)
+    .on(&quot;change&quot;, function() {
+      selectedMode = this.value;
+      update();
+    })
+
+  d3.select(&quot;select.year&quot;)
+    .on(&quot;change&quot;, function() {
+      selectedYear = this.value;
+      update();
+    });
+}
+
+function update() {
+  updateFilteredData();
+  updateBars();
+  updateAxis();
+}
+
+d3.tsv(&quot;College_Brewery.tsv&quot;, function(err, tsv) {
+
+
+  data = tsv;
+
+  initialize();
+  update();
+});
+
+&lt;/script&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2025 Senthil Thyagarajan.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme  |  <a href="http://www.stencilled.me/index.xml" target="_blank">RSS Feeds</a>
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <title>Visualizing your favourite song?</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91161205-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-91161205-1');
+        </script>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              
+                <a class="nav-item nav-link" href="https://github.com/senthilthyagarajan" target="_blank">GitHub</a>
+              
+              
+              <a class="nav-item nav-link " href="/page/about/">About</a>
+              <a class="nav-item nav-link " href="/page/resume/">Resume</a>
+              <a class="nav-item nav-link " href="/page/blogroll/">Blogroll</a>
+              <a class="nav-item nav-link " href="/page/reading/">Reading</a>
+              <a class="nav-item nav-link " href="https://twitter.com/TheRascala">Twitter</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Stencilled</a></h1>
+          <span id="author-name">
+            <h6><a href="/page/about/">Senthil Thyagarajan</a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>Visualizing your favourite song?</h1>
+  <div class="blog-post-subheader">
+  
+  </div>
+  <div class="blog-post-content">
+    <p>Recently I was searching for some gifts when I stumbled across <!-- raw HTML omitted -->Sound Viz<!-- raw HTML omitted --> and <!-- raw HTML omitted -->Cumberland Coast<!-- raw HTML omitted --> .
+These were your favorite songs which were visualized and printed. So that&rsquo;s when I started looking into on how could you visualize them. So I wanted to try the same and that’s when I came across the r packages <code>tuneR</code> and <code>seewave</code>. Now I knew that I wanted to visualize the song but then I also wanted to see how different are the visualizations for the same song in an original version and the acoustic version. So I did download both the versions of the song Take On Me by A-ha. Since the wave format is too big to-be processed I did clip the songs to 1-minute duration. Below are the visualizations for the different versions of the same song.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Following is the code which I used to generate the waveforms above:</p>
+<pre tabindex="0"><code>library(tuneR)
+library(seewave)
+
+setWavPlayer(&#39;mplayer&#39;) # Set the command-line WAV player
+fin &lt;- readWave(&#39;yoyoma_clip.wav&#39;)
+
+data = (fin)
+
+snd = data@left
+
+par(bg=&#34;orange&#34;)
+# plot waveform
+orig_left &lt;- plot(snd, type = &#39;l&#39;, xlab = &#39;Samples&#39;, ylab = &#39;Amplitude&#39;,col = c( &#34;blue&#34;,&#34;green&#34;, &#34;orange&#34;),frame.plot=FALSE)
+</code></pre><p>And finally finishing this post with one of my favorite song.</p>
+<!-- raw HTML omitted -->
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2025 Senthil Thyagarajan.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme  |  <a href="http://www.stencilled.me/index.xml" target="_blank">RSS Feeds</a>
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+

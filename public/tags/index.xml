@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Stencilled</title>
+    <link>http://www.stencilled.me/tags/</link>
+    <description>Recent content in Tags on Stencilled</description>
+    <image>
+      <title>Stencilled</title>
+      <url>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.125.7</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.stencilled.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analytics</title>
+      <link>http://www.stencilled.me/tags/analytics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/analytics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Campaigns</title>
+      <link>http://www.stencilled.me/tags/campaigns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/campaigns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dashboards</title>
+      <link>http://www.stencilled.me/tags/dashboards/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/dashboards/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Media</title>
+      <link>http://www.stencilled.me/tags/media/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/media/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Infrastructure</title>
+      <link>http://www.stencilled.me/tags/data-infrastructure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/data-infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Warehouse</title>
+      <link>http://www.stencilled.me/tags/data-warehouse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/data-warehouse/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ETL</title>
+      <link>http://www.stencilled.me/tags/etl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/etl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data-Visualization</title>
+      <link>http://www.stencilled.me/tags/data-visualization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/data-visualization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Google-Sheets</title>
+      <link>http://www.stencilled.me/tags/google-sheets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/google-sheets/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>R</title>
+      <link>http://www.stencilled.me/tags/r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/r/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tableau</title>
+      <link>http://www.stencilled.me/tags/tableau/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/tableau/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Js</title>
+      <link>http://www.stencilled.me/tags/js/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/js/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>D3js</title>
+      <link>http://www.stencilled.me/tags/d3js/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/d3js/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Qgis</title>
+      <link>http://www.stencilled.me/tags/qgis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/qgis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Excel</title>
+      <link>http://www.stencilled.me/tags/excel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/excel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ImageMagick</title>
+      <link>http://www.stencilled.me/tags/imagemagick/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/imagemagick/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Leaflet</title>
+      <link>http://www.stencilled.me/tags/leaflet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/leaflet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nfl</title>
+      <link>http://www.stencilled.me/tags/nfl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/nfl/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

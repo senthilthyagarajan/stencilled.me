@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nfl on Stencilled</title>
+    <link>http://www.stencilled.me/tags/nfl/</link>
+    <description>Recent content in Nfl on Stencilled</description>
+    <image>
+      <title>Stencilled</title>
+      <url>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.125.7</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.stencilled.me/tags/nfl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NFL Season 2016-17</title>
+      <link>http://www.stencilled.me/posts/2017-01-29-nfl/</link>
+      <pubDate>Sun, 29 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2017-01-29-nfl/</guid>
+      <description>&lt;p&gt;Hello World !!! This is my first project using d3js. Being a GIS professional, visualization is always a part of job.
+I always wanted to learn different ways for visualizing data.Let it be a simple plot using R or a choropleth map using Arcmap .&lt;/p&gt;
+&lt;p&gt;In this project I am trying to display how the NFL season 2016-17 went about. Ofcourse was surprised to see the Cowboys doing so well.
+May be we got our own Tom Brady.I started working with the data grabbed from the NFL site for how the season went by each seasson.
+Below is the location for the each team.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <title>Get over that data fatigue</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91161205-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-91161205-1');
+        </script>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              
+                <a class="nav-item nav-link" href="https://github.com/senthilthyagarajan" target="_blank">GitHub</a>
+              
+              
+              <a class="nav-item nav-link " href="/page/about/">About</a>
+              <a class="nav-item nav-link " href="/page/resume/">Resume</a>
+              <a class="nav-item nav-link " href="/page/blogroll/">Blogroll</a>
+              <a class="nav-item nav-link " href="/page/reading/">Reading</a>
+              <a class="nav-item nav-link " href="https://twitter.com/TheRascala">Twitter</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Stencilled</a></h1>
+          <span id="author-name">
+            <h6><a href="/page/about/">Senthil Thyagarajan</a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>Get over that data fatigue</h1>
+  <div class="blog-post-subheader">
+  
+  </div>
+  <div class="blog-post-content">
+    <p>So you are looking at numbers everyday. These can be in excel sheets / google sheets while cleaning data or trying to get some insights out of the tables in various dashboards you see daily. These numbers might be  currency , rates or just volume of any metrics you want to track.</p>
+<p>So how would you find the outliers across these  tables, the best peforming KPI&rsquo;s , correlations between various metrics. Just numbers in these tables wouldnt help the user in identifying these underlying relationships.Below are a few ways you can do these in google sheets or tables using R.</p>
+<h2 id="using-r">Using R</h2>
+<p>We can also do a similar kind of visualization for tables with numbers using mutiple options. A few of them would be using libraries like <a href="https://rstudio.github.io/DT/">DT</a>,<a href="https://glin.github.io/reactable/">Reactable</a> and <a href="https://cran.r-project.org/web/packages/rpivotTable/vignettes/rpivotTableIntroduction.html">pivot table js</a>.</p>
+<h3 id="dt">DT</h3>
+<p>This is one of the first packages I started using while trying to publish tables in R shiny apps.The plugins and the extensions in this library makes it easy to copy, filter and searchd data in the tables easy.This package has multiple options to format the values in tables , single rows, bar chart formatting and color scale formatting. Below are the examples of how each formatting option looks like.</p>
+<figure class="img-sm">
+     <img loading="lazy" src="dt_single_column.png"/> 
+ </figure>
+
+<figure class="img-sm">
+     <img loading="lazy" src="dt_multiple_columns.png"/> 
+ </figure>
+
+<figure class="img-sm">
+     <img loading="lazy" src="dt_color_scale.png"/> 
+ </figure>
+
+<p>For more details regarding how to visualize the tables using DT you can read <a href="https://rstudio.github.io/DT/010-style.html">here</a></p>
+<h3 id="reactable">Reactable</h3>
+<p>Reactable  is one of the recent packages in R which I would say have more functionalites than DT above. Apart from conditonally styling the values in the tables it also allows integrations of html widgets which can render sparkline and barcharts in columns.</p>
+<p>This first example below shows on how to visualize  two columns combined together to understand not only which twitter handle has the most users but also who have the most exclusive followers. The visualization makes the top twitter handles standout.</p>
+<figure class="img-sm">
+    <img loading="lazy" src="rt_relation.png"/> 
+</figure>
+
+<p>The second table was Women&rsquo;s soccer world cup prediction which  was posted on FiveThirtyEight  . This clearly shows how the columns are grouped together and visualized to get a better understanding on how each team does in terms of offense and defense. These columns are colored based off the scores. The knockout stages columns for each team use gradual scaled colors which makes it easy fo the readers to understand which team will progress in the tournament.</p>
+<figure class="img-sm">
+    <img loading="lazy" src="rt_538.png"/> 
+</figure>
+
+<h3 id="rpivottable">rpivotTable</h3>
+<p>This R library is based of open source js<a href="https://pivottable.js.org/examples/">pivottable</a>. This package has many functionalites such as rendering charts and pivots. In this post we would look at how this allows user to create heatmaps on table . these can be rendered by rows or columns.</p>
+<figure class="img-sm">
+    <img loading="lazy" src="pv_heatmap.png"/> 
+</figure>
+
+<figure class="img-sm">
+    <img loading="lazy" src="pv_col.png"/> 
+</figure>
+
+<figure class="img-sm">
+    <img loading="lazy" src="pv_row.png"/> 
+</figure>
+
+<h2 id="google-sheets">Google Sheets</h2>
+<p>In google sheets you can do it using the option, conditional formatting . This can be done using single colors or color scale.</p>
+<figure class="img-sm">
+    <img loading="lazy" src="first_step.png"/> 
+</figure>
+
+<p>Single color option can be used to format the range you select. This option allows the users to select the colors , add any formulaes like greater than or less than ,vlookups to format the selected range.</p>
+<figure class="img-sm">
+    <img loading="lazy" src="single_color.png"/> 
+</figure>
+
+<p>The second option would be to using the color scales. This option can be used when you also want to visually distinguish the difference between the values in the selected range. For example, a score of 90 would be a  shade of green, 60 would a shade of orange and 30 would be a shade of red.</p>
+<figure class="img-sm">
+    <img loading="lazy" src="color_scale.png"/> 
+</figure>
+
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2025 Senthil Thyagarajan.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme  |  <a href="http://www.stencilled.me/index.xml" target="_blank">RSS Feeds</a>
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+

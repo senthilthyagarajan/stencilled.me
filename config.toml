@@ -1,0 +1,144 @@
+baseURL = "http://www.stencilled.me"
+title = "Stencilled"
+paginate = 5
+theme = "PaperMod"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[params]
+env = "production"
+title = "Stencilled"
+description = "A blog about Data Science, R, and Visualization"
+keywords = [ "Blog", "Portfolio", "Data Science", "R" ]
+author = "Senthil Thyagarajan"
+images = [ "<link or path of image for opengraph, twitter-cards>" ]
+DateFormat = "January 2, 2006"
+defaultTheme = "auto"
+disableThemeToggle = false
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowWordCount = true
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = false
+showtoc = true
+tocopen = false
+mainSections = ["posts"]
+ShowAllPagesInArchive = true
+
+  [params.assets]
+  favicon = "<link / abs url>"
+  favicon16x16 = "<link / abs url>"
+  favicon32x32 = "<link / abs url>"
+  apple_touch_icon = "<link / abs url>"
+  safari_pinned_tab = "<link / abs url>"
+
+  [params.label]
+  text = "Stencilled"
+  icon = "/apple-touch-icon.png"
+  iconHeight = 35
+
+  [params.profileMode]
+  enabled = false
+  title = "Stencilled"
+  subtitle = "A blog about Data Science, R, and Visualization"
+  imageUrl = "<img location>"
+  imageWidth = 120
+  imageHeight = 120
+  imageTitle = "my image"
+
+  [params.homeInfoParams]
+  Title = "Mapping Innovation: Building Tools for Insight and Visual Storytelling"
+  Content = ""
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/therascala"
+weight = 90
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/senthilthyagarajan"
+weight = 91
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/in/senthilthyagarajan"
+weight = 92
+
+[[params.socialIcons]]
+name = "substack"
+url = "https://stencilled.substack.com"
+weight = 93
+
+[params.cover]
+hidden = true
+hiddenInList = true
+hiddenInSingle = true
+
+[params.editPost]
+URL = "https://github.com/senthilthyagarajan/stencilled.me/content"
+Text = "Suggest Changes"
+appendFilePath = true
+
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1000
+threshold = 0.4
+minMatchCharLength = 0
+keys = ["title", "permalink", "summary", "content"]
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "archives"
+name = "Archives"
+url = "/archives/"
+weight = 20
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 30
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 40
+
+[[menu.main]]
+identifier = "resume"
+name = "Resume"
+url = "/resume/"
+weight = 45
+
+[[menu.main]]
+identifier = "newsletter"
+name = "Newsletter"
+url = "https://stencilled.substack.com"
+weight = 50
+
+[markup.highlight]
+noClasses = false

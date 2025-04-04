@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
+
+        <title>Top Beers in 2016.</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91161205-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-91161205-1');
+        </script>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              
+                <a class="nav-item nav-link" href="https://github.com/senthilthyagarajan" target="_blank">GitHub</a>
+              
+              
+              <a class="nav-item nav-link " href="/page/about/">About</a>
+              <a class="nav-item nav-link " href="/page/resume/">Resume</a>
+              <a class="nav-item nav-link " href="/page/blogroll/">Blogroll</a>
+              <a class="nav-item nav-link " href="/page/reading/">Reading</a>
+              <a class="nav-item nav-link " href="https://twitter.com/TheRascala">Twitter</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Stencilled</a></h1>
+          <span id="author-name">
+            <h6><a href="/page/about/">Senthil Thyagarajan</a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>Top Beers in 2016.</h1>
+  <div class="blog-post-subheader">
+  
+  </div>
+  <div class="blog-post-content">
+    <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>After completing my previous post on food I wanted to work on something which I have started to explore recently,craft beer.
+A friend of mine introduced me to a beer club membership prior to which I never knew anything beyond the Corona&rsquo;s .
+Then began the collection and here it is, what  have so far.</p>
+<p><img alt="This is an image" loading="lazy" src="/post/2017-02-22-topbeers2016/beercaps.jpg"></p>
+<p>So when I started searching for the data google lead me to <!-- raw HTML omitted -->Beer Advocate.<!-- raw HTML omitted --> Below is how the raw html table from the website looked like.</p>
+<p><img alt="This is an image" loading="lazy" src="/post/2017-02-22-topbeers2016/rawdata.PNG"></p>
+<p>I have used R to scrape the table from the website using R. The library I am using here to scrape is <!-- raw HTML omitted -->Rvest<!-- raw HTML omitted -->. Below is the code on how to get the data.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="nf">library</span><span class="p">(</span><span class="s">&#34;rvest&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="c1"># Enter the url below</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">url</span> <span class="o">&lt;-</span> <span class="s">&#34;https://www.beeradvocate.com/lists/top/&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                      <span class="n">beer</span> <span class="o">&lt;-</span> <span class="n">url</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">                      <span class="nf">html</span><span class="p">()</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                      <span class="c1">## to get xpath for a table ,right click on the table,inspect,</span>
+</span></span><span class="line"><span class="cl">                      <span class="c1">## go to the table tag ,right click again and go to copy xpath .. phew ...</span>
+</span></span><span class="line"><span class="cl">                      <span class="c1">## not clear click here for &lt;a href=&#34;http://www.wikihow.com/Find-XPath-Using-Firebug&#34;&gt;more details&lt;/a&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                      <span class="nf">html_nodes</span><span class="p">(</span><span class="n">xpath</span> <span class="o">=</span> <span class="s">&#39;//*[@id=&#34;extendedInfo&#34;]/a[1]&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">                      <span class="nf">html_table</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                      <span class="n">beer</span> <span class="o">&lt;-</span> <span class="n">beer[[1]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                      <span class="nf">head</span><span class="p">(</span><span class="n">beer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                      <span class="nf">write.table</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">beer</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">file</span> <span class="o">=</span> <span class="s">&#34;topus250.csv&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">quote</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">row.names</span> <span class="o">=</span> <span class="kc">FALSE</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">)</span>
+</span></span></code></pre></div><p>Now that I got the scraped data and  address parameter as the name of the brewing company , it looks something like this.</p>
+<p><img alt="This is an image" loading="lazy" src="/post/2017-02-22-topbeers2016/address.PNG"></p>
+<p>The next step here is to get the address geocoded which would help me plot this on a map . For this I have used the library ggmap.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="nf">library</span><span class="p">(</span><span class="s">&#34;rvest&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">library</span><span class="p">(</span><span class="n">ggmap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                 <span class="c1"># Read in the CSV data and store it in a variable</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">origAddress</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;topus250.csv&#34;</span><span class="p">,</span> <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                  <span class="c1"># Initialize the data frame</span>
+</span></span><span class="line"><span class="cl">                  <span class="n">geocoded</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                  <span class="c1"># Loop through the addresses to get the latitude and longitude of each address</span>
+</span></span><span class="line"><span class="cl">                  <span class="c1"># and add it to the origAddress data frame in new columns lat and lon</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                  <span class="kr">for</span><span class="p">(</span><span class="n">i</span> <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">origAddress</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># Print(&#34;Working...&#34;)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">result</span> <span class="o">&lt;-</span> <span class="nf">geocode</span><span class="p">(</span><span class="n">origAddress</span><span class="o">$</span><span class="n">Address[i]</span><span class="p">,</span> <span class="n">output</span> <span class="o">=</span> <span class="s">&#34;latlona&#34;</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s">&#34;google&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">origAddress</span><span class="o">$</span><span class="n">lon[i]</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">result[1]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">origAddress</span><span class="o">$</span><span class="n">lat[i]</span> <span class="o">&lt;-</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">result[2]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">origAddress</span><span class="o">$</span><span class="n">geoAddress[i]</span> <span class="o">&lt;-</span> <span class="nf">as.character</span><span class="p">(</span><span class="n">result[3]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">origAddress</span><span class="o">$</span><span class="n">state[i]</span> <span class="o">&lt;-</span> <span class="nf">as.character</span><span class="p">(</span><span class="n">result[3]</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                  <span class="c1"># Save the output as csv to the working directory</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">write.csv</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="n">geocoded.csv</span><span class="p">)</span>
+</span></span></code></pre></div><p>Now I got the data cleaned, gecoded and ready to plot it on the map. Another task &hellip;another library. Here I have used  the leaflet library
+to add the basemap,plot the points , add clusters and markers to it. All it took was a couple of lines in R  !! As a continuation to this project.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">leaflet</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">lf</span> <span class="o">&lt;-</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;beer_lat_long.csv&#34;</span><span class="p">,</span> <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="c1"># Brings in the file &#39;ctlist.csv&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">map</span> <span class="o">&lt;-</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">leaflet</span><span class="p">(</span><span class="n">lf</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">addTiles</span><span class="p">(</span><span class="s">&#39;http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                               <span class="n">attribution</span> <span class="o">=</span> <span class="s">&#39;Map tiles by &lt;a href=&#34;http://stamen.com&#34;&gt;Stamen Design&lt;/a&gt;, &lt;a href=&#34;http://creativecommons.org/licenses/by/3.0&#34;&gt;CC BY 3.0&lt;/a&gt; &amp;mdash; Map data &amp;copy; &lt;a href=&#34;http://www.openstreetmap.org/copyright&#34;&gt;OpenStreetMap&lt;/a&gt;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">map</span> <span class="o">%&gt;%</span> <span class="nf">setView</span><span class="p">(</span><span class="m">-95.712891</span><span class="p">,</span> <span class="m">37.09024</span><span class="p">,</span> <span class="n">zoom</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#add cluster</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">map</span> <span class="o">%&gt;%</span> <span class="nf">addMarkers</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="n">popup</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Brewer:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lf</span><span class="o">$</span><span class="n">company</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Beer Name:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lf</span><span class="o">$</span><span class="n">name</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Rank:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lf</span><span class="o">$</span><span class="n">rank</span>
+</span></span><span class="line"><span class="cl">      <span class="p">),</span>
+</span></span><span class="line"><span class="cl">      <span class="n">clusterOptions</span> <span class="o">=</span> <span class="nf">markerClusterOptions</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<pre><code>        &lt;div class='myIframe' &gt;
+  &lt;iframe width=&quot;720&quot; height=&quot;600&quot; src=&quot;https://s3.amazonaws.com/www.stencilled.me/post/leaflethtml.html&quot;&gt;&lt;/iframe&gt;
+        &lt;/div&gt;
+</code></pre>
+<p>Sadly we dont  see many breweries in the top list from Texas, but then that gives me more the reasons to travel and visit many breweries.
+As I was doing this project I did realize that when I want to show the leaflet map using R in an html page this converts all the data loaded
+and that makes the html file heavy to load. So going on next I would  to try  do some more advanced visualization and representation of the
+same data using leaflet library and html.</p>
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2025 Senthil Thyagarajan.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme  |  <a href="http://www.stencilled.me/index.xml" target="_blank">RSS Feeds</a>
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+
