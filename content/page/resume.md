@@ -1,15 +1,13 @@
 ---
 title: "Resume"
-date: 2024-03-19
+date: 2025-04-04
 draft: false
 ---
 
 # SENTHIL THYAGARAJAN
 
-```
 (504) 908 0008 | senthil.thyagarajan@gmail.com
 Portfolio: http://www.stencilled.me https://www.linkedin.com/in/senthilthyagarajan/
-```
 
 ### PROFESSIONAL EXPERIENCE
 

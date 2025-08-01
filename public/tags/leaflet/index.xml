@@ -18,8 +18,25 @@
       <link>http://www.stencilled.me/posts/2017-02-22-topbeers2016/</link>
       <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
       <guid>http://www.stencilled.me/posts/2017-02-22-topbeers2016/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;style&gt;
+
+.myIframe {
+position: relative;
+padding-bottom: 65.25%;
+padding-top: 30px;
+height: 0;
+overflow: auto;
+-webkit-overflow-scrolling:touch; //&lt;&lt;--- THIS IS THE KEY
+border: solid black 1px;
+}
+.myIframe iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+&lt;/style&gt;
 &lt;p&gt;After completing my previous post on food I wanted to work on something which I have started to explore recently,craft beer.
 A friend of mine introduced me to a beer club membership prior to which I never knew anything beyond the Corona&amp;rsquo;s .
 Then began the collection and here it is, what  have so far.&lt;/p&gt;</description>

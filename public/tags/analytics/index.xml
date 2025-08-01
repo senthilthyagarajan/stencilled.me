@@ -11,8 +11,50 @@
     </image>
     <generator>Hugo -- 0.125.7</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.stencilled.me/tags/analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Is Your Website Built for LLMs? Why Analytics Needs to Rethink the Funnel</title>
+      <link>http://www.stencilled.me/posts/2025-06-09-llm-funnel/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-06-09-llm-funnel/</guid>
+      <description>In a world where large language models are the first point of contact, your website needs to speak to them as much as it does to your users. Here&amp;#39;s how analytics teams can help rewire the funnel.</description>
+    </item>
+    <item>
+      <title>Benchmarks vs. Baselines: When &#39;Above Average&#39; Isn&#39;t Good Enough</title>
+      <link>http://www.stencilled.me/posts/2025-06-02-benchmarks-baselines/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-06-02-benchmarks-baselines/</guid>
+      <description>Why relying on external benchmarks in media analytics can be misleading, and how building your own baselines leads to smarter, more context-aware decision making.</description>
+    </item>
+    <item>
+      <title>Stop Asking for Data You&#39;ll Never Use</title>
+      <link>http://www.stencilled.me/posts/2025-05-06-stop-asking-data/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-05-06-stop-asking-data/</guid>
+      <description>The real problem isn&amp;#39;t the dashboard. It&amp;#39;s how we treat data as a checklist, not a conversation. Learn how to make analytics work harder for the right questions.</description>
+    </item>
+    <item>
+      <title>Why Every Media Team Needs a Measurement Playbook (Not Just a Dashboard)</title>
+      <link>http://www.stencilled.me/posts/2024-05-08-measurement-playbook/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2024-05-08-measurement-playbook/</guid>
+      <description>Demystifying media analytics tools like MMM and incrementality testing, and how to leverage them to move from tactical execution to strategic mastery.</description>
+    </item>
+    <item>
+      <title>Why Every Media Team Needs an Analytics Agent</title>
+      <link>http://www.stencilled.me/posts/2025-04-05-analytics-agents/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-04-05-analytics-agents/</guid>
+      <description>From dashboards to decisions — AI is now the analyst. Explore how analytics agents are transforming media teams by providing instant insights and automated analysis.</description>
+    </item>
+    <item>
+      <title>AMI Dashboard</title>
+      <link>http://www.stencilled.me/ami-dashboard/</link>
+      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/ami-dashboard/</guid>
+      <description>Adaptive Media Intelligence - Comprehensive Analytics Dashboard</description>
+    </item>
     <item>
       <title>Empowering Media Campaigns with Dynamic Analytics</title>
       <link>http://www.stencilled.me/posts/empowering-media-campaigns/</link>

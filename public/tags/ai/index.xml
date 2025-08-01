@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AI on Stencilled</title>
+    <link>http://www.stencilled.me/tags/ai/</link>
+    <description>Recent content in AI on Stencilled</description>
+    <image>
+      <title>Stencilled</title>
+      <url>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.125.7</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.stencilled.me/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Is Your Website Built for LLMs? Why Analytics Needs to Rethink the Funnel</title>
+      <link>http://www.stencilled.me/posts/2025-06-09-llm-funnel/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-06-09-llm-funnel/</guid>
+      <description>In a world where large language models are the first point of contact, your website needs to speak to them as much as it does to your users. Here&amp;#39;s how analytics teams can help rewire the funnel.</description>
+    </item>
+    <item>
+      <title>Why Every Media Team Needs an Analytics Agent</title>
+      <link>http://www.stencilled.me/posts/2025-04-05-analytics-agents/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-04-05-analytics-agents/</guid>
+      <description>From dashboards to decisions — AI is now the analyst. Explore how analytics agents are transforming media teams by providing instant insights and automated analysis.</description>
+    </item>
+    <item>
+      <title>The Death of Manual Data Analysis? Why AI Won&#39;t Replace You (Yet)</title>
+      <link>http://www.stencilled.me/posts/2025-02-26-ai-wont-replace-analysts/</link>
+      <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-02-26-ai-wont-replace-analysts/</guid>
+      <description>Exploring why AI tools enhance but don&amp;#39;t replace human data analysts, and how to leverage AI for better analytics.</description>
+    </item>
+  </channel>
+</rss>

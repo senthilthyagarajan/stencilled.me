@@ -11,8 +11,50 @@
     </image>
     <generator>Hugo -- 0.125.7</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.stencilled.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Marketing Analytics</title>
+      <link>http://www.stencilled.me/tags/marketing-analytics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/marketing-analytics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Media Mix Modeling</title>
+      <link>http://www.stencilled.me/tags/media-mix-modeling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/media-mix-modeling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MMM</title>
+      <link>http://www.stencilled.me/tags/mmm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/mmm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>QuickMMM</title>
+      <link>http://www.stencilled.me/tags/quickmmm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/quickmmm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>http://www.stencilled.me/tags/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>http://www.stencilled.me/tags/ai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/ai/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Analytics</title>
       <link>http://www.stencilled.me/tags/analytics/</link>
@@ -21,10 +63,52 @@
       <description></description>
     </item>
     <item>
-      <title>Campaigns</title>
-      <link>http://www.stencilled.me/tags/campaigns/</link>
+      <title>LLMs</title>
+      <link>http://www.stencilled.me/tags/llms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://www.stencilled.me/tags/campaigns/</guid>
+      <guid>http://www.stencilled.me/tags/llms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Marketing</title>
+      <link>http://www.stencilled.me/tags/marketing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/marketing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Strategy</title>
+      <link>http://www.stencilled.me/tags/web-strategy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/web-strategy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Benchmarks</title>
+      <link>http://www.stencilled.me/tags/benchmarks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/benchmarks/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Measurement</title>
+      <link>http://www.stencilled.me/tags/measurement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/measurement/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Media</title>
+      <link>http://www.stencilled.me/tags/media/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/media/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Strategy</title>
+      <link>http://www.stencilled.me/tags/strategy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/strategy/</guid>
       <description></description>
     </item>
     <item>
@@ -35,10 +119,80 @@
       <description></description>
     </item>
     <item>
-      <title>Media</title>
-      <link>http://www.stencilled.me/tags/media/</link>
+      <title>Data</title>
+      <link>http://www.stencilled.me/tags/data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://www.stencilled.me/tags/media/</guid>
+      <guid>http://www.stencilled.me/tags/data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Incrementality</title>
+      <link>http://www.stencilled.me/tags/incrementality/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/incrementality/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Insights</title>
+      <link>http://www.stencilled.me/tags/insights/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/insights/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>http://www.stencilled.me/tags/automation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>http://www.stencilled.me/tags/llm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Analysts</title>
+      <link>http://www.stencilled.me/tags/analysts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/analysts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Analytics</title>
+      <link>http://www.stencilled.me/tags/data-analytics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/data-analytics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productivity</title>
+      <link>http://www.stencilled.me/tags/productivity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/productivity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dashboard</title>
+      <link>http://www.stencilled.me/tags/dashboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/dashboard/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data-Science</title>
+      <link>http://www.stencilled.me/tags/data-science/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/data-science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Campaigns</title>
+      <link>http://www.stencilled.me/tags/campaigns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/tags/campaigns/</guid>
       <description></description>
     </item>
     <item>
@@ -109,13 +263,6 @@
       <link>http://www.stencilled.me/tags/qgis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://www.stencilled.me/tags/qgis/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Excel</title>
-      <link>http://www.stencilled.me/tags/excel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://www.stencilled.me/tags/excel/</guid>
       <description></description>
     </item>
     <item>

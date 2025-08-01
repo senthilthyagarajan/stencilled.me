@@ -18,26 +18,9 @@
       <link>http://www.stencilled.me/posts/2017-05-10-states-to-shapes/</link>
       <pubDate>Wed, 10 May 2017 00:00:00 +0000</pubDate>
       <guid>http://www.stencilled.me/posts/2017-05-10-states-to-shapes/</guid>
-      <description>&lt;p&gt;I started working on this visualation after coming across  &lt;!-- raw HTML omitted --&gt;Mike Bostock&amp;rsquo;s shape tweening bl.ock&lt;!-- raw HTML omitted --&gt; ,
+      <description>&lt;p&gt;I started working on this visualation after coming across  &lt;a href=&#34;https://bl.ocks.org/mbostock/3081153&#34;&gt;Mike Bostock&amp;rsquo;s shape tweening bl.ock&lt;/a&gt; ,
 which was done for one state. The source for this data is
 Insurance Institute for Highway Service(IIHS). The size of the square is based on the motor vehicle deaths per 100,000 people(2015).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Harry Potter Characters.</title>
-      <link>http://www.stencilled.me/posts/2017-05-02-harry-potter-characters/</link>
-      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
-      <guid>http://www.stencilled.me/posts/2017-05-02-harry-potter-characters/</guid>
-      <description>&lt;p&gt;Across 7 books/ 8 movies there are so many characters in this series by J.K Rowling. For this project I have got the data from
-&lt;!-- raw HTML omitted --&gt;data.world&lt;!-- raw HTML omitted --&gt;. All files here were combined to create a json with nodes and links.
-Using d3js I have  visualized  the characters connected to each other.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Indian Premier League so far.</title>
-      <link>http://www.stencilled.me/posts/2017-04-10-iplseasons/</link>
-      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>http://www.stencilled.me/posts/2017-04-10-iplseasons/</guid>
-      <description>&lt;p&gt;Indian Premier League(IPL) has had 13 different teams over the past ten years. In this project I have tried to visualize how these teams
-have performed over the years.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Where do people eat in Austin ??</title>

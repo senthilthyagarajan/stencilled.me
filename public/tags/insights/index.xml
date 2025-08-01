@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Insights on Stencilled</title>
+    <link>http://www.stencilled.me/tags/insights/</link>
+    <description>Recent content in Insights on Stencilled</description>
+    <image>
+      <title>Stencilled</title>
+      <url>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.125.7</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.stencilled.me/tags/insights/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stop Asking for Data You&#39;ll Never Use</title>
+      <link>http://www.stencilled.me/posts/2025-05-06-stop-asking-data/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-05-06-stop-asking-data/</guid>
+      <description>The real problem isn&amp;#39;t the dashboard. It&amp;#39;s how we treat data as a checklist, not a conversation. Learn how to make analytics work harder for the right questions.</description>
+    </item>
+  </channel>
+</rss>

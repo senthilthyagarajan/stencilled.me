@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MMM on Stencilled</title>
+    <link>http://www.stencilled.me/tags/mmm/</link>
+    <description>Recent content in MMM on Stencilled</description>
+    <image>
+      <title>Stencilled</title>
+      <url>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://www.stencilled.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.125.7</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.stencilled.me/tags/mmm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>QuickMMM: Making Media Mix Modeling Simple for Marketers</title>
+      <link>http://www.stencilled.me/posts/2025-06-10-quickmmm/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-06-10-quickmmm/</guid>
+      <description>A fast, marketer-friendly tool for media mix modeling — get actionable insights in hours, not months.</description>
+    </item>
+    <item>
+      <title>Why Every Media Team Needs a Measurement Playbook (Not Just a Dashboard)</title>
+      <link>http://www.stencilled.me/posts/2024-05-08-measurement-playbook/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2024-05-08-measurement-playbook/</guid>
+      <description>Demystifying media analytics tools like MMM and incrementality testing, and how to leverage them to move from tactical execution to strategic mastery.</description>
+    </item>
+  </channel>
+</rss>

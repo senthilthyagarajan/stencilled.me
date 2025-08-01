@@ -40,6 +40,9 @@ tocopen = false
 mainSections = ["posts"]
 ShowAllPagesInArchive = true
 
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
   [params.assets]
   favicon = "<link / abs url>"
   favicon16x16 = "<link / abs url>"
@@ -55,7 +58,7 @@ ShowAllPagesInArchive = true
   [params.profileMode]
   enabled = false
   title = "Stencilled"
-  subtitle = "A blog about Data Science, R, and Visualization"
+  subtitle = "Mapping Innovation: Building Tools for Insight and Visual Storytelling"
   imageUrl = "<img location>"
   imageWidth = 120
   imageHeight = 120
@@ -89,11 +92,6 @@ weight = 93
 hidden = true
 hiddenInList = true
 hiddenInSingle = true
-
-[params.editPost]
-URL = "https://github.com/senthilthyagarajan/stencilled.me/content"
-Text = "Suggest Changes"
-appendFilePath = true
 
 [params.fuseOpts]
 isCaseSensitive = false
@@ -140,5 +138,13 @@ name = "Newsletter"
 url = "https://stencilled.substack.com"
 weight = 50
 
-[markup.highlight]
-noClasses = false
+[[menu.main]]
+identifier = "ami-dashboard"
+name = "AMI Dashboard"
+url = "/ami-dashboard/"
+weight = 55
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

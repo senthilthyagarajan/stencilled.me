@@ -11,8 +11,81 @@
     </image>
     <generator>Hugo -- 0.125.7</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.stencilled.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>QuickMMM: Making Media Mix Modeling Simple for Marketers</title>
+      <link>http://www.stencilled.me/posts/2025-06-10-quickmmm/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-06-10-quickmmm/</guid>
+      <description>A fast, marketer-friendly tool for media mix modeling — get actionable insights in hours, not months.</description>
+    </item>
+    <item>
+      <title>Is Your Website Built for LLMs? Why Analytics Needs to Rethink the Funnel</title>
+      <link>http://www.stencilled.me/posts/2025-06-09-llm-funnel/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-06-09-llm-funnel/</guid>
+      <description>In a world where large language models are the first point of contact, your website needs to speak to them as much as it does to your users. Here&amp;#39;s how analytics teams can help rewire the funnel.</description>
+    </item>
+    <item>
+      <title>Benchmarks vs. Baselines: When &#39;Above Average&#39; Isn&#39;t Good Enough</title>
+      <link>http://www.stencilled.me/posts/2025-06-02-benchmarks-baselines/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-06-02-benchmarks-baselines/</guid>
+      <description>Why relying on external benchmarks in media analytics can be misleading, and how building your own baselines leads to smarter, more context-aware decision making.</description>
+    </item>
+    <item>
+      <title>Stop Asking for Data You&#39;ll Never Use</title>
+      <link>http://www.stencilled.me/posts/2025-05-06-stop-asking-data/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-05-06-stop-asking-data/</guid>
+      <description>The real problem isn&amp;#39;t the dashboard. It&amp;#39;s how we treat data as a checklist, not a conversation. Learn how to make analytics work harder for the right questions.</description>
+    </item>
+    <item>
+      <title>Why Every Media Team Needs a Measurement Playbook (Not Just a Dashboard)</title>
+      <link>http://www.stencilled.me/posts/2024-05-08-measurement-playbook/</link>
+      <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2024-05-08-measurement-playbook/</guid>
+      <description>Demystifying media analytics tools like MMM and incrementality testing, and how to leverage them to move from tactical execution to strategic mastery.</description>
+    </item>
+    <item>
+      <title>Why Every Media Team Needs an Analytics Agent</title>
+      <link>http://www.stencilled.me/posts/2025-04-05-analytics-agents/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-04-05-analytics-agents/</guid>
+      <description>From dashboards to decisions — AI is now the analyst. Explore how analytics agents are transforming media teams by providing instant insights and automated analysis.</description>
+    </item>
+    <item>
+      <title>The Death of Manual Data Analysis? Why AI Won&#39;t Replace You (Yet)</title>
+      <link>http://www.stencilled.me/posts/2025-02-26-ai-wont-replace-analysts/</link>
+      <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/posts/2025-02-26-ai-wont-replace-analysts/</guid>
+      <description>Exploring why AI tools enhance but don&amp;#39;t replace human data analysts, and how to leverage AI for better analytics.</description>
+    </item>
+    <item>
+      <title>Resume</title>
+      <link>http://www.stencilled.me/page/resume/</link>
+      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/page/resume/</guid>
+      <description>SENTHIL THYAGARAJAN (504) 908 0008 | senthil.thyagarajan@gmail.com Portfolio: http://www.stencilled.me https://www.linkedin.com/in/senthilthyagarajan/
+PROFESSIONAL EXPERIENCE Analytics Director, Mekanism, New York, NY June 2023 –Present
+Built real-time reporting dashboards with Supermetrics &amp;amp; BigQuery, integrating cross-channel data to improve decision-making. Developed a RAG tool that cut insight generation time by 30%, streamlining reporting and enhancing data-driven decision-making. Condensed 100+ slides into a one-page executive report, simplifying media insights for C-suite stakeholders. Embedded a data-driven culture, mentoring teams on analytics tools and integrating data into agency strategy.</description>
+    </item>
+    <item>
+      <title>Resume</title>
+      <link>http://www.stencilled.me/resume/</link>
+      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/resume/</guid>
+      <description>SENTHIL THYAGARAJAN PROFESSIONAL EXPERIENCE Analytics Director, Mekanism, New York, NY June 2023 –Present
+Built real-time reporting dashboards with Supermetrics &amp;amp; BigQuery, integrating cross-channel data to improve decision-making. Developed a RAG tool that cut insight generation time by 30%, streamlining reporting and enhancing data-driven decision-making. Condensed 100+ slides into a one-page executive report, simplifying media insights for C-suite stakeholders. Embedded a data-driven culture, mentoring teams on analytics tools and integrating data into agency strategy.</description>
+    </item>
+    <item>
+      <title>AMI Dashboard</title>
+      <link>http://www.stencilled.me/ami-dashboard/</link>
+      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/ami-dashboard/</guid>
+      <description>Adaptive Media Intelligence - Comprehensive Analytics Dashboard</description>
+    </item>
     <item>
       <title>Empowering Media Campaigns with Dynamic Analytics</title>
       <link>http://www.stencilled.me/posts/empowering-media-campaigns/</link>
@@ -21,31 +94,11 @@
       <description>How to create effective interactive dashboards for media campaigns</description>
     </item>
     <item>
-      <title>Resume</title>
-      <link>http://www.stencilled.me/resume/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://www.stencilled.me/resume/</guid>
-      <description>Senthil Thyagarajan Email senthil.thyagarajan@gmail.com Portfolio www.stencilled.me LinkedIn www.linkedin.com/in/senthilthyagarajan
-SKILLS Languages : R, Python, JavaScript, SQL
-Libraries : R Shiny, d3js, dplyr, tibble, titdyR, ggplot2, leaflet, Fusion charts, Chartjs,Plotly, Rvest, Pandas, Numpy, Scikit-learn, Matplotlib
-Analytics Tools : RShiny, Alteryx, Tableau, Origami Logic, Pentaho Data Integration, MS Excel
-Statistical Analysis : ANOVA, Multiple Regression, Confidence intervals, Hypothesis testing, Significance Tests
-Machine Learning : Linear and Logistic Regression, Decision Trees and Random Forests, Support Vector Machines, Clustering, Isolation Forests, KNN</description>
-    </item>
-    <item>
       <title>Building a Strong Data Infrastructure</title>
       <link>http://www.stencilled.me/posts/building-a-strong-data-infrastructure/</link>
       <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
       <guid>http://www.stencilled.me/posts/building-a-strong-data-infrastructure/</guid>
       <description>Learn why establishing a robust data infrastructure is crucial for digital marketing and media campaigns, and how tools like ETL and data warehousing solutions can streamline your analytics process.</description>
-    </item>
-    <item>
-      <title>Resume</title>
-      <link>http://www.stencilled.me/page/resume/</link>
-      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://www.stencilled.me/page/resume/</guid>
-      <description>SENTHIL THYAGARAJAN (504) 908 0008 | senthil.thyagarajan@gmail.comPortfolio: http://www.stencilled.me https://www.linkedin.com/in/senthilthyagarajan/ PROFESSIONAL EXPERIENCE Analytics Director, Mekanism, New York, NY June 2023 –Present
-Built real-time reporting dashboards with Supermetrics &amp;amp; BigQuery, integrating cross-channel data to improve decision-making. Developed a RAG tool that cut insight generation time by 30%, streamlining reporting and enhancing data-driven decision-making. Condensed 100+ slides into a one-page executive report, simplifying media insights for C-suite stakeholders. Embedded a data-driven culture, mentoring teams on analytics tools and integrating data into agency strategy.</description>
     </item>
     <item>
       <title>Get over that data fatigue</title>
@@ -97,7 +150,7 @@ Libraries The libraries which we will be using are shiny for the app itself, dpl
       <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
       <guid>http://www.stencilled.me/posts/2018-09-26-college-brewery/</guid>
       <description>In this post we see how the no. of breweries stack up against no. of colleges across USA. Here I am using d3js and a grid bar chartwhere each grid represents 5 breweries/colleges.I collected the data for Brewery from Beer Advocate and for colleges from wikipedia
-&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.4/d3.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var tilesPerRow = 5; var tileSize = 15; var barPadding = 20; var maxValue = 100; var numVisibleCountries = 10; var barWidth = (tilesPerRow * tileSize) + barPadding; var data, filteredData; let colors = [&amp;quot;#8dd3c7&amp;quot;,&amp;quot;#a6cee3&amp;quot;,&amp;quot;#bebada&amp;quot;,&amp;quot;#fb8072&amp;quot;,&amp;quot;#80b1d3&amp;quot;,&amp;quot;#fdb462&amp;quot;,&amp;quot;#b3de69&amp;quot;,&amp;quot;#fccde5&amp;quot;,&amp;quot;#d9d9d9&amp;quot;,&amp;quot;#bc80bd&amp;quot;]; var selectedYear = &amp;quot;College&amp;quot;, selectedMode = &amp;quot;top10&amp;quot;; function initializeData() { data = data.</description>
+&lt;!DOCTYPE html&gt; More Breweries than Colleges Breweries vs Colleges in US = 5 Top 10 States Bottom 10 States College Brewery &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.4/d3.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://cdnjs.</description>
     </item>
     <item>
       <title>Google Trends using gtrends and R shiny</title>
@@ -140,37 +193,37 @@ Once the data was ready this was put to use by being displayed on a web mapping 
       <link>http://www.stencilled.me/posts/2017-05-10-states-to-shapes/</link>
       <pubDate>Wed, 10 May 2017 00:00:00 +0000</pubDate>
       <guid>http://www.stencilled.me/posts/2017-05-10-states-to-shapes/</guid>
-      <description>&lt;p&gt;I started working on this visualation after coming across  &lt;!-- raw HTML omitted --&gt;Mike Bostock&amp;rsquo;s shape tweening bl.ock&lt;!-- raw HTML omitted --&gt; ,
+      <description>&lt;p&gt;I started working on this visualation after coming across  &lt;a href=&#34;https://bl.ocks.org/mbostock/3081153&#34;&gt;Mike Bostock&amp;rsquo;s shape tweening bl.ock&lt;/a&gt; ,
 which was done for one state. The source for this data is
 Insurance Institute for Highway Service(IIHS). The size of the square is based on the motor vehicle deaths per 100,000 people(2015).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Harry Potter Characters.</title>
-      <link>http://www.stencilled.me/posts/2017-05-02-harry-potter-characters/</link>
-      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
-      <guid>http://www.stencilled.me/posts/2017-05-02-harry-potter-characters/</guid>
-      <description>&lt;p&gt;Across 7 books/ 8 movies there are so many characters in this series by J.K Rowling. For this project I have got the data from
-&lt;!-- raw HTML omitted --&gt;data.world&lt;!-- raw HTML omitted --&gt;. All files here were combined to create a json with nodes and links.
-Using d3js I have  visualized  the characters connected to each other.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Breweries or Wineries ??</title>
       <link>http://www.stencilled.me/posts/2017-04-29-whats-your-states-poison/</link>
       <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
       <guid>http://www.stencilled.me/posts/2017-04-29-whats-your-states-poison/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;style&gt;
+
+.myIframe {
+position: relative;
+padding-bottom: 65.25%;
+padding-top: 30px;
+height: 0;
+overflow: auto;
+-webkit-overflow-scrolling:touch; //&lt;&lt;--- THIS IS THE KEY
+border: solid black 1px;
+}
+.myIframe iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+&lt;/style&gt;
 &lt;p&gt;When you think about Texas, the first thing that would come in mind is barbecue which of course  pairs well with a good beer. In this post I have mapped each state in the
 US ranked based on the breweries or wineries present. I got the data from the Brewers Association and the American Winery Guide. With data visualization being so
-important in representing the dataset I have used hexbins shapefile from   &lt;!-- raw HTML omitted --&gt;Don Meltz&amp;rsquo;s repo&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Indian Premier League so far.</title>
-      <link>http://www.stencilled.me/posts/2017-04-10-iplseasons/</link>
-      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>http://www.stencilled.me/posts/2017-04-10-iplseasons/</guid>
-      <description>&lt;p&gt;Indian Premier League(IPL) has had 13 different teams over the past ten years. In this project I have tried to visualize how these teams
-have performed over the years.&lt;/p&gt;</description>
+important in representing the dataset I have used hexbins shapefile from   &lt;a href=&#34;https://github.com/donmeltz/US-States---Hexbins&#34;&gt;Don Meltz&amp;rsquo;s repo&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Maps and gifs</title>
@@ -185,8 +238,25 @@ So I thought, how about making an election based map over the past elections.</d
       <link>http://www.stencilled.me/posts/2017-02-22-topbeers2016/</link>
       <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
       <guid>http://www.stencilled.me/posts/2017-02-22-topbeers2016/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+      <description>&lt;style&gt;
+
+.myIframe {
+position: relative;
+padding-bottom: 65.25%;
+padding-top: 30px;
+height: 0;
+overflow: auto;
+-webkit-overflow-scrolling:touch; //&lt;&lt;--- THIS IS THE KEY
+border: solid black 1px;
+}
+.myIframe iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+&lt;/style&gt;
 &lt;p&gt;After completing my previous post on food I wanted to work on something which I have started to explore recently,craft beer.
 A friend of mine introduced me to a beer club membership prior to which I never knew anything beyond the Corona&amp;rsquo;s .
 Then began the collection and here it is, what  have so far.&lt;/p&gt;</description>
@@ -222,10 +292,25 @@ Below is the location for the each team.&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
+      <link>http://www.stencilled.me/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/page/about/</guid>
+      <description>Hello, I’m Senthil Thyagarajan. My journey began with a school stencil, sparking a passion for mapping that evolved into a career in data analytics. As the Analytics Director at Mekanism and the founder of Stencilled, I specialize in transforming complex data into clear, visual narratives that drive informed decision-making. I integrate the latest AI trends into real-time reporting and strategic insights, ensuring every project is both innovative and impactful.
+Outside of work, I’m a dedicated LEGO builder—currently immersed in Formula 1 sets—and an enthusiastic home cook who loves experimenting with new recipes.</description>
+    </item>
+    <item>
+      <title></title>
       <link>http://www.stencilled.me/page/blogroll/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://www.stencilled.me/page/blogroll/</guid>
       <description>R-Bloggers</description>
+    </item>
+    <item>
+      <title>Content Calendar 2025: Web Development in Ad Analytics</title>
+      <link>http://www.stencilled.me/calendar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.stencilled.me/calendar/</guid>
+      <description>Technical content strategy for ad analytics roles</description>
     </item>
   </channel>
 </rss>

@@ -1,88 +1,71 @@
 ---
 title: "Resume"
-date: 2024-04-04
+date: 2025-04-04
 draft: false
 ---
 
-# Senthil Thyagarajan
+# SENTHIL THYAGARAJAN
 
--------------------                -------------------
-Email                                                                                                                             [senthil.thyagarajan@gmail.com](mailto:senthil.thyagarajan@gmail.com)
-Portfolio                                                                                                                                         [www.stencilled.me](http://www.stencilled.me/)
-LinkedIn                                                                                                    [www.linkedin.com/in/senthilthyagarajan](https://www.linkedin.com/in/senthilthyagarajan/)
--------------------                -------------------
 
-## SKILLS
----------
 
-- ***Languages*** :           R, Python, JavaScript, SQL
+### PROFESSIONAL EXPERIENCE
 
-- ***Libraries*** : 	        R Shiny, d3js, dplyr, tibble, titdyR, ggplot2, leaflet, Fusion charts, Chartjs,Plotly, Rvest, Pandas, Numpy, Scikit-learn, Matplotlib
+**Analytics Director**, Mekanism, New York, NY June 2023 –Present
 
-- ***Analytics Tools*** : 		  RShiny, Alteryx, Tableau, Origami Logic, Pentaho Data Integration, MS Excel
+- Built real-time reporting dashboards with Supermetrics & BigQuery, integrating cross-channel data to improve decision-making.
+- Developed a RAG tool that cut insight generation time by 30%, streamlining reporting and enhancing data-driven decision-making.
+- Condensed 100+ slides into a one-page executive report, simplifying media insights for C-suite stakeholders.
+- Embedded a data-driven culture, mentoring teams on analytics tools and integrating data into agency strategy.
+- Created an in-house benchmarking tool, saving $150K annually and improving media performance evaluation.
+- Implemented real-time anomaly detection via Slack/email alerts, reducing response times by 40% and enabling faster optimizations.
+- Drove $2M+ in new client revenue, integrating advanced reporting frameworks into business development.
+- Led and mentored a team of 10, delivering 15+ analytics projects on time, strengthening data-driven decision-making.
 
-- ***Statistical Analysis*** : 			    ANOVA, Multiple Regression, Confidence intervals, Hypothesis testing, Significance Tests
+**Associate Director Analytics**, Mekanism, New York, NY April 2021 –June 2023
 
-- ***Machine Learning*** : 			    Linear and Logistic Regression, Decision Trees and Random Forests, Support Vector Machines, Clustering, Isolation Forests, KNN
+- Led the development of client-specific measurement frameworks, aligning reporting to client goals and ensuring that analytics provided a competitive advantage.
+- Automated reporting pipelines, reducing manual effort by 50% and saving 20+ hours weekly, enabling the team to focus on strategic analysis and client presentations.
+- Drove customer acquisition cost reductions through advanced statistical models, optimizing campaign performance for better ROI.
 
-- ***Web Design*** : 			    HTML, CSS, Bootstrap, Angular Material Design
+**Sr Analytics Manager**, Mekanism, New York, NY June 2019–April 2021
 
-- ***GIS Tools*** : 			    ArcGIS Suite, QGIS, Map Server, ERDAS Imagine, Google Earth, MapInfo, Maptitude
+- Built custom dashboards for real-time media performance tracking, consolidating data from various platforms and simplifying the visualization of key metrics for internal teams.
+- Led sales performance analysis through data modeling and historical forecasting, helping clients link campaign results to business outcomes.
+- Implemented automated workflows for media reporting, reducing manual data extraction and processing time, leading to faster turnaround on key insights.
+- Worked with media planners to refine campaign strategies based on data-driven insights, helping improve media flighting and budget allocation decisions.
 
-##  PROFESSIONAL EXPERIENCE
----------------------------
+**Analytics Manager**, In4mation Insights, New York, NY Feb 2018 –May 2019
 
-**Information and Analytics Manager**, In4mation Insights, New York, NY                                                   Feb 2018 – Present
+- Developed and maintained R Shiny applications using Teradata and SQL Server for brand forecasting, evaluation of advertisement, optimization model outputs and pricing activities for CPG and media clients.
+- Guided the client teams with User Acceptance Testing and best practices for using the analytics dashboards thereby onboarding 7 new clients to the new analytics dashboards.
 
-- Developed and maintained R Shiny applications using Teradata and SQL Server for brand forecasting, evaluation of advertisement and pricing activities for multiple brand product lines.
-- Developed R shiny based web tool to analyze the optimization model outputs for media budget allocations.
-- Developed R Shiny dashboards for analyzing user survey results.
-- Implemented Marketing analytics dashboards for CPG clients based on the KPI framework.
-- Implemented best practices for developing data analytics and reporting tools.
-- Guided the client teams with User Acceptance Testing and best practices for using the analytics dashboards.
+**Senior GIS Developer (Data Analytics)**, Tango Analytics – Irving, TX June 2013 –Jan 2018
 
-**Senior GIS Developer (Data Analytics and Visualization)**, Tango Analytics – Irving, TX                                Jul 2013 – Jan 2018
+- Developed dashboards using D3js, Python and R for visualizing demographic variables within store trade areas assisting the clients in understanding the underlying important demographics and target marketing.
+- Implemented PL/SQL procedures for generating demographic reports, trade areas, sales forecast model.
 
-- Developed dashboards using D3js visualizing demographic variables assisting the clients in understanding the underlying important demographics and target marketing.
-- Developed tools for web mapping application to perform spatial analysis allowing retailers to understand the spatial relationship between stores, their customers, competitors.
--  Designed and developed UI for the mapping application to make it responsive across various devices allowing end users to use the application on site to run real time reports and understand factors in deciding potential new sites.
--  Implemented PL/SQL procedures for generating demographic reports, trade areas, sales forecast model and geospatial editing functionalities.
--  Utilized Alteryx for building GIS data pipelines to automate demographic data update process.
+### SKILLS
 
-**Senior Developer**, High Mark Credit Information Services Ltd – Mumbai, India                             Feb 2012 - Aug 2012
+**Data Analytics**: R Shiny, Looker, Alteryx, Tableau, Origami Logic, AWS, MS Excel
 
--  Set up and mentored a GIS team for R&D to implement zip code proximity mapping workflow using QGIS to improve the accuracy and usability of Indian addresses for the purpose of identity resolution.
+**Media Analytics**: Google Analytics, GTM, AdWords, DCM, Brand lift studies
 
-**Senior GIS Analyst**, Cybertech Systems and Software, Ltd – Mumbai, India                                        Jun 2010 - Feb 2012
+**Machine Learning**: Linear & Logistic Regression, Decision Trees, Random Forests, Gradient Boosting, Causal Analysis, Clustering, Isolation Forests
 
--  Implemented desktop and web-based GIS solutions for clients using ESRI suite of products.
+**Languages**: R, Python, JavaScript, SQL, Google app scripts
 
-**GIS Specialist**, Environmental Management Centre – Mumbai, India                                              Sep 2008 - May 2010
+**Libraries**: R Shiny, d3js, dplyr, tidyR, ggplot2, leaflet, Plotly, Pandas, Numpy, Scikit-learn
 
--  Developed a GIS Web Based Project Information Management system for an Infrastructure Development firm with ArcGIS Server.
--  Converted CAD data to GIS data, geodatabase creation from spatial and non-spatial data, spatial and attribute editing, digitizing and implement a fully functional ArcGIS Server setup.
+**Web Design**: HTML, CSS, Bootstrap, Angular Material Design
 
-**GIS Engineer**, ESRI India Ltd – Mumbai, India                                                         Jan 2007 - Sep 2008
+**GIS Tools**: ArcGIS Suite, QGIS, Map Server, ERDAS Imagine, Google Earth, MapInfo, Maptitude
 
--  Trained key clients to ensure understanding for ArcGIS Desktop and ArcGIS Server,improved efficiency for ATMs by implementing a web-based GIS application and monitoring their status using ArcGIS Server for banking institutions.
+### EDUCATION
 
-## EDUCATION
-------------
+University of Texas, Dallas M.S – Geospatial Information Science
 
-University of Texas, Dallas                           M.S – Geospatial Information Science
+Symbiosis, India M.S – Geoinformatics
 
-Symbiosis, India 									  M.S – Geoinformatics
+Anna University, India B.S – Electronics and Instrumentation Engineering
 
-Anna University, India                                B.S – Electronics and Instrumentation Engineering
-
-## ANALYTICS PROJECTS
-------------
--  Where do people eat in Austin? Scrapped data from Foursquare API for all places falling under the food & restaurant category
-using R, used D3.js to create bubble chart based on the inputs, check-ins and ratings.
--  Mapping breweries in the US: Mapping breweries across US using R to scrape and geocode data and leaflet to map them.
--  Visualizing Airbnb listings: Used R and Python to analyze how prices vary for rental listings in NY based on geography, listing
-type and amenities.
-
-<div style="text-align: center; margin-top: 2em;">
-<a href="/SENTHIL_THYAGARAJAN_Resume.pdf" class="button">Download PDF Version</a>
-</div> 
+[Download Resume PDF](/SENTHIL_THYAGARAJAN_Resume.pdf)
