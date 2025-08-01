@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css integrity=sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB crossorigin=anonymous><link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel=stylesheet><title>Download and Email reports in R Shiny app</title>
+<link rel=stylesheet href=/css/stylesheet.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-91161205-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-91161205-1")</script></head><body><div class=container-fluid><nav class="navbar navbar-expand-md navbar-light"><span class="navbar-brand mb-0 h1"></span>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNavAltMarkup aria-controls=navbarNav aria-expanded=false aria-label="Toggle Navigation" name=button>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarNavAltMarkup><div class=navbar-nav><a class="nav-item nav-link" href=/>Home</a>
+<a class="nav-item nav-link" href=https://github.com/senthilthyagarajan target=_blank>GitHub</a>
+<a class="nav-item nav-link" href=/page/about/>About</a>
+<a class="nav-item nav-link" href=/page/resume/>Resume</a>
+<a class="nav-item nav-link" href=/page/blogroll/>Blogroll</a>
+<a class="nav-item nav-link" href=/page/reading/>Reading</a>
+<a class="nav-item nav-link" href=https://twitter.com/TheRascala>Twitter</a></div></div></nav><section id=page-title><h1><a href=/>Stencilled</a></h1><span id=author-name><h6><a href=/page/about/></a></h6></span></section><div class=blog-post><h1>Download and Email reports in R Shiny app</h1><div class=blog-post-subheader></div><div class=blog-post-content><p>Most of the dashboards / R shiny app are viewed by the people who want to view the underyling data without doing much analysis. While they view the KPI&rsquo;s , the charts and the tables it would be also an important for them to take the results out of the app for meetings and presenations. One of way doing it is the traditionally downloading the reports. But to make it one step easier they could also be given an option to email these reports.Thats one way of making most out of such tools.</p><h3 id=libraries>Libraries</h3><p>The libraries which we will be using are <code>shiny</code> for the app itself, <code>shinyFiles</code> and <code>fs</code> for selecting the files to be mailed and <code>shinyAce</code> and <code>mailR</code> for the email component of the app.</p><pre tabindex=0><code>library(shiny)
+library(shinyFiles)
+library(fs)
+library(shinyAce)
+library(mailR)
+</code></pre><p>The app layout has a sidebar and a main panel. The sidebar has the download and the email functionality and the main panel has the plot . The user can donload the the report in mutiple formats.</p><p><img src=ui_layout.png alt=ui></p><h3 id=download-reports>Download Reports</h3><p>Below is the code for downloading report. The user can download the reports in multiple formats. You could also write into powerpoints which can taken into weekly meetings.</p><pre tabindex=0><code>output$downloadReport &lt;- downloadHandler(
+  filename = function() {
+    paste(&#39;my-report&#39;, sep = &#39;.&#39;, switch(
+      input$format, PDF = &#39;pdf&#39;, HTML = &#39;html&#39;, Word = &#39;docx&#39;
+    ))
+  },
+  content = function(file) {
+    src &lt;- normalizePath(&#39;report.Rmd&#39;)
+
+    # temporarily switch to the temp dir, in case you do not have write
+    # permission to the current working directory
+    owd &lt;- setwd(tempdir())
+    on.exit(setwd(owd))
+    file.copy(src, &#39;report.Rmd&#39;, overwrite = TRUE)
+
+    library(rmarkdown)
+    out &lt;- render(&#39;report.Rmd&#39;, switch(
+      input$format,
+      PDF = pdf_document(), HTML = html_document(), Word = word_document()
+    ))
+    file.rename(out, file)
+  }
+)
+</code></pre><h3 id=email-component>Email component</h3><p>The following code handles how to email from the app itself.Once the user downloads the report to their local drive, they can select any files they want to mail to using <code>shinyFiles</code></p><pre tabindex=0><code>volumes &lt;- c(Home = fs::path_home(), &#34;R Installation&#34; = R.home(), getVolumes()())
+shinyFileChoose(input, &#34;file&#34;, roots = volumes, session = session)
+</code></pre><p>When the user clicks on the send button it takes the inputs such as to, the body of the mail and the file to be mailed which was selected by the user.In this app the email is configured via gmail but this can be done via Outlook as well.</p><pre tabindex=0><code class=language-observe( data-lang=observe(>  if(is.null(input$send) || input$send==0) return(NULL)
+
+  subject &lt;- isolate(input$subject)
+  msg &lt;- isolate(input$message)
+  sender &lt;- &#34;from@gmail.com&#34;
+  recipients &lt;- isolate(input$to)
+  path &lt;- parseFilePaths(volumes, input$file)
+  send.mail(from = sender,
+            to = recipients,
+            subject = subject,
+            body = msg,
+            #body,
+            #attach.files = path$datapath,#file.path(folder, fileName),
+            attach.files = path$datapath,
+            smtp = list(host.name = &#34;smtp.gmail.com&#34;, port = 465,
+                        user.name=sender, passwd=&#34;*********&#34;, ssl=TRUE),
+            authenticate = TRUE,
+            send = TRUE)
+
+})
+</code></pre><h3 id=code>Code</h3><p>You can find code for the app <a href=https://github.com/senthilthyagarajan/shinyemail>here</a>.</p></div></div><footer><hr><small>&copy; 2025 .
+Powered by <a href=https://gohugo.io/ target=_blank>Hugo</a> using the <a href=https://github.com/arjunkrishnababu96/basics target=_blank>Basics</a> theme | <a href=http://www.stencilled.me/index.xml target=_blank>RSS Feeds</a></small></footer></div><script src=https://code.jquery.com/jquery-3.3.1.slim.min.js integrity=sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js integrity=sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js integrity=sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T crossorigin=anonymous></script></body></html>

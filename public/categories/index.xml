@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on Stencilled</title>
-    <link>http://www.stencilled.me/categories/</link>
-    <description>Recent content in Categories on Stencilled</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor>
-    <webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster>
-    
-	<atom:link href="http://www.stencilled.me/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on Stencilled</title><link>http://www.stencilled.me/categories/</link><description>Recent content in Categories on Stencilled</description><generator>Hugo</generator><language>en-us</language><managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor><webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster><lastBuildDate>Thu, 01 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://www.stencilled.me/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Data Science</title><link>http://www.stencilled.me/categories/data-science/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/categories/data-science/</guid><description/></item></channel></rss>

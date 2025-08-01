@@ -1,39 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pages on Stencilled</title>
-    <link>http://www.stencilled.me/page/</link>
-    <description>Recent content in Pages on Stencilled</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor>
-    <webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster>
-    <lastBuildDate>Tue, 25 Sep 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.stencilled.me/page/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title></title>
-      <link>http://www.stencilled.me/page/reading/</link>
-      <pubDate>Tue, 25 Sep 2018 00:00:00 +0000</pubDate>
-      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
-      <guid>http://www.stencilled.me/page/reading/</guid>
-      <description> Injustice : God Among Us Year one - Tom Taylor &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5&amp;frasl;5  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://www.stencilled.me/page/about/</link>
-      <pubDate>Sun, 29 Jan 2017 00:00:00 +0000</pubDate>
-      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
-      <guid>http://www.stencilled.me/page/about/</guid>
-      <description>My name is Senthil Thyagarajan.
-As a kid in school we used a stencil to draw the first map.
-Little did I know then that making maps would be my passion/profession.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on Stencilled</title><link>http://www.stencilled.me/page/</link><description>Recent content in Pages on Stencilled</description><generator>Hugo</generator><language>en-us</language><managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor><webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster><lastBuildDate>Tue, 25 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://www.stencilled.me/page/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>http://www.stencilled.me/page/reading/</link><pubDate>Tue, 25 Sep 2018 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/page/reading/</guid><description> Injustice : God Among Us Year one - Tom Taylor 5/5</description></item><item><title/><link>http://www.stencilled.me/page/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/page/about/</guid><description>My name is Senthil Thyagarajan.As a kid in school we used a stencil to draw the first map.Little did I know then that making maps would be my passion/profession.
 Here in Stencilled I would be working on projects to represent data in different forms of visualization and maps.
-This website is compiled using Hugo a static site generator and automatically deployed to AWS S3 using Wercker. All the code for this website is available freely on github.</description>
-    </item>
-    
-  </channel>
-</rss>
+This website is compiled using Hugo a static site generator and automatically deployed to AWS S3 using Wercker. All the code for this website is available freely on github.</description></item><item><title/><link>http://www.stencilled.me/page/blogroll/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/page/blogroll/</guid><description>R-Bloggers</description></item><item><title/><link>http://www.stencilled.me/page/resume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/page/resume/</guid><description>Senthil Thyagarajan Email senthil.thyagarajan@gmail.com Portfolio www.stencilled.me LinkedIn www.linkedin.com/in/senthilthyagarajan
+SKILLS Languages : R, Python, JavaScript, SQL
+Libraries : R Shiny, d3js, dplyr, tibble, titdyR, ggplot2, leaflet, Fusion charts, Chartjs,Plotly, Rvest, Pandas, Numpy, Scikit-learn, Matplotlib
+Analytics Tools : RShiny, Alteryx, Tableau, Origami Logic, Pentaho Data Integration, MS Excel
+Statistical Analysis : ANOVA, Multiple Regression, Confidence intervals, Hypothesis testing, Significance Tests
+Machine Learning : Linear and Logistic Regression, Decision Trees and Random Forests, Support Vector Machines, Clustering, Isolation Forests, KNN</description></item></channel></rss>

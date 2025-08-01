@@ -1,198 +1,101 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-
-        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
-
-        <title>Maps and gifs</title>
-
-        <link rel="stylesheet" href="/css/stylesheet.css">
-    </head>
-    <body>
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-md navbar-light">
-
-          
-          <span class="navbar-brand mb-0 h1"></span>
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-item nav-link " href="/">Home</a>
-              <a class="nav-item nav-link" href="https://github.com/senthilthyagarajan" target="_blank">GitHub</a>
-              
-              <a class="nav-item nav-link " href="/page/about/">About</a>
-              <a class="nav-item nav-link " href="/page/reading/">Reading</a>
-
-            </div>
-          </div>
-        </nav>
-
-        <section id="page-title">
-          <h1><a href="/">Stencilled</a></h1>
-          <span id="author-name">
-            <h6><a href="/page/about/"></a></h6>
-          </span>
-        </section>
-
-
-<div class="blog-post">
-  <h1>Maps and gifs</h1>
-  <div class="blog-post-subheader">
-  
-  </div>
-  <div class="blog-post-content">
-    <p>As I have been using R for a while, one of the things I wanted to do was a time series map. Most of the time series maps I see have sliders to change the years.
-While looking at how to make time series maps I happened to lear how to make a GIF with a set of images.</p>
-
-<p>So I thought, how about making an election based map over the past elections. First I couldn’t get the historical data. Also, there’s an abundance of election news right now anyways, so I didn’t want to take on that topic. Then I went on making several maps to see which demographic variable would be a right fit for this exercise. I ended up using “People with at least one Health Insurance coverage”.
-This variable was strictly selected for learning purpose. The library I have used here is Choroplethr and ChoroplethrMaps by Ari Lamstien.</p>
-
-<p>Now to get the demographics data into R I have used the American Community Survey(ACS) library. For this you must get API key from  <a href="http://api.census.gov/data/key_signup.html">ACS website</a>.</p>
-
-<pre><code class="language-r">library(acs)
-library(choroplethr)
-library(choroplethrMaps)
-library(ggplot2)
-
-#api.key.install(key=&quot;API from the ACS website&quot;)
-
-</code></pre>
-
-<p>Once  this is done you can use the ACS lookup function to search for the variables list.</p>
-
-<pre><code class="language-r">acs.lookup(keyword = &quot;Population&quot;, endyear = 2013 )
-</code></pre>
-
-<p>Now as I mentioned above I did want to do make maps for over a time period. So their are two ways to make them. Either save each map individually or
-just put them through a loop for all the years you want to make maps for . Below is the code for how to put through a loop and save all the maps at once.</p>
-
-<pre><code class="language-r"># array of years
-vr&lt;-c(2013,2014,2015)
-
-for (i in 1:3) {
-
-vr[i] &lt;- vr[i]
-
-print(vr[i])
-
-getdata = get_acs_data(&quot;B27010&quot;, &quot;county&quot;,endyear=vr[i],span = 5, include_moe = FALSE)
-
-str(getdata)
-
-#to get this into a dataframe
-df = getdata[[1]]
-
-data(county.regions)
-head(county.regions)
-
-df2 = merge(df, county.regions)
-df2 = df2[order(-df2$value), ]
-head(df2)
-totalCount &lt;- sum(df2$value)
-totalCount
-
-
-myplot&lt;- county_choropleth(df2, title = vr[i],legend = totalCount,county_zoom = NULL)
-
-#use paste to covert params passed into it to a Character string.
-
-ggsave(myplot,filename=paste(&quot;Health Coverage&quot;, vr[i],&quot;.png&quot;,sep=&quot;&quot;))
-
-}
-</code></pre>
-
-<p>So once this was done  I get images like the one below for each year I have mentioned in the code.
-<img src="Health Coverage2013.png" alt="This is an image" />
-Once this was done I wanted to make a gif for all the individual maps. I have used <a href="https://www.imagemagick.org/script/download.php">ImageMagick</a> for it . Once your download and install it
-go to the command prompt and go the path where all the images have been saved. Below is the command to generate the gifs.</p>
-
-<pre><code class="language-html">
-magick  -delay 100 -loop 0 *.png animation.gif
-
-</code></pre>
-
-<p>To break it down first you define how much should be the delay time , then select all the pngs in the folder and then the name you want to save the
-gifs.</p>
-
-<p><img src="Health_Insurance.gif" alt="This is an image" /></p>
-
-<p>This particular exercise was mainly on learning how to make choropleth maps using demographics variable and publish them as a GIF to see how the variable varies over a time period. Also you could see in the numbers that the Insurance coverage did increase over the time period.</p>
-
-<p>Post this I did want to see how it could be done for all the states in the US separately. Below is the code and the output too. The demographics variable I have used here is the CY population.</p>
-
-<pre><code class="language-r">library(acs)
-library(choroplethr)
-library(choroplethrMaps)
-library(ggplot2)
-
-#api.key.install(key=&quot;API from the ACS website&quot;)
-
-vr&lt;-c(2015)
-
-for (i in 1:1) {
-
-vr[i] &lt;- vr[i]
-print(vr[i])
-
-l = get_acs_data(&quot;B00001&quot;, &quot;county&quot;,endyear=vr[i],span = 5, include_moe = TRUE)
-
-str(l)
-
-df = l[[1]]
-
-head(df)
-
-data(county.regions)
-head(county.regions)
-
-df2 = merge(df, county.regions)
-df2 = df2[order(-df2$value), ]
-head(df2)
-totalCount &lt;- sum(df2$value)
-totalCount
-
-stt &lt;- c(unique(df2$state.name))
-stt
-
-for ( i in 1:51) {
-  print(stt[i])
-  myplot&lt;- county_choropleth(df2, title = &quot;&quot;,legend = stt[i],state_zoom = stt[i])
-ggsave(myplot,filename=paste(&quot;Population_&quot;,stt[i],&quot;.png&quot;,sep=&quot;&quot;))
-}
-}
-
-</code></pre>
-
-<p><img src="Population_State.gif" alt="This is an image" /></p>
-
-<p>You could change to any demographics variable you want and see how many years the data is available for and make maps as per your needs.
-Happy GIFFING !!!</p>
-
-  </div>
-</div>
-
-      <footer>
-        <hr>
-        <small>
-          &copy; 2018 .
-          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
-        </small>
-      </footer>
-    </div> 
-
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
-</html>
-
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css integrity=sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB crossorigin=anonymous><link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel=stylesheet><title>Maps and gifs</title>
+<link rel=stylesheet href=/css/stylesheet.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-91161205-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-91161205-1")</script></head><body><div class=container-fluid><nav class="navbar navbar-expand-md navbar-light"><span class="navbar-brand mb-0 h1"></span>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNavAltMarkup aria-controls=navbarNav aria-expanded=false aria-label="Toggle Navigation" name=button>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarNavAltMarkup><div class=navbar-nav><a class="nav-item nav-link" href=/>Home</a>
+<a class="nav-item nav-link" href=https://github.com/senthilthyagarajan target=_blank>GitHub</a>
+<a class="nav-item nav-link" href=/page/about/>About</a>
+<a class="nav-item nav-link" href=/page/resume/>Resume</a>
+<a class="nav-item nav-link" href=/page/blogroll/>Blogroll</a>
+<a class="nav-item nav-link" href=/page/reading/>Reading</a>
+<a class="nav-item nav-link" href=https://twitter.com/TheRascala>Twitter</a></div></div></nav><section id=page-title><h1><a href=/>Stencilled</a></h1><span id=author-name><h6><a href=/page/about/></a></h6></span></section><div class=blog-post><h1>Maps and gifs</h1><div class=blog-post-subheader></div><div class=blog-post-content><p>As I have been using R for a while, one of the things I wanted to do was a time series map. Most of the time series maps I see have sliders to change the years.
+While looking at how to make time series maps I happened to lear how to make a GIF with a set of images.</p><p>So I thought, how about making an election based map over the past elections. First I couldn’t get the historical data. Also, there’s an abundance of election news right now anyways, so I didn’t want to take on that topic. Then I went on making several maps to see which demographic variable would be a right fit for this exercise. I ended up using “People with at least one Health Insurance coverage”.
+This variable was strictly selected for learning purpose. The library I have used here is Choroplethr and ChoroplethrMaps by Ari Lamstien.</p><p>Now to get the demographics data into R I have used the American Community Survey(ACS) library. For this you must get API key from ACS website.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>library</span><span class=p>(</span><span class=n>acs</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>library</span><span class=p>(</span><span class=n>choroplethr</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>library</span><span class=p>(</span><span class=n>choroplethrMaps</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>library</span><span class=p>(</span><span class=n>ggplot2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#api.key.install(key=&#34;API from the ACS website&#34;)</span>
+</span></span></code></pre></div><p>Once this is done you can use the ACS lookup function to search for the variables list.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>acs.lookup</span><span class=p>(</span><span class=n>keyword</span> <span class=o>=</span> <span class=s>&#34;Population&#34;</span><span class=p>,</span> <span class=n>endyear</span> <span class=o>=</span> <span class=m>2013</span> <span class=p>)</span>
+</span></span></code></pre></div><p>Now as I mentioned above I did want to do make maps for over a time period. So their are two ways to make them. Either save each map individually or
+just put them through a loop for all the years you want to make maps for . Below is the code for how to put through a loop and save all the maps at once.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=c1># array of years</span>
+</span></span><span class=line><span class=cl><span class=n>vr</span><span class=o>&lt;-</span><span class=nf>c</span><span class=p>(</span><span class=m>2013</span><span class=p>,</span><span class=m>2014</span><span class=p>,</span><span class=m>2015</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>for</span> <span class=p>(</span><span class=n>i</span> <span class=kr>in</span> <span class=m>1</span><span class=o>:</span><span class=m>3</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>vr[i]</span> <span class=o>&lt;-</span> <span class=n>vr[i]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>print</span><span class=p>(</span><span class=n>vr[i]</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>getdata</span> <span class=o>=</span> <span class=nf>get_acs_data</span><span class=p>(</span><span class=s>&#34;B27010&#34;</span><span class=p>,</span> <span class=s>&#34;county&#34;</span><span class=p>,</span><span class=n>endyear</span><span class=o>=</span><span class=n>vr[i]</span><span class=p>,</span><span class=n>span</span> <span class=o>=</span> <span class=m>5</span><span class=p>,</span> <span class=n>include_moe</span> <span class=o>=</span> <span class=kc>FALSE</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>str</span><span class=p>(</span><span class=n>getdata</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#to get this into a dataframe</span>
+</span></span><span class=line><span class=cl><span class=n>df</span> <span class=o>=</span> <span class=n>getdata[[1]]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>data</span><span class=p>(</span><span class=n>county.regions</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>head</span><span class=p>(</span><span class=n>county.regions</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>df2</span> <span class=o>=</span> <span class=nf>merge</span><span class=p>(</span><span class=n>df</span><span class=p>,</span> <span class=n>county.regions</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>df2</span> <span class=o>=</span> <span class=n>df2</span><span class=nf>[order</span><span class=p>(</span><span class=o>-</span><span class=n>df2</span><span class=o>$</span><span class=n>value</span><span class=p>),</span> <span class=n>]</span>
+</span></span><span class=line><span class=cl><span class=nf>head</span><span class=p>(</span><span class=n>df2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>totalCount</span> <span class=o>&lt;-</span> <span class=nf>sum</span><span class=p>(</span><span class=n>df2</span><span class=o>$</span><span class=n>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>totalCount</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>myplot</span><span class=o>&lt;-</span> <span class=nf>county_choropleth</span><span class=p>(</span><span class=n>df2</span><span class=p>,</span> <span class=n>title</span> <span class=o>=</span> <span class=n>vr[i]</span><span class=p>,</span><span class=n>legend</span> <span class=o>=</span> <span class=n>totalCount</span><span class=p>,</span><span class=n>county_zoom</span> <span class=o>=</span> <span class=kc>NULL</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#use paste to covert params passed into it to a Character string.</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>ggsave</span><span class=p>(</span><span class=n>myplot</span><span class=p>,</span><span class=n>filename</span><span class=o>=</span><span class=nf>paste</span><span class=p>(</span><span class=s>&#34;Health Coverage&#34;</span><span class=p>,</span> <span class=n>vr[i]</span><span class=p>,</span><span class=s>&#34;.png&#34;</span><span class=p>,</span><span class=n>sep</span><span class=o>=</span><span class=s>&#34;&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>So once this was done I get images like the one below for each year I have mentioned in the code.
+![This is an image](Health Coverage2013.png)
+Once this was done I wanted to make a gif for all the individual maps. I have used ImageMagick for it . Once your download and install it
+go to the command prompt and go the path where all the images have been saved. Below is the command to generate the gifs.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>magick  -delay 100 -loop 0 *.png animation.gif
+</span></span></code></pre></div><p>To break it down first you define how much should be the delay time , then select all the pngs in the folder and then the name you want to save the
+gifs.</p><p><img src=Health_Insurance.gif alt="This is an image"></p><p>This particular exercise was mainly on learning how to make choropleth maps using demographics variable and publish them as a GIF to see how the variable varies over a time period. Also you could see in the numbers that the Insurance coverage did increase over the time period.</p><p>Post this I did want to see how it could be done for all the states in the US separately. Below is the code and the output too. The demographics variable I have used here is the CY population.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-r data-lang=r><span class=line><span class=cl><span class=nf>library</span><span class=p>(</span><span class=n>acs</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>library</span><span class=p>(</span><span class=n>choroplethr</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>library</span><span class=p>(</span><span class=n>choroplethrMaps</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>library</span><span class=p>(</span><span class=n>ggplot2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>#api.key.install(key=&#34;API from the ACS website&#34;)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>vr</span><span class=o>&lt;-</span><span class=nf>c</span><span class=p>(</span><span class=m>2015</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>for</span> <span class=p>(</span><span class=n>i</span> <span class=kr>in</span> <span class=m>1</span><span class=o>:</span><span class=m>1</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>vr[i]</span> <span class=o>&lt;-</span> <span class=n>vr[i]</span>
+</span></span><span class=line><span class=cl><span class=nf>print</span><span class=p>(</span><span class=n>vr[i]</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>l</span> <span class=o>=</span> <span class=nf>get_acs_data</span><span class=p>(</span><span class=s>&#34;B00001&#34;</span><span class=p>,</span> <span class=s>&#34;county&#34;</span><span class=p>,</span><span class=n>endyear</span><span class=o>=</span><span class=n>vr[i]</span><span class=p>,</span><span class=n>span</span> <span class=o>=</span> <span class=m>5</span><span class=p>,</span> <span class=n>include_moe</span> <span class=o>=</span> <span class=kc>TRUE</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>str</span><span class=p>(</span><span class=n>l</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>df</span> <span class=o>=</span> <span class=n>l[[1]]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>head</span><span class=p>(</span><span class=n>df</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>data</span><span class=p>(</span><span class=n>county.regions</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>head</span><span class=p>(</span><span class=n>county.regions</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>df2</span> <span class=o>=</span> <span class=nf>merge</span><span class=p>(</span><span class=n>df</span><span class=p>,</span> <span class=n>county.regions</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>df2</span> <span class=o>=</span> <span class=n>df2</span><span class=nf>[order</span><span class=p>(</span><span class=o>-</span><span class=n>df2</span><span class=o>$</span><span class=n>value</span><span class=p>),</span> <span class=n>]</span>
+</span></span><span class=line><span class=cl><span class=nf>head</span><span class=p>(</span><span class=n>df2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>totalCount</span> <span class=o>&lt;-</span> <span class=nf>sum</span><span class=p>(</span><span class=n>df2</span><span class=o>$</span><span class=n>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>totalCount</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>stt</span> <span class=o>&lt;-</span> <span class=nf>c</span><span class=p>(</span><span class=nf>unique</span><span class=p>(</span><span class=n>df2</span><span class=o>$</span><span class=n>state.name</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=n>stt</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>for</span> <span class=p>(</span> <span class=n>i</span> <span class=kr>in</span> <span class=m>1</span><span class=o>:</span><span class=m>51</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nf>print</span><span class=p>(</span><span class=n>stt[i]</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=n>myplot</span><span class=o>&lt;-</span> <span class=nf>county_choropleth</span><span class=p>(</span><span class=n>df2</span><span class=p>,</span> <span class=n>title</span> <span class=o>=</span> <span class=s>&#34;&#34;</span><span class=p>,</span><span class=n>legend</span> <span class=o>=</span> <span class=n>stt[i]</span><span class=p>,</span><span class=n>state_zoom</span> <span class=o>=</span> <span class=n>stt[i]</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nf>ggsave</span><span class=p>(</span><span class=n>myplot</span><span class=p>,</span><span class=n>filename</span><span class=o>=</span><span class=nf>paste</span><span class=p>(</span><span class=s>&#34;Population_&#34;</span><span class=p>,</span><span class=n>stt[i]</span><span class=p>,</span><span class=s>&#34;.png&#34;</span><span class=p>,</span><span class=n>sep</span><span class=o>=</span><span class=s>&#34;&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p><img src=Population_State.gif alt="This is an image"></p><p>You could change to any demographics variable you want and see how many years the data is available for and make maps as per your needs.
+Happy GIFFING !!!</p></div></div><footer><hr><small>&copy; 2025 .
+Powered by <a href=https://gohugo.io/ target=_blank>Hugo</a> using the <a href=https://github.com/arjunkrishnababu96/basics target=_blank>Basics</a> theme | <a href=http://www.stencilled.me/index.xml target=_blank>RSS Feeds</a></small></footer></div><script src=https://code.jquery.com/jquery-3.3.1.slim.min.js integrity=sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js integrity=sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js integrity=sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T crossorigin=anonymous></script></body></html>

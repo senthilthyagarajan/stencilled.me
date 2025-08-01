@@ -1,62 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>D3js on Stencilled</title>
-    <link>http://www.stencilled.me/tags/d3js/</link>
-    <description>Recent content in D3js on Stencilled</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor>
-    <webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster>
-    <lastBuildDate>Wed, 10 May 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.stencilled.me/tags/d3js/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>States to Shapes</title>
-      <link>http://www.stencilled.me/post/2017-05-10-states-to-shapes/</link>
-      <pubDate>Wed, 10 May 2017 00:00:00 +0000</pubDate>
-      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
-      <guid>http://www.stencilled.me/post/2017-05-10-states-to-shapes/</guid>
-      <description>I started working on this visualation after coming across Mike Bostock&#39;s shape tweening bl.ock , which was done for one state. The source for this data is Insurance Institute for Highway Service(IIHS). The size of the square is based on the motor vehicle deaths per 100,000 people(2015).     body { margin: 0; font-family: &#34;Helvetica Neue&#34;, sans-serif; } .state-path { fill: #ccc; stroke: #fff; stroke-width: 5px; } .state-label { font-size: .</description>
-    </item>
-    
-    <item>
-      <title>Harry Potter Characters.</title>
-      <link>http://www.stencilled.me/post/2017-05-02-harry-potter-characters/</link>
-      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
-      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
-      <guid>http://www.stencilled.me/post/2017-05-02-harry-potter-characters/</guid>
-      <description>Across 7 books/ 8 movies there are so many characters in this series by J.K Rowling. For this project I have got the data from data.world. All files here were combined to create a json with nodes and links. Using d3js I have visualized the characters connected to each other.   .link { fill: none; stroke-width: 0.5px; } .link.win{ stroke: #a6d96a; } .link.loss{ stroke: #ca0020; } .node text { pointer-events: none; font: 10px sans-serif; }    //Constants for the SVG var width = 1080, height = 900; //Set up the colour scale var color = d3.</description>
-    </item>
-    
-    <item>
-      <title>Indian Premier League so far.</title>
-      <link>http://www.stencilled.me/post/2017-04-10-iplseasons/</link>
-      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
-      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
-      <guid>http://www.stencilled.me/post/2017-04-10-iplseasons/</guid>
-      <description>Indian Premier League(IPL) has had 13 different teams over the past ten years. In this project I have tried to visualize how these teams have performed over the years.   svg text{ fill:grey; font-size:11px; } svg .values text{ pointer-events:none; stroke-width: 0.5px; } .groups:hover{ cursor:pointer; font-weight:bold; }      var data = [[&#39;Chennai Super Kings&#39;,&#39;Deccan Chargers&#39;,6], [&#39;Chennai Super Kings&#39;,&#39;Delhi Daredevils&#39;,11], [&#39;Chennai Super Kings&#39;,&#39;Kings XI Punjab&#39;,10], [&#39;Chennai Super Kings&#39;,&#39;Kochi Tuskers Kerala&#39;,1], [&#39;Chennai Super Kings&#39;,&#39;Kolkata Knight Riders&#39;,10], [&#39;Chennai Super Kings&#39;,&#39;Mumbai Indians&#39;,10], [&#39;Chennai Super Kings&#39;,&#39;Pune Warriors&#39;,4], [&#39;Chennai Super Kings&#39;,&#39;Rajasthan Royals&#39;,11], [&#39;Chennai Super Kings&#39;,&#39;Royal Challengers Bangalore&#39;,12], [&#39;Chennai Super Kings&#39;,&#39;Sunrisers Hyderabad&#39;,4], [&#39;Deccan Chargers&#39;,&#39;Chennai Super Kings&#39;,4], [&#39;Deccan Chargers&#39;,&#39;Delhi Daredevils&#39;,4], [&#39;Deccan Chargers&#39;,&#39;Kings XI Punjab&#39;,3], [&#39;Deccan Chargers&#39;,&#39;Kochi Tuskers Kerala&#39;,1], [&#39;Deccan Chargers&#39;,&#39;Kolkata Knight Riders&#39;,2], [&#39;Deccan Chargers&#39;,&#39;Mumbai Indians&#39;,4], [&#39;Deccan Chargers&#39;,&#39;Pune Warriors&#39;,3], [&#39;Deccan Chargers&#39;,&#39;Rajasthan Royals&#39;,2], [&#39;Deccan Chargers&#39;,&#39;Royal Challengers Bangalore&#39;,6], [&#39;Delhi Daredevils&#39;,&#39;Chennai Super Kings&#39;,5], [&#39;Delhi Daredevils&#39;,&#39;Deccan Chargers&#39;,7], [&#39;Delhi Daredevils&#39;,&#39;Gujarat Lions&#39;,1], [&#39;Delhi Daredevils&#39;,&#39;Kings XI Punjab&#39;,8], [&#39;Delhi Daredevils&#39;,&#39;Kochi Tuskers Kerala&#39;,1], [&#39;Delhi Daredevils&#39;,&#39;Kolkata Knight Riders&#39;,7], [&#39;Delhi Daredevils&#39;,&#39;Mumbai Indians&#39;,9], [&#39;Delhi Daredevils&#39;,&#39;Pune Warriors&#39;,3], [&#39;Delhi Daredevils&#39;,&#39;Rajasthan Royals&#39;,6], [&#39;Delhi Daredevils&#39;,&#39;Royal Challengers Bangalore&#39;,6], [&#39;Delhi Daredevils&#39;,&#39;Sunrisers Hyderabad&#39;,3], [&#39;Gujarat Lions&#39;,&#39;Delhi Daredevils&#39;,1], [&#39;Gujarat Lions&#39;,&#39;Kings XI Punjab&#39;,1], [&#39;Gujarat Lions&#39;,&#39;Kolkata Knight Riders&#39;,2], [&#39;Gujarat Lions&#39;,&#39;Mumbai Indians&#39;,2], [&#39;Gujarat Lions&#39;,&#39;Rising Pune Supergiants&#39;,2], [&#39;Gujarat Lions&#39;,&#39;Royal Challengers Bangalore&#39;,1], [&#39;Kings XI Punjab&#39;,&#39;Chennai Super Kings&#39;,7], [&#39;Kings XI Punjab&#39;,&#39;Deccan Chargers&#39;,7], [&#39;Kings XI Punjab&#39;,&#39;Delhi Daredevils&#39;,10], [&#39;Kings XI Punjab&#39;,&#39;Gujarat Lions&#39;,1], [&#39;Kings XI Punjab&#39;,&#39;Kochi Tuskers Kerala&#39;,1], [&#39;Kings XI Punjab&#39;,&#39;Kolkata Knight Riders&#39;,6], [&#39;Kings XI Punjab&#39;,&#39;Mumbai Indians&#39;,9], [&#39;Kings XI Punjab&#39;,&#39;Pune Warriors&#39;,3], [&#39;Kings XI Punjab&#39;,&#39;Rajasthan Royals&#39;,6], [&#39;Kings XI Punjab&#39;,&#39;Rising Pune Supergiants&#39;,1], [&#39;Kings XI Punjab&#39;,&#39;Royal Challengers Bangalore&#39;,10], [&#39;Kings XI Punjab&#39;,&#39;Sunrisers Hyderabad&#39;,2], [&#39;Kochi Tuskers Kerala&#39;,&#39;Chennai Super Kings&#39;,1], [&#39;Kochi Tuskers Kerala&#39;,&#39;Delhi Daredevils&#39;,1], [&#39;Kochi Tuskers Kerala&#39;,&#39;Kolkata Knight Riders&#39;,2], [&#39;Kochi Tuskers Kerala&#39;,&#39;Mumbai Indians&#39;,1], [&#39;Kochi Tuskers Kerala&#39;,&#39;Rajasthan Royals&#39;,1], [&#39;Kolkata Knight Riders&#39;,&#39;Chennai Super Kings&#39;,6], [&#39;Kolkata Knight Riders&#39;,&#39;Deccan Chargers&#39;,7], [&#39;Kolkata Knight Riders&#39;,&#39;Delhi Daredevils&#39;,10], [&#39;Kolkata Knight Riders&#39;,&#39;Kings XI Punjab&#39;,13], [&#39;Kolkata Knight Riders&#39;,&#39;Mumbai Indians&#39;,5], [&#39;Kolkata Knight Riders&#39;,&#39;Pune Warriors&#39;,4], [&#39;Kolkata Knight Riders&#39;,&#39;Rajasthan Royals&#39;,6], [&#39;Kolkata Knight Riders&#39;,&#39;Rising Pune Supergiants&#39;,2], [&#39;Kolkata Knight Riders&#39;,&#39;Royal Challengers Bangalore&#39;,9], [&#39;Kolkata Knight Riders&#39;,&#39;Sunrisers Hyderabad&#39;,6], [&#39;Mumbai Indians&#39;,&#39;Chennai Super Kings&#39;,12], [&#39;Mumbai Indians&#39;,&#39;Deccan Chargers&#39;,6], [&#39;Mumbai Indians&#39;,&#39;Delhi Daredevils&#39;,9], [&#39;Mumbai Indians&#39;,&#39;Kings XI Punjab&#39;,9], [&#39;Mumbai Indians&#39;,&#39;Kolkata Knight Riders&#39;,13], [&#39;Mumbai Indians&#39;,&#39;Pune Warriors&#39;,5], [&#39;Mumbai Indians&#39;,&#39;Rajasthan Royals&#39;,10], [&#39;Mumbai Indians&#39;,&#39;Rising Pune Supergiants&#39;,1], [&#39;Mumbai Indians&#39;,&#39;Royal Challengers Bangalore&#39;,11], [&#39;Mumbai Indians&#39;,&#39;Sunrisers Hyderabad&#39;,4], [&#39;Pune Warriors&#39;,&#39;Chennai Super Kings&#39;,2], [&#39;Pune Warriors&#39;,&#39;Deccan Chargers&#39;,1], [&#39;Pune Warriors&#39;,&#39;Delhi Daredevils&#39;,2], [&#39;Pune Warriors&#39;,&#39;Kings XI Punjab&#39;,3], [&#39;Pune Warriors&#39;,&#39;Kochi Tuskers Kerala&#39;,1], [&#39;Pune Warriors&#39;,&#39;Kolkata Knight Riders&#39;,1], [&#39;Pune Warriors&#39;,&#39;Mumbai Indians&#39;,1], [&#39;Pune Warriors&#39;,&#39;Rajasthan Royals&#39;,1], [&#39;Rajasthan Royals&#39;,&#39;Chennai Super Kings&#39;,6], [&#39;Rajasthan Royals&#39;,&#39;Deccan Chargers&#39;,7], [&#39;Rajasthan Royals&#39;,&#39;Delhi Daredevils&#39;,10], [&#39;Rajasthan Royals&#39;,&#39;Kings XI Punjab&#39;,9], [&#39;Rajasthan Royals&#39;,&#39;Kochi Tuskers Kerala&#39;,1], [&#39;Rajasthan Royals&#39;,&#39;Kolkata Knight Riders&#39;,9], [&#39;Rajasthan Royals&#39;,&#39;Mumbai Indians&#39;,6], [&#39;Rajasthan Royals&#39;,&#39;Pune Warriors&#39;,4], [&#39;Rajasthan Royals&#39;,&#39;Royal Challengers Bangalore&#39;,7], [&#39;Rajasthan Royals&#39;,&#39;Sunrisers Hyderabad&#39;,4], [&#39;Rising Pune Supergiants&#39;,&#39;Delhi Daredevils&#39;,2], [&#39;Rising Pune Supergiants&#39;,&#39;Kings XI Punjab&#39;,1], [&#39;Rising Pune Supergiants&#39;,&#39;Mumbai Indians&#39;,1], [&#39;Rising Pune Supergiants&#39;,&#39;Sunrisers Hyderabad&#39;,1], [&#39;Royal Challengers Bangalore&#39;,&#39;Chennai Super Kings&#39;,7], [&#39;Royal Challengers Bangalore&#39;,&#39;Deccan Chargers&#39;,5], [&#39;Royal Challengers Bangalore&#39;,&#39;Delhi Daredevils&#39;,10], [&#39;Royal Challengers Bangalore&#39;,&#39;Gujarat Lions&#39;,2], [&#39;Royal Challengers Bangalore&#39;,&#39;Kings XI Punjab&#39;,8], [&#39;Royal Challengers Bangalore&#39;,&#39;Kochi Tuskers Kerala&#39;,2], [&#39;Royal Challengers Bangalore&#39;,&#39;Kolkata Knight Riders&#39;,9], [&#39;Royal Challengers Bangalore&#39;,&#39;Mumbai Indians&#39;,8], [&#39;Royal Challengers Bangalore&#39;,&#39;Pune Warriors&#39;,5], [&#39;Royal Challengers Bangalore&#39;,&#39;Rajasthan Royals&#39;,8], [&#39;Royal Challengers Bangalore&#39;,&#39;Rising Pune Supergiants&#39;,2], [&#39;Royal Challengers Bangalore&#39;,&#39;Sunrisers Hyderabad&#39;,4], [&#39;Sunrisers Hyderabad&#39;,&#39;Chennai Super Kings&#39;,2], [&#39;Sunrisers Hyderabad&#39;,&#39;Delhi Daredevils&#39;,5], [&#39;Sunrisers Hyderabad&#39;,&#39;Gujarat Lions&#39;,3], [&#39;Sunrisers Hyderabad&#39;,&#39;Kings XI Punjab&#39;,6], [&#39;Sunrisers Hyderabad&#39;,&#39;Kolkata Knight Riders&#39;,3], [&#39;Sunrisers Hyderabad&#39;,&#39;Mumbai Indians&#39;,4], [&#39;Sunrisers Hyderabad&#39;,&#39;Pune Warriors&#39;,2], [&#39;Sunrisers Hyderabad&#39;,&#39;Rajasthan Royals&#39;,3], [&#39;Sunrisers Hyderabad&#39;,&#39;Rising Pune Supergiants&#39;,1], [&#39;Sunrisers Hyderabad&#39;,&#39;Royal Challengers Bangalore&#39;,5]] ; var colors = { &#34;</description>
-    </item>
-    
-    <item>
-      <title>Where do people eat in Austin ??</title>
-      <link>http://www.stencilled.me/post/2017-02-15-foursquare/</link>
-      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
-      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
-      <guid>http://www.stencilled.me/post/2017-02-15-foursquare/</guid>
-      <description>Recently I visited Austin and many of my friends had mentioned about the variety in food options here. So my wife and I decided to search for places to eat on the foursquare app. As a standard search filter with high rating we ended up at pretty good places and foursquare did alert us to checkins whenever we reached a place. Post the trip I wanted to see how many people do checkins using this app and how the checkins are correlated with the ratings.</description>
-    </item>
-    
-    <item>
-      <title>NFL Season 2016-17</title>
-      <link>http://www.stencilled.me/post/2017-01-29-nfl/</link>
-      <pubDate>Sun, 29 Jan 2017 00:00:00 +0000</pubDate>
-      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
-      <guid>http://www.stencilled.me/post/2017-01-29-nfl/</guid>
-      <description>Hello World !!! This is my first project using d3js. Being a GIS professional, visualization is always a part of job. I always wanted to learn different ways for visualizing data.Let it be a simple plot using R or a choropleth map using Arcmap . In this project I am trying to display how the NFL season 2016-17 went about. Ofcourse was surprised to see the Cowboys doing so well. May be we got our own Tom Brady.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>D3js on Stencilled</title><link>http://www.stencilled.me/tags/d3js/</link><description>Recent content in D3js on Stencilled</description><generator>Hugo</generator><language>en-us</language><managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor><webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster><lastBuildDate>Wed, 10 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://www.stencilled.me/tags/d3js/index.xml" rel="self" type="application/rss+xml"/><item><title>States to Shapes</title><link>http://www.stencilled.me/post/2017-05-10-states-to-shapes/</link><pubDate>Wed, 10 May 2017 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/post/2017-05-10-states-to-shapes/</guid><description>
+
+I started working on this visualation after coming across &lt;a href="https://bl.ocks.org/mbostock/3081153">Mike Bostock's shape tweening bl.ock&lt;/a> ,
+ which was done for one state. The source for this data is
+Insurance Institute for Highway Service(IIHS). The size of the square is based on the motor vehicle deaths per 100,000 people(2015).
+</description></item><item><title>Harry Potter Characters.</title><link>http://www.stencilled.me/post/2017-05-02-harry-potter-characters/</link><pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/post/2017-05-02-harry-potter-characters/</guid><description>
+
+Across 7 books/ 8 movies there are so many characters in this series by J.K Rowling. For this project I have got the data from
+&lt;a href="https://data.world/harishkgarg/harry-potter-universe">data.world&lt;/a>. All files here were combined to create a json with nodes and links.
+ Using d3js I have visualized the characters connected to each other.
+</description></item><item><title>Indian Premier League so far.</title><link>http://www.stencilled.me/post/2017-04-10-iplseasons/</link><pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/post/2017-04-10-iplseasons/</guid><description>
+Indian Premier League(IPL) has had 13 different teams over the past ten years. In this project I have tried to visualize how these teams
+have performed over the years.</description></item><item><title>NFL Season 2016-17</title><link>http://www.stencilled.me/post/2017-01-29-nfl/</link><pubDate>Sun, 29 Jan 2017 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/post/2017-01-29-nfl/</guid><description>
+Hello World !!! This is my first project using d3js. Being a GIS professional, visualization is always a part of job.
+I always wanted to learn different ways for visualizing data.Let it be a simple plot using R or a choropleth map using Arcmap .
+
+In this project I am trying to display how the NFL season 2016-17 went about. Ofcourse was surprised to see the Cowboys doing so well.
+May be we got our own Tom Brady.I started working with the data grabbed from the NFL site for how the season went by each seasson.
+Below is the location for the each team.
+</description></item></channel></rss>

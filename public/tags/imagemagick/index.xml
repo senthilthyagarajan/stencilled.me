@@ -1,27 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Imagemagick on Stencilled</title>
-    <link>http://www.stencilled.me/tags/imagemagick/</link>
-    <description>Recent content in Imagemagick on Stencilled</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor>
-    <webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster>
-    <lastBuildDate>Mon, 20 Mar 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://www.stencilled.me/tags/imagemagick/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Maps and gifs</title>
-      <link>http://www.stencilled.me/post/2017-03-20-map-gif-r/</link>
-      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
-      <author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author>
-      <guid>http://www.stencilled.me/post/2017-03-20-map-gif-r/</guid>
-      <description>As I have been using R for a while, one of the things I wanted to do was a time series map. Most of the time series maps I see have sliders to change the years. While looking at how to make time series maps I happened to lear how to make a GIF with a set of images.
-So I thought, how about making an election based map over the past elections.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ImageMagick on Stencilled</title><link>http://www.stencilled.me/tags/imagemagick/</link><description>Recent content in ImageMagick on Stencilled</description><generator>Hugo</generator><language>en-us</language><managingEditor>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</managingEditor><webMaster>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</webMaster><lastBuildDate>Mon, 20 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://www.stencilled.me/tags/imagemagick/index.xml" rel="self" type="application/rss+xml"/><item><title>Maps and gifs</title><link>http://www.stencilled.me/post/2017-03-20-map-gif-r/</link><pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate><author>senthil.thyagarajan@gmail.com (Senthil Thyagarajan)</author><guid>http://www.stencilled.me/post/2017-03-20-map-gif-r/</guid><description>As I have been using R for a while, one of the things I wanted to do was a time series map. Most of the time series maps I see have sliders to change the years. While looking at how to make time series maps I happened to lear how to make a GIF with a set of images.
+So I thought, how about making an election based map over the past elections.</description></item></channel></rss>

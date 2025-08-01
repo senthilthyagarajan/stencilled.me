@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css integrity=sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB crossorigin=anonymous><link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel=stylesheet><title>Styling DataTables</title>
+<link rel=stylesheet href=/css/stylesheet.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-91161205-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-91161205-1")</script></head><body><div class=container-fluid><nav class="navbar navbar-expand-md navbar-light"><span class="navbar-brand mb-0 h1"></span>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarNavAltMarkup aria-controls=navbarNav aria-expanded=false aria-label="Toggle Navigation" name=button>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarNavAltMarkup><div class=navbar-nav><a class="nav-item nav-link" href=/>Home</a>
+<a class="nav-item nav-link" href=https://github.com/senthilthyagarajan target=_blank>GitHub</a>
+<a class="nav-item nav-link" href=/page/about/>About</a>
+<a class="nav-item nav-link" href=/page/resume/>Resume</a>
+<a class="nav-item nav-link" href=/page/blogroll/>Blogroll</a>
+<a class="nav-item nav-link" href=/page/reading/>Reading</a>
+<a class="nav-item nav-link" href=https://twitter.com/TheRascala>Twitter</a></div></div></nav><section id=page-title><h1><a href=/>Stencilled</a></h1><span id=author-name><h6><a href=/page/about/></a></h6></span></section><div class=blog-post><h1>Styling DataTables</h1><div class=blog-post-subheader></div><div class=blog-post-content><p>Most of the shiny apps have tables as the primary component. Now lets say you want to prettify your app and style the tables. All you need understand how tables are built using HTML. This is how the default datatable looks like in the app.</p><figure class=img-sm><img src=/post/2019-04-20-stylingdt/defaultdt.png></figure><p>In order to build the html table I have used a function <code>table_frame</code> which can be used as a container in <code>DT::renderdatatable</code>.
+This function basically uses <code>htmltools</code>. For more references on the basics of html tables please refer <a href=https://www.w3schools.com/html/html_tables.asp>here</a></p><pre tabindex=0><code>table_frame &lt;-
+  function() {
+    htmltools::withTags(table(class = &#39;display&#39;,
+                              thead(
+                                tr(
+                                  th(rowspan = 2, &#39;Latitude&#39;),
+                                  th(rowspan = 2, &#39;Longitude&#39;),
+                                  th(rowspan = 2, &#39;Month&#39;),
+                                  th(rowspan = 2, &#39;Year&#39;),
+                                  th(class = &#39;dt-center&#39;, colspan = 3, &#39;Cloud&#39;),
+                                  th(rowspan = 2, &#39;Ozone&#39;),
+                                  th(rowspan = 2, &#39;Pressure&#39;),
+                                  th(rowspan = 2, &#39;Surface Temperature&#39;),
+                                  th(rowspan = 2, &#39;Temperature&#39;),
+                                  tr(lapply(rep(
+                                    c(&#39;High&#39;, &#39;Low&#39;, &#39;Mid&#39;), 1
+                                  ), th))
+                                )
+                              )))
+  }
+</code></pre><p>Tables might have n number of records and its not feasible to display them at once on dashboards. But someone might need to see them all at once. So in <code>tableoptions</code> where we can add two buttons <code>show more</code> and <code>show less</code>. Show less will use the default option of 10 records and show more will display all the records.</p><pre tabindex=0><code>table_options &lt;- function() {
+  list(
+    dom = &#39;Bfrtip&#39;,
+    #Bfrtip
+    pageLength = 10,
+    buttons = list(
+      c(&#39;copy&#39;, &#39;csv&#39;, &#39;excel&#39;, &#39;pdf&#39;, &#39;print&#39;),
+      list(
+        extend = &#34;collection&#34;,
+        text = &#39;Show All&#39;,
+        action = DT::JS(
+          &#34;function ( e, dt, node, config ) {
+          dt.page.len(-1);
+          dt.ajax.reload();}&#34;
+        )
+        ),
+      list(
+        extend = &#34;collection&#34;,
+        text = &#39;Show Less&#39;,
+        action = DT::JS(
+          &#34;function ( e, dt, node, config ) {
+          dt.page.len(10);
+          dt.ajax.reload();}&#34;
+        )
+        )
+        ),
+    deferRender = TRUE,
+    lengthMenu = list(c(10, 20,-1), c(&#39;10&#39;, &#39;20&#39;, &#39;All&#39;)),
+    searching = FALSE,
+    editable = TRUE,
+    scroller = TRUE,
+    lengthChange = FALSE
+    ,
+    initComplete = JS(
+      &#34;function(settings, json) {&#34;,
+      &#34;$(this.api().table().header()).css({&#39;background-color&#39;: &#39;#517fb9&#39;, &#39;color&#39;: &#39;#fff&#39;});&#34;,
+      &#34;}&#34;
+    )
+      )
+}
+</code></pre><p>Below is the output how the datatable looks like once the html container and table options are used.So by stying not only
+can we change the column names but also group them. If you see the default table how we have three columns with prefix cloud.
+These can be grouped under one column name Cloud.</p><figure class=img-sm><img src=/post/2019-04-20-stylingdt/styledt.png></figure><h3 id=code>Code</h3><p>You can find code for the app <a href=https://gist.github.com/senthilthyagarajan/4448495e2ecb6fd9456cc1924502c43c>here</a>.</p></div></div><footer><hr><small>&copy; 2025 .
+Powered by <a href=https://gohugo.io/ target=_blank>Hugo</a> using the <a href=https://github.com/arjunkrishnababu96/basics target=_blank>Basics</a> theme | <a href=http://www.stencilled.me/index.xml target=_blank>RSS Feeds</a></small></footer></div><script src=https://code.jquery.com/jquery-3.3.1.slim.min.js integrity=sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js integrity=sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js integrity=sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T crossorigin=anonymous></script></body></html>
