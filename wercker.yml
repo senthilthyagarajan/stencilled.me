@@ -3,7 +3,7 @@ build:
   steps:
     - arjen/hugo-build:
         version: "0.46"
-        theme: "beautifulhugo"
+        theme: "PaperMod"
         disable_pygments: true
         flags: --buildDrafts=true
 
