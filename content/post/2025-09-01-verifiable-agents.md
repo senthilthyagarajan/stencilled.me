@@ -1,6 +1,6 @@
 ---
 title: "Verifiable Agents, Not Demos: A Problem-First Approach"
-date: 2025-09-01
+date: 2024-12-19
 description: "Course notes from 'Building Agentic AI Applications with a Problem-First Approach' - moving beyond clever demos toward measurable, reliable agent systems with practical playbooks for problem-first framing, early evaluations, guardrails as product requirements, and iteration with data."
 tags: ["ai", "agents", "machine-learning", "data-science", "automation", "llm", "llms", "analytics"]
 categories: ["data-science"]
