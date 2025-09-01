@@ -138,11 +138,7 @@ name = "Newsletter"
 url = "https://stencilled.substack.com"
 weight = 50
 
-[[menu.main]]
-identifier = "ami-dashboard"
-name = "AMI Dashboard"
-url = "/ami-dashboard/"
-weight = 55
+
 
 [markup]
   [markup.goldmark]
