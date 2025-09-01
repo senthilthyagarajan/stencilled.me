@@ -1,0 +1,46 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+        fetch-depth: 0
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.125.7'
+        extended: true
+
+    - name: Build
+      run: |
+        hugo --theme=PaperMod --buildDrafts=false --minify
+        echo "Build completed. Checking for verifiable agents post:"
+        find public/posts/ -name "*verifiable*" -type d
+        ls -la public/posts/ | head -10
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Deploy to S3
+      run: |
+        aws s3 sync public/ s3://${{ secrets.S3_BUCKET }} --delete --cache-control max-age=3600
+        aws s3 cp public/ s3://${{ secrets.S3_BUCKET }} --recursive --cache-control max-age=3600
+
+    - name: Invalidate CloudFront
+      if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+      run: |
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*" 
