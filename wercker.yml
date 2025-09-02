@@ -1,22 +1,11 @@
 box: debian
 build:
   steps:
-    - script:
-        name: Install Hugo
-        code: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.125.7/hugo_extended_0.125.7_linux-amd64.deb
-          sudo dpkg -i hugo_extended_0.125.7_linux-amd64.deb
-          hugo version
-    - script:
-        name: Build Hugo site
-        code: |
-          hugo --theme=PaperMod --buildDrafts=false --minify
-    - script:
-        name: List built files
-        code: |
-          ls -la public/posts/
-          echo "Checking for verifiable agents post:"
-          find public/posts/ -name "*verifiable*" -type d
+    - arjen/hugo-build:
+        version: "0.125.7"
+        theme: "PaperMod"
+        disable_pygments: true
+        flags: --buildDrafts=false
 
 deploy:
   steps:
